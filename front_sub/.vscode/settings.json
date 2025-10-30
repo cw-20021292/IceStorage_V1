@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "hal_serial.h": "c",
+        "api_led.h": "c",
+        "prj_type.h": "c",
+        "hw.h": "c",
+        "led.h": "c"
+    }
+}

@@ -1,0 +1,1820 @@
+
+
+
+78K0R Linker V1.80                            Date:27 Oct 2025 Page:   1
+
+Command:   -yC:\Program Files (x86)\Renesas Electronics\CS+\CACX\Device\
+           RL78\Devicefile -_msgoff -oDefaultBuild\ICE_STORAGE_FRONT_SUB
+           .lmf -gi00000000000000000000h -go84h,0FE00h,512 -gb0FF73E8H -
+           mi0 -s -pDefaultBuild\ICE_STORAGE_FRONT_SUB.map -kl -kp C:\Pr
+           ogram Files (x86)\Renesas Electronics\CS+\CACX\CA78K0R\V1.72\
+           lib78k0r\s0rll.rel DefaultBuild\r_systeminit.rel DefaultBuild
+           \r_cg_cgc.rel DefaultBuild\r_cg_cgc_user.rel DefaultBuild\r_c
+           g_port.rel DefaultBuild\r_cg_serial.rel DefaultBuild\r_cg_tim
+           er.rel DefaultBuild\r_cg_wdt.rel DefaultBuild\r_cg_wdt_user.r
+           el DefaultBuild\api_led.rel DefaultBuild\comm.rel DefaultBuil
+           d\crc16.rel DefaultBuild\parser.rel DefaultBuild\hal_serial.r
+           el DefaultBuild\hal_timer.rel DefaultBuild\led.rel DefaultBui
+           ld\timer.rel DefaultBuild\main.rel DefaultBuild\process_sys_e
+           vent.rel DefaultBuild\purifier.rel DefaultBuild\util.rel Defa
+           ultBuild\parser_front.rel -bcl0ral.lib -bcl0rl.lib -bcl0rlf.l
+           ib -iC:\Program Files (x86)\Renesas Electronics\CS+\CACX\CA78
+           K0R\V1.72\lib78k0r
+Para-file:
+Out-file:  DefaultBuild\ICE_STORAGE_FRONT_SUB.lmf
+Map-file:  DefaultBuild\ICE_STORAGE_FRONT_SUB.map
+Direc-file:
+Directive:
+
+
+*** Link information ***
+
+    51 output segment(s)
+ 2B0BH byte(s) real data
+  3325 symbol(s) defined
+
+
+*** Memory map ***
+
+
+  SPACE=REGULAR
+
+  MEMORY=ROM
+  BASE ADDRESS=00000H   SIZE=10000H
+         OUTPUT   INPUT    INPUT      BASE      SIZE
+         SEGMENT  SEGMENT  MODULE     ADDRESS
+         @@VECT00                     00000H    00002H  CSEG AT
+                  @@VECT00 @cstart    00000H    00002H
+         @@CNST                       00002H    00000H  CSEG UNITP
+                  @@CNST   @cstart    00002H    00000H
+                  @@CNST   r_systeminit
+                                      00002H    00000H
+                  @@CNST   r_cg_cgc   00002H    00000H
+                  @@CNST   r_cg_cgc_user
+                                      00002H    00000H
+                  @@CNST   r_cg_port
+                                      00002H    00000H
+                  @@CNST   r_cg_serial
+                                      00002H    00000H
+                  @@CNST   r_cg_timer
+                                      00002H    00000H
+                  @@CNST   r_cg_wdt   00002H    00000H
+                  @@CNST   r_cg_wdt_user
+                                      00002H    00000H
+                  @@CNST   api_led    00002H    00000H
+                  @@CNST   comm       00002H    00000H
+                  @@CNST   crc16      00002H    00000H
+                  @@CNST   parser     00002H    00000H
+                  @@CNST   hal_serial
+                                      00002H    00000H
+                  @@CNST   hal_timer
+                                      00002H    00000H
+                  @@CNST   led        00002H    00000H
+                  @@CNST   timer      00002H    00000H
+                  @@CNST   main       00002H    00000H
+                  @@CNST   process_sys_event
+                                      00002H    00000H
+                  @@CNST   purifier   00002H    00000H
+                  @@CNST   util       00002H    00000H
+                  @@CNST   parser_front
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  @cstart    00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_systeminit
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_cgc   00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_cgc_user
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_port
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_serial
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_timer
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_wdt   00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  r_cg_wdt_user
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  api_led    00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  comm       00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  hal_serial
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  hal_timer
+                                      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  led        00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  timer      00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  main       00002H    00000H
+         @@CNSTL                      00002H    00000H  CSEG PAGE64KP
+                  @@CNSTL  util       00002H    00000H
+         @@R_INIT                     00002H    00000H  CSEG UNIT64KP
+                  @@R_INIT @cstart    00002H    00000H
+                  @@R_INIT r_systeminit
+                                      00002H    00000H
+                  @@R_INIT r_cg_cgc   00002H    00000H
+                  @@R_INIT r_cg_cgc_user
+                                      00002H    00000H
+                  @@R_INIT r_cg_port
+                                      00002H    00000H
+                  @@R_INIT r_cg_serial
+                                      00002H    00000H
+                  @@R_INIT r_cg_timer
+                                      00002H    00000H
+                  @@R_INIT r_cg_wdt   00002H    00000H
+                  @@R_INIT r_cg_wdt_user
+                                      00002H    00000H
+                  @@R_INIT api_led    00002H    00000H
+                  @@R_INIT comm       00002H    00000H
+                  @@R_INIT crc16      00002H    00000H
+                  @@R_INIT parser     00002H    00000H
+                  @@R_INIT hal_serial
+                                      00002H    00000H
+                  @@R_INIT hal_timer
+                                      00002H    00000H
+                  @@R_INIT led        00002H    00000H
+                  @@R_INIT timer      00002H    00000H
+                  @@R_INIT main       00002H    00000H
+                  @@R_INIT process_sys_event
+                                      00002H    00000H
+                  @@R_INIT purifier   00002H    00000H
+                  @@R_INIT util       00002H    00000H
+                  @@R_INIT parser_front
+                                      00002H    00000H
+                  @@R_INIT @rom       00002H    00000H
+         @@R_INIS                     00002H    00000H  CSEG UNIT64KP
+                  @@R_INIS @cstart    00002H    00000H
+                  @@R_INIS r_systeminit
+                                      00002H    00000H
+                  @@R_INIS r_cg_cgc   00002H    00000H
+                  @@R_INIS r_cg_cgc_user
+                                      00002H    00000H
+                  @@R_INIS r_cg_port
+                                      00002H    00000H
+                  @@R_INIS r_cg_serial
+                                      00002H    00000H
+                  @@R_INIS r_cg_timer
+                                      00002H    00000H
+                  @@R_INIS r_cg_wdt   00002H    00000H
+                  @@R_INIS r_cg_wdt_user
+                                      00002H    00000H
+                  @@R_INIS api_led    00002H    00000H
+                  @@R_INIS comm       00002H    00000H
+                  @@R_INIS crc16      00002H    00000H
+                  @@R_INIS parser     00002H    00000H
+                  @@R_INIS hal_serial
+                                      00002H    00000H
+                  @@R_INIS hal_timer
+                                      00002H    00000H
+                  @@R_INIS led        00002H    00000H
+                  @@R_INIS timer      00002H    00000H
+                  @@R_INIS main       00002H    00000H
+                  @@R_INIS process_sys_event
+                                      00002H    00000H
+                  @@R_INIS purifier   00002H    00000H
+                  @@R_INIS util       00002H    00000H
+                  @@R_INIS parser_front
+                                      00002H    00000H
+                  @@R_INIS @rom       00002H    00000H
+         @@CALT                       00002H    00000H  CSEG
+                  @@CALT   @cstart    00002H    00000H
+                  @@CALT   r_systeminit
+                                      00002H    00000H
+                  @@CALT   r_cg_cgc   00002H    00000H
+                  @@CALT   r_cg_cgc_user
+                                      00002H    00000H
+                  @@CALT   r_cg_port
+                                      00002H    00000H
+                  @@CALT   r_cg_serial
+                                      00002H    00000H
+                  @@CALT   r_cg_timer
+                                      00002H    00000H
+                  @@CALT   r_cg_wdt   00002H    00000H
+                  @@CALT   r_cg_wdt_user
+                                      00002H    00000H
+                  @@CALT   api_led    00002H    00000H
+                  @@CALT   comm       00002H    00000H
+                  @@CALT   crc16      00002H    00000H
+                  @@CALT   parser     00002H    00000H
+                  @@CALT   hal_serial
+                                      00002H    00000H
+                  @@CALT   hal_timer
+                                      00002H    00000H
+                  @@CALT   led        00002H    00000H
+                  @@CALT   timer      00002H    00000H
+                  @@CALT   main       00002H    00000H
+                  @@CALT   process_sys_event
+                                      00002H    00000H
+                  @@CALT   purifier   00002H    00000H
+                  @@CALT   util       00002H    00000H
+                  @@CALT   parser_front
+                                      00002H    00000H
+         ??NMIROM                     00002H    00002H  CSEG
+         @@VECT04                     00004H    00002H  CSEG AT
+                  @@VECT04 r_cg_wdt_user
+                                      00004H    00002H
+         @@CNSTL                      00006H    00014H  CSEG PAGE64KP
+                  @@CNSTL  parser     00006H    00014H
+* gap *                               0001AH    0000AH
+         @@VECT24                     00024H    00004H  CSEG AT
+                  @@VECT24 hal_serial
+                                      00024H    00004H
+* gap *                               00028H    00004H
+         @@VECT2C                     0002CH    00004H  CSEG AT
+                  @@VECT2C hal_timer
+                                      0002CH    00004H
+         @@CNSTL                      00030H    00090H  CSEG PAGE64KP
+                  @@CNSTL  process_sys_event
+                                      00030H    00090H
+         ?CSEGOB0                     000C0H    00004H  CSEG OPT_BYTE
+         @@CODE                       000C4H    00000H  CSEG BASE
+                  @@CODE   r_systeminit
+                                      000C4H    00000H
+                  @@CODE   r_cg_cgc   000C4H    00000H
+                  @@CODE   r_cg_cgc_user
+                                      000C4H    00000H
+                  @@CODE   r_cg_port
+                                      000C4H    00000H
+                  @@CODE   r_cg_serial
+                                      000C4H    00000H
+                  @@CODE   r_cg_timer
+                                      000C4H    00000H
+                  @@CODE   r_cg_wdt   000C4H    00000H
+                  @@CODE   r_cg_wdt_user
+                                      000C4H    00000H
+                  @@CODE   api_led    000C4H    00000H
+                  @@CODE   comm       000C4H    00000H
+                  @@CODE   crc16      000C4H    00000H
+                  @@CODE   parser     000C4H    00000H
+                  @@CODE   hal_serial
+                                      000C4H    00000H
+                  @@CODE   hal_timer
+                                      000C4H    00000H
+                  @@CODE   led        000C4H    00000H
+                  @@CODE   timer      000C4H    00000H
+                  @@CODE   main       000C4H    00000H
+                  @@CODE   process_sys_event
+                                      000C4H    00000H
+                  @@CODE   purifier   000C4H    00000H
+                  @@CODE   util       000C4H    00000H
+                  @@CODE   parser_front
+                                      000C4H    00000H
+         ?CSEGSI                      000C4H    0000AH  CSEG
+         ?OCDSTAD                     000CEH    0000AH  CSEG
+         @@LCODE                      000D8H    00213H  CSEG BASE
+                  @@LCODE  @cstart    000D8H    000ADH
+                  @@LCODE  @cudiv     00185H    00034H
+                  @@LCODE  @curem     001B9H    00036H
+                  @@LCODE  @divuw     001EFH    00034H
+                  @@LCODE  @iscmp     00223H    0000CH
+                  @@LCODE  m_fcmp     0022FH    00073H
+                  @@LCODE  m_fcom5    002A2H    0002AH
+                  @@LCODE  m_fcom6    002CCH    0001FH
+         @@BASE                       002EBH    0016EH  CSEG BASE
+                  @@BASE   r_systeminit
+                                      002EBH    00000H
+                  @@BASE   r_cg_cgc   002EBH    00000H
+                  @@BASE   r_cg_cgc_user
+                                      002EBH    00000H
+                  @@BASE   r_cg_port
+                                      002EBH    00000H
+                  @@BASE   r_cg_serial
+                                      002EBH    00000H
+                  @@BASE   r_cg_timer
+                                      002EBH    00000H
+                  @@BASE   r_cg_wdt   002EBH    00000H
+                  @@BASE   r_cg_wdt_user
+                                      002EBH    00002H
+                  @@BASE   api_led    002EDH    00000H
+                  @@BASE   comm       002EDH    00000H
+                  @@BASE   crc16      002EDH    00000H
+                  @@BASE   parser     002EDH    00000H
+                  @@BASE   hal_serial
+                                      002EDH    000E1H
+                  @@BASE   hal_timer
+                                      003CEH    0008BH
+                  @@BASE   led        00459H    00000H
+                  @@BASE   timer      00459H    00000H
+                  @@BASE   main       00459H    00000H
+                  @@BASE   process_sys_event
+                                      00459H    00000H
+                  @@BASE   purifier   00459H    00000H
+                  @@BASE   util       00459H    00000H
+                  @@BASE   parser_front
+                                      00459H    00000H
+* gap *                               00459H    00001H
+         @@CNSTL                      0045AH    00200H  CSEG PAGE64KP
+                  @@CNSTL  crc16      0045AH    00200H
+         @@CNSTL                      0065AH    0000EH  CSEG PAGE64KP
+                  @@CNSTL  purifier   0065AH    0000EH
+         @@CNSTL                      00668H    0000CH  CSEG PAGE64KP
+                  @@CNSTL  parser_front
+                                      00668H    0000CH
+         @@CNSTL                      00674H    000CEH  CSEG PAGE64KP
+                  @@CNSTL  m_fcom5    00674H    000CEH
+         @@RLINIT                     00742H    001B0H  CSEG UNIT64KP
+                  @@RLINIT @cstart    00742H    00000H
+                  @@RLINIT r_systeminit
+                                      00742H    00000H
+                  @@RLINIT r_cg_cgc   00742H    00000H
+                  @@RLINIT r_cg_cgc_user
+                                      00742H    00000H
+                  @@RLINIT r_cg_port
+                                      00742H    00000H
+                  @@RLINIT r_cg_serial
+                                      00742H    00000H
+                  @@RLINIT r_cg_timer
+                                      00742H    00000H
+                  @@RLINIT r_cg_wdt   00742H    00000H
+                  @@RLINIT r_cg_wdt_user
+                                      00742H    00000H
+                  @@RLINIT api_led    00742H    00000H
+                  @@RLINIT comm       00742H    00002H
+                  @@RLINIT crc16      00744H    00000H
+                  @@RLINIT parser     00744H    00004H
+                  @@RLINIT hal_serial
+                                      00748H    00002H
+                  @@RLINIT hal_timer
+                                      0074AH    00000H
+                  @@RLINIT led        0074AH    001A4H
+                  @@RLINIT timer      008EEH    00004H
+                  @@RLINIT main       008F2H    00000H
+                  @@RLINIT process_sys_event
+                                      008F2H    00000H
+                  @@RLINIT purifier   008F2H    00000H
+                  @@RLINIT util       008F2H    00000H
+                  @@RLINIT parser_front
+                                      008F2H    00000H
+                  @@RLINIT @rom       008F2H    00000H
+         @@CODEL                      008F2H    01AF7H  CSEG
+                  @@CODEL  r_systeminit
+                                      008F2H    00027H
+                  @@CODEL  r_cg_cgc   00919H    00017H
+                  @@CODEL  r_cg_cgc_user
+                                      00930H    00005H
+                  @@CODEL  r_cg_port
+                                      00935H    00040H
+                  @@CODEL  r_cg_serial
+                                      00975H    00181H
+                  @@CODEL  r_cg_timer
+                                      00AF6H    000E7H
+                  @@CODEL  r_cg_wdt   00BDDH    00014H
+                  @@CODEL  r_cg_wdt_user
+                                      00BF1H    00000H
+                  @@CODEL  api_led    00BF1H    002A4H
+                  @@CODEL  comm       00E95H    0051CH
+                  @@CODEL  crc16      013B1H    0009BH
+                  @@CODEL  parser     0144CH    00211H
+                  @@CODEL  hal_serial
+                                      0165DH    00036H
+                  @@CODEL  hal_timer
+                                      01693H    00000H
+                  @@CODEL  led        01693H    002ABH
+                  @@CODEL  timer      0193EH    00231H
+                  @@CODEL  main       01B6FH    00029H
+                  @@CODEL  process_sys_event
+                                      01B98H    00188H
+                  @@CODEL  purifier   01D20H    000F4H
+                  @@CODEL  util       01E14H    00294H
+                  @@CODEL  parser_front
+                                      020A8H    00341H
+         @@LCODEL                     023E9H    00531H  CSEG
+                  @@LCODEL @stkinit   023E9H    00044H
+                  @@LCODEL sscanf_f   0242DH    004B2H
+                  @@LCODEL exit       028DFH    0001CH
+                  @@LCODEL memset_f   028FBH    0001FH
+* gap *                               0291AH    0D4E6H
+         ??OCDROM                     0FE00H    00200H  CSEG
+
+  MEMORY=RAM
+  BASE ADDRESS=FEF00H   SIZE=01100H
+         OUTPUT   INPUT    INPUT      BASE      SIZE
+         SEGMENT  SEGMENT  MODULE     ADDRESS
+         @@DATA                       FEF00H    000BAH  DSEG BASEP
+                  @@DATA   @cstart    FEF00H    000BAH
+                  @@DATA   r_systeminit
+                                      FEFBAH    00000H
+                  @@DATA   r_cg_cgc   FEFBAH    00000H
+                  @@DATA   r_cg_cgc_user
+                                      FEFBAH    00000H
+                  @@DATA   r_cg_port
+                                      FEFBAH    00000H
+                  @@DATA   r_cg_serial
+                                      FEFBAH    00000H
+                  @@DATA   r_cg_timer
+                                      FEFBAH    00000H
+                  @@DATA   r_cg_wdt   FEFBAH    00000H
+                  @@DATA   r_cg_wdt_user
+                                      FEFBAH    00000H
+                  @@DATA   api_led    FEFBAH    00000H
+                  @@DATA   comm       FEFBAH    00000H
+                  @@DATA   crc16      FEFBAH    00000H
+                  @@DATA   parser     FEFBAH    00000H
+                  @@DATA   hal_serial
+                                      FEFBAH    00000H
+                  @@DATA   hal_timer
+                                      FEFBAH    00000H
+                  @@DATA   led        FEFBAH    00000H
+                  @@DATA   timer      FEFBAH    00000H
+                  @@DATA   main       FEFBAH    00000H
+                  @@DATA   process_sys_event
+                                      FEFBAH    00000H
+                  @@DATA   purifier   FEFBAH    00000H
+                  @@DATA   util       FEFBAH    00000H
+                  @@DATA   parser_front
+                                      FEFBAH    00000H
+                  @@DATA   @rom       FEFBAH    00000H
+         @@INIT                       FEFBAH    00000H  DSEG BASEP
+                  @@INIT   @cstart    FEFBAH    00000H
+                  @@INIT   r_systeminit
+                                      FEFBAH    00000H
+                  @@INIT   r_cg_cgc   FEFBAH    00000H
+                  @@INIT   r_cg_cgc_user
+                                      FEFBAH    00000H
+                  @@INIT   r_cg_port
+                                      FEFBAH    00000H
+                  @@INIT   r_cg_serial
+                                      FEFBAH    00000H
+                  @@INIT   r_cg_timer
+                                      FEFBAH    00000H
+                  @@INIT   r_cg_wdt   FEFBAH    00000H
+                  @@INIT   r_cg_wdt_user
+                                      FEFBAH    00000H
+                  @@INIT   api_led    FEFBAH    00000H
+                  @@INIT   comm       FEFBAH    00000H
+                  @@INIT   crc16      FEFBAH    00000H
+                  @@INIT   parser     FEFBAH    00000H
+                  @@INIT   hal_serial
+                                      FEFBAH    00000H
+                  @@INIT   hal_timer
+                                      FEFBAH    00000H
+                  @@INIT   led        FEFBAH    00000H
+                  @@INIT   timer      FEFBAH    00000H
+                  @@INIT   main       FEFBAH    00000H
+                  @@INIT   process_sys_event
+                                      FEFBAH    00000H
+                  @@INIT   purifier   FEFBAH    00000H
+                  @@INIT   util       FEFBAH    00000H
+                  @@INIT   parser_front
+                                      FEFBAH    00000H
+                  @@INIT   @rom       FEFBAH    00000H
+         @@INIS                       FEFBAH    00000H  DSEG UNITP
+                  @@INIS   @cstart    FEFBAH    00000H
+                  @@INIS   r_systeminit
+                                      FEFBAH    00000H
+                  @@INIS   r_cg_cgc   FEFBAH    00000H
+                  @@INIS   r_cg_cgc_user
+                                      FEFBAH    00000H
+                  @@INIS   r_cg_port
+                                      FEFBAH    00000H
+                  @@INIS   r_cg_serial
+                                      FEFBAH    00000H
+                  @@INIS   r_cg_timer
+                                      FEFBAH    00000H
+                  @@INIS   r_cg_wdt   FEFBAH    00000H
+                  @@INIS   r_cg_wdt_user
+                                      FEFBAH    00000H
+                  @@INIS   api_led    FEFBAH    00000H
+                  @@INIS   comm       FEFBAH    00000H
+                  @@INIS   crc16      FEFBAH    00000H
+                  @@INIS   parser     FEFBAH    00000H
+                  @@INIS   hal_serial
+                                      FEFBAH    00000H
+                  @@INIS   hal_timer
+                                      FEFBAH    00000H
+                  @@INIS   led        FEFBAH    00000H
+                  @@INIS   timer      FEFBAH    00000H
+                  @@INIS   main       FEFBAH    00000H
+                  @@INIS   process_sys_event
+                                      FEFBAH    00000H
+                  @@INIS   purifier   FEFBAH    00000H
+                  @@INIS   util       FEFBAH    00000H
+                  @@INIS   parser_front
+                                      FEFBAH    00000H
+                  @@INIS   @rom       FEFBAH    00000H
+         @@DATS                       FEFBAH    00000H  DSEG UNITP
+                  @@DATS   @cstart    FEFBAH    00000H
+                  @@DATS   r_systeminit
+                                      FEFBAH    00000H
+                  @@DATS   r_cg_cgc   FEFBAH    00000H
+                  @@DATS   r_cg_cgc_user
+                                      FEFBAH    00000H
+                  @@DATS   r_cg_port
+                                      FEFBAH    00000H
+                  @@DATS   r_cg_serial
+                                      FEFBAH    00000H
+                  @@DATS   r_cg_timer
+                                      FEFBAH    00000H
+                  @@DATS   r_cg_wdt   FEFBAH    00000H
+                  @@DATS   r_cg_wdt_user
+                                      FEFBAH    00000H
+                  @@DATS   api_led    FEFBAH    00000H
+                  @@DATS   comm       FEFBAH    00000H
+                  @@DATS   crc16      FEFBAH    00000H
+                  @@DATS   parser     FEFBAH    00000H
+                  @@DATS   hal_serial
+                                      FEFBAH    00000H
+                  @@DATS   hal_timer
+                                      FEFBAH    00000H
+                  @@DATS   led        FEFBAH    00000H
+                  @@DATS   timer      FEFBAH    00000H
+                  @@DATS   main       FEFBAH    00000H
+                  @@DATS   process_sys_event
+                                      FEFBAH    00000H
+                  @@DATS   purifier   FEFBAH    00000H
+                  @@DATS   util       FEFBAH    00000H
+                  @@DATS   parser_front
+                                      FEFBAH    00000H
+                  @@DATS   @rom       FEFBAH    00000H
+         @@INITL                      FEFBAH    001B0H  DSEG UNIT64KP
+                  @@INITL  @cstart    FEFBAH    00000H
+                  @@INITL  r_systeminit
+                                      FEFBAH    00000H
+                  @@INITL  r_cg_cgc   FEFBAH    00000H
+                  @@INITL  r_cg_cgc_user
+                                      FEFBAH    00000H
+                  @@INITL  r_cg_port
+                                      FEFBAH    00000H
+                  @@INITL  r_cg_serial
+                                      FEFBAH    00000H
+                  @@INITL  r_cg_timer
+                                      FEFBAH    00000H
+                  @@INITL  r_cg_wdt   FEFBAH    00000H
+                  @@INITL  r_cg_wdt_user
+                                      FEFBAH    00000H
+                  @@INITL  api_led    FEFBAH    00000H
+                  @@INITL  comm       FEFBAH    00002H
+                  @@INITL  crc16      FEFBCH    00000H
+                  @@INITL  parser     FEFBCH    00004H
+                  @@INITL  hal_serial
+                                      FEFC0H    00002H
+                  @@INITL  hal_timer
+                                      FEFC2H    00000H
+                  @@INITL  led        FEFC2H    001A4H
+                  @@INITL  timer      FF166H    00004H
+                  @@INITL  main       FF16AH    00000H
+                  @@INITL  process_sys_event
+                                      FF16AH    00000H
+                  @@INITL  purifier   FF16AH    00000H
+                  @@INITL  util       FF16AH    00000H
+                  @@INITL  parser_front
+                                      FF16AH    00000H
+                  @@INITL  @rom       FF16AH    00000H
+         @@DATAL                      FF16AH    00394H  DSEG UNIT64KP
+                  @@DATAL  @cstart    FF16AH    00000H
+                  @@DATAL  r_systeminit
+                                      FF16AH    00000H
+                  @@DATAL  r_cg_cgc   FF16AH    00000H
+                  @@DATAL  r_cg_cgc_user
+                                      FF16AH    00000H
+                  @@DATAL  r_cg_port
+                                      FF16AH    00000H
+                  @@DATAL  r_cg_serial
+                                      FF16AH    0000EH
+                  @@DATAL  r_cg_timer
+                                      FF178H    00000H
+                  @@DATAL  r_cg_wdt   FF178H    00000H
+                  @@DATAL  r_cg_wdt_user
+                                      FF178H    00000H
+                  @@DATAL  api_led    FF178H    00000H
+                  @@DATAL  comm       FF178H    00140H
+                  @@DATAL  crc16      FF2B8H    00000H
+                  @@DATAL  parser     FF2B8H    001FEH
+                  @@DATAL  hal_serial
+                                      FF4B6H    00000H
+                  @@DATAL  hal_timer
+                                      FF4B6H    00000H
+                  @@DATAL  led        FF4B6H    00004H
+                  @@DATAL  timer      FF4BAH    0003CH
+                  @@DATAL  main       FF4F6H    00000H
+                  @@DATAL  process_sys_event
+                                      FF4F6H    00000H
+                  @@DATAL  purifier   FF4F6H    00008H
+                  @@DATAL  util       FF4FEH    00000H
+                  @@DATAL  parser_front
+                                      FF4FEH    00000H
+                  @@DATAL  @rom       FF4FEH    00000H
+         @@BITS                       FF4FEH    00000H  BSEG
+                  @@BITS   @cstart    FF4FEH.0  00000H.0
+                  @@BITS   r_systeminit
+                                      FF4FEH.0  00000H.0
+                  @@BITS   r_cg_cgc   FF4FEH.0  00000H.0
+                  @@BITS   r_cg_cgc_user
+                                      FF4FEH.0  00000H.0
+                  @@BITS   r_cg_port
+                                      FF4FEH.0  00000H.0
+                  @@BITS   r_cg_serial
+                                      FF4FEH.0  00000H.0
+                  @@BITS   r_cg_timer
+                                      FF4FEH.0  00000H.0
+                  @@BITS   r_cg_wdt   FF4FEH.0  00000H.0
+                  @@BITS   r_cg_wdt_user
+                                      FF4FEH.0  00000H.0
+                  @@BITS   api_led    FF4FEH.0  00000H.0
+                  @@BITS   comm       FF4FEH.0  00000H.0
+                  @@BITS   crc16      FF4FEH.0  00000H.0
+                  @@BITS   parser     FF4FEH.0  00000H.0
+                  @@BITS   hal_serial
+                                      FF4FEH.0  00000H.0
+                  @@BITS   hal_timer
+                                      FF4FEH.0  00000H.0
+                  @@BITS   led        FF4FEH.0  00000H.0
+                  @@BITS   timer      FF4FEH.0  00000H.0
+                  @@BITS   main       FF4FEH.0  00000H.0
+                  @@BITS   process_sys_event
+                                      FF4FEH.0  00000H.0
+                  @@BITS   purifier   FF4FEH.0  00000H.0
+                  @@BITS   util       FF4FEH.0  00000H.0
+                  @@BITS   parser_front
+                                      FF4FEH.0  00000H.0
+* gap *                               FF4FEH    009D6H
+         @@SEGREG                     FFED4H    00004H  DSEG AT
+                  @@SEGREG @SEGREG    FFED4H    00004H
+         @@RTARG0                     FFED8H    00008H  DSEG AT
+                  @@RTARG0 @RTARG0    FFED8H    00008H
+* gap *                               FFEE0H    00020H
+* gap (Not Free Area) *               FFF00H    00100H
+
+
+
+*** Local symbol list ***
+
+MODULE    ATTR       VALUE    NAME
+
+@cstart
+          MOD                 @cstart
+          DSEG                @@DATA
+          CSEG                @@VECT00
+          CSEG                @@LCODE
+          CSEG                @@R_INIT
+          CSEG                @@RLINIT
+          CSEG                @@R_INIS
+          DSEG                @@INIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CALT
+          CSEG                @@CNST
+          CSEG                @@CNSTL
+          BSEG                @@BITS
+r_systeminit
+          MOD                 r_systeminit
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+r_cg_cgc
+          MOD                 r_cg_cgc
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+r_cg_cgc_user
+          MOD                 r_cg_cgc_user
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+                     00006H   _reset_flag
+r_cg_port
+          MOD                 r_cg_port
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+r_cg_serial
+          MOD                 r_cg_serial
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+                     00002H   _rx_buf
+                     0000CH   _rx_num
+                     00000H   _status
+                     00002H   _tx_buf
+                     0000CH   _tx_num
+                     00000H   _status
+r_cg_timer
+          MOD                 r_cg_timer
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+r_cg_wdt
+          MOD                 r_cg_wdt
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+r_cg_wdt_user
+          MOD                 r_cg_wdt_user
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+          CSEG                @@VECT04
+          ADDR       002EBH   _r_wdt_interrupt
+api_led
+          MOD                 api_led
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+                     00006H   _onOff
+comm
+          MOD                 comm
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+                     00000H   __comm_
+                     00000H   _recvBuf
+                     00004H   _sendBuf
+                     00008H   _recvLen
+                     0000AH   _sendLen
+                     0000CH   _txLen
+                     0000EH   _rxErrLimitTimer
+                     00010H   _rxErr
+                     00000H   __comm_id_
+                     00000H   _COMM_ID_FRONT
+                     00001H   _COMM_ID_MAX
+                     00004H   _id
+                     00000H   _pComm
+          ADDR       00F48H   _GetRecvBufferLength
+                     00002H   _id
+                     00000H   _size
+                     00004H   _id
+                     00000H   _communication
+          ADDR       00FA9H   _IsEmptyRecvBuffer
+                     00004H   _id
+                     00000H   _communication
+          ADDR       00FDBH   _GetSendBufferLength
+                     00002H   _id
+                     00000H   _size
+          ADDR       00FF2H   _IsFullSendBuffer
+                     00004H   _id
+                     00000H   _communication
+                     00006H   _id
+          ADDR       01052H   _GetRecvLength
+                     00006H   _id
+                     00006H   _id
+          ADDR       0107EH   _GetSendLength
+                     00006H   _id
+                     00004H   _id
+                     0000CH   _data
+                     00000H   _communication
+          ADDR       010E9H   _GetRecvBuffer
+                     00004H   _id
+                     0000CH   _index
+                     00000H   _communicaiton
+          ADDR       01128H   _SetSendBuffer
+                     00004H   _id
+                     0000CH   _data
+                     00000H   _communicaiton
+          ADDR       0118AH   _GetSendBuffer
+                     00004H   _id
+                     0000CH   _index
+                     00000H   _communication
+                     00006H   _id
+                     00005H   _txData
+                     00000H   _communication
+                     00006H   _id
+                     00006H   _id
+                     00007H   _cmd
+                     00006H   _id
+                     00002H   _id
+                     0000AH   _sendBuf
+                     0000EH   _len
+                     00001H   _i
+                     00004H   _id
+                     0000CH   _recvBuf
+                     00002H   _i
+                     00000H   _len
+                     00006H   _err
+          ADDR       FEFBAH   _blink
+crc16
+          MOD                 crc16
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+                     00006H   _Crc
+                     0000EH   _C
+                     00005H   _j
+                     00002H   _CrcSum
+                     00000H   _CrcBuf
+                     00004H   _uc_data
+                     0000EH   _uc_number
+                     00002H   _ui_crc
+                     00000H   _ui_temp_crc
+parser
+          MOD                 parser
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+                     00000H   __parser_rx_list_
+                     00000H   _timerId
+                     00001H   _commId
+                     00002H   _isValidPkt
+                     00006H   _parserPkt
+                     00000H   __parser_tx_list_
+                     00000H   _timerId
+                     00001H   _commId
+                     00002H   _makePkt
+                     00006H   _crc16
+          ADDR       00006H   _parserRxList
+                     00002H   _list
+                     00001H   _i
+          ADDR       00010H   _parserTxList
+                     00002H   _list
+                     00001H   _i
+                     00000H   _comm
+hal_serial
+          MOD                 hal_serial
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+          CSEG                @@VECT24
+                     00000H   _rxData
+                     00006H   _txData
+                     00006H   _enable
+          ADDR       002EDH   _r_uart1_interrupt_receive
+                     00001H   _rxData
+                     00000H   _errType
+          ADDR       0038EH   _r_uart1_interrupt_send
+hal_timer
+          MOD                 hal_timer
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+          CSEG                @@VECT2C
+          ADDR       003CEH   _BaseTimer_Interrupt
+                     00000H   _userISR
+          ADDR       00426H   _LedDimmingTimer_Interrupt
+led
+          MOD                 led
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+                     00000H   __led_cnt_
+                     00000H   _LedCntCycle
+                     00002H   _LedCntSyncDelay
+                     00000H   __led_id_
+                     00000H   _LED_ID_SEG_1A
+                     00001H   _LED_ID_SEG_1B
+                     00002H   _LED_ID_SEG_1C
+                     00003H   _LED_ID_SEG_1D
+                     00004H   _LED_ID_SEG_1E
+                     00005H   _LED_ID_SEG_1F
+                     00006H   _LED_ID_SEG_1G
+                     00007H   _LED_ID_SEG_2A
+                     00008H   _LED_ID_SEG_2B
+                     00009H   _LED_ID_SEG_2C
+                     0000AH   _LED_ID_SEG_2D
+                     0000BH   _LED_ID_SEG_2E
+                     0000CH   _LED_ID_SEG_2F
+                     0000DH   _LED_ID_SEG_2G
+                     0000EH   _LED_ID_SEG_3A
+                     0000FH   _LED_ID_SEG_3B
+                     00010H   _LED_ID_SEG_3C
+                     00011H   _LED_ID_SEG_3D
+                     00012H   _LED_ID_SEG_3E
+                     00013H   _LED_ID_SEG_3F
+                     00014H   _LED_ID_SEG_3G
+                     00015H   _LED_ID_SEG_4A
+                     00016H   _LED_ID_SEG_4B
+                     00017H   _LED_ID_SEG_4C
+                     00018H   _LED_ID_SEG_4D
+                     00019H   _LED_ID_SEG_4E
+                     0001AH   _LED_ID_SEG_4F
+                     0001BH   _LED_ID_SEG_4G
+                     0001CH   _LED_ID_SEG_5A
+                     0001DH   _LED_ID_SEG_5B
+                     0001EH   _LED_ID_SEG_5C
+                     0001FH   _LED_ID_SEG_5D
+                     00020H   _LED_ID_SEG_5E
+                     00021H   _LED_ID_SEG_5F
+                     00022H   _LED_ID_SEG_5G
+                     00023H   _LED_ID_SEG_6A
+                     00024H   _LED_ID_SEG_6B
+                     00025H   _LED_ID_SEG_6C
+                     00026H   _LED_ID_SEG_6D
+                     00027H   _LED_ID_SEG_6E
+                     00028H   _LED_ID_SEG_6F
+                     00029H   _LED_ID_SEG_6G
+                     0002AH   _LED_ID_MAX
+                     00000H   __led_list_
+                     00000H   _Led
+                     00002H   _TargetTick
+                     00004H   _CurrentTick
+                     00006H   _LedOnOff
+          ADDR       016A6H   _ConvDuty2Tick
+                     00002H   _duty
+                     00000H   _tick
+          ADDR       016D5H   _OnOffTick
+                     00000H   _ledList
+                     0000AH   _ledCntCycle
+          ADDR       01712H   _Sync
+                     00000H   _ledList
+                     00006H   _id
+                     0000EH   _duty
+                     00002H   _pLedList
+                     00001H   _ledType
+                     00000H   _ledDuty
+                     00006H   _i
+                     00008H   _led
+                     00004H   _pLedList
+                     00002H   _TarDuty
+                     00001H   _result
+                     00006H   _data
+                     00007H   _result
+                     00006H   _i
+timer
+          MOD                 timer
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+                     00000H   __timer_
+                     00000H   _Enable
+                     00002H   _TimeOut
+                     00000H   __timer_type_
+                     00000H   _TIMER_PROCESS
+                     00001H   _TIMER_USER
+          ADDR       01966H   _GetAddrOfBuf
+                     00004H   _type
+                     0000CH   _id
+                     00000H   _pTimer
+                     00006H   _type
+                     0000EH   _id
+                     00010H   _timeOut
+                     00002H   _pTimer
+                     00001H   __ints_base_timer_byte
+                     00004H   _type
+                     0000CH   _id
+                     00000H   _pTimer
+                     00006H   _type
+                     00007H   _id
+                     0000AH   _type
+                     00012H   _id
+                     00006H   _pTimer
+                     00002H   _timeOut
+                     00001H   __ints_base_timer_byte
+                     00006H   _i
+                     00007H   _j
+                     00000H   _FPUserISR
+main
+          MOD                 main
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+process_sys_event
+          MOD                 process_sys_event
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+                     00000H   __sys_event_
+                     00000H   _timerId
+                     00002H   _pFunc
+                     00006H   _pFuncDiag
+                     0000AH   _pFuncFct
+                     0000EH   _pFuncEol
+          ADDR       01C29H   _Evt_Normal_1ms_Handler
+          ADDR       01C36H   _Evt_Normal_10ms_Handler
+          ADDR       01C45H   _Evt_Normal_100ms_Handler
+          ADDR       01C5CH   _Evt_Normal_1sec_Handler
+          ADDR       01C6EH   _Evt_Normal_10sec_Handler
+          ADDR       01C80H   _Evt_Normal_40sec_Handler
+          ADDR       01C92H   _Evt_Normal_1min_Handler
+          ADDR       01CA4H   _Evt_Front_Rx_Err
+          ADDR       00030H   _SysEventList
+                     00009H   _i
+                     00004H   _func
+                     00000H   _pSysEventList
+purifier
+          MOD                 purifier
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+                     00000H   __purifier_
+                     00000H   _MainVerMajor
+                     00001H   _MainVerEvent
+                     00002H   _MainVerPatch
+                     00003H   _MainVerMiner
+                     00004H   _FrontVerMajor
+                     00005H   _FrontVerEvent
+                     00006H   _FrontVerPatch
+                     00007H   _FrontVerMiner
+                     00008H   _ver
+                     00006H   _major
+                     00004H   _event
+                     00002H   _patch
+                     00000H   _miner
+                     00006H   _ver
+                     00006H   _ver
+                     00006H   _ver
+                     00006H   _ver
+                     0065AH   L0007
+util
+          MOD                 util
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+                     00006H   _hex
+                     00007H   _dec
+                     00006H   _dec
+                     00007H   _hex
+                     00002H   _upper
+                     0000AH   _lower
+                     00001H   _uTemp
+                     00000H   _uVal
+                     00006H   _us
+                     00004H   _ms
+                     00002H   _i
+                     00001H   _j
+                     00004H   _src
+                     00002H   _h_to_l
+                     00000H   _l_to_h
+                     00000H   _val
+                     00008H   _min
+                     0000AH   _max
+                     0000CH   _init
+                     00000H   _dataX
+                     00008H   _dataY
+                     00000H   _dataX
+                     00008H   _dataY
+                     00000H   _val
+                     00008H   _min
+                     0000AH   _max
+                     00000H   _val
+                     00008H   _min
+                     0000AH   _max
+                     00000H   _val
+                     00008H   _min
+                     0000AH   _max
+                     00000H   _val
+                     0000AH   _min
+                     0000EH   _max
+                     00000H   _val
+                     0000AH   _min
+                     0000EH   _max
+                     00000H   _bitData
+                     0000AH   _pos
+                     00000H   _bitData
+                     0000AH   _pos
+                     00002H   _bitData
+                     0000CH   _pos
+                     00001H   _data
+parser_front
+          MOD                 parser_front
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+                     00000H   __parser_list_
+                     00000H   _type
+                     00002H   _pParserPkt
+                     00000H   __make_list_
+                     00000H   _type
+                     00002H   _makePkt
+                     00000H   __led_id_
+                     00000H   _LED_ID_SEG_1A
+                     00001H   _LED_ID_SEG_1B
+                     00002H   _LED_ID_SEG_1C
+                     00003H   _LED_ID_SEG_1D
+                     00004H   _LED_ID_SEG_1E
+                     00005H   _LED_ID_SEG_1F
+                     00006H   _LED_ID_SEG_1G
+                     00007H   _LED_ID_SEG_2A
+                     00008H   _LED_ID_SEG_2B
+                     00009H   _LED_ID_SEG_2C
+                     0000AH   _LED_ID_SEG_2D
+                     0000BH   _LED_ID_SEG_2E
+                     0000CH   _LED_ID_SEG_2F
+                     0000DH   _LED_ID_SEG_2G
+                     0000EH   _LED_ID_SEG_3A
+                     0000FH   _LED_ID_SEG_3B
+                     00010H   _LED_ID_SEG_3C
+                     00011H   _LED_ID_SEG_3D
+                     00012H   _LED_ID_SEG_3E
+                     00013H   _LED_ID_SEG_3F
+                     00014H   _LED_ID_SEG_3G
+                     00015H   _LED_ID_SEG_4A
+                     00016H   _LED_ID_SEG_4B
+                     00017H   _LED_ID_SEG_4C
+                     00018H   _LED_ID_SEG_4D
+                     00019H   _LED_ID_SEG_4E
+                     0001AH   _LED_ID_SEG_4F
+                     0001BH   _LED_ID_SEG_4G
+                     0001CH   _LED_ID_SEG_5A
+                     0001DH   _LED_ID_SEG_5B
+                     0001EH   _LED_ID_SEG_5C
+                     0001FH   _LED_ID_SEG_5D
+                     00020H   _LED_ID_SEG_5E
+                     00021H   _LED_ID_SEG_5F
+                     00022H   _LED_ID_SEG_5G
+                     00023H   _LED_ID_SEG_6A
+                     00024H   _LED_ID_SEG_6B
+                     00025H   _LED_ID_SEG_6C
+                     00026H   _LED_ID_SEG_6D
+                     00027H   _LED_ID_SEG_6E
+                     00028H   _LED_ID_SEG_6F
+                     00029H   _LED_ID_SEG_6G
+                     0002AH   _LED_ID_MAX
+          ADDR       020A8H   _Rx_CRC_CCITT
+                     00008H   _puchMsg
+                     00012H   _usDataLen
+                     00007H   _i
+                     00004H   _wCRCin
+                     00002H   _wCPoly
+                     00001H   _wChar
+                     00002H   _buf
+                     0000CH   _len
+                     00000H   _checksum
+          ADDR       0217AH   _ParserReqFront
+                     00002H   _buf
+                     00001H   _i
+          ADDR       021C6H   _Check_Crc
+                     00002H   _buf
+                     0000CH   _len
+                     00000H   _crc16
+                     00000H   _buf
+                     0000AH   _len
+          ADDR       00668H   _parserList
+                     00008H   _buf
+                     00012H   _len
+                     00007H   _type
+                     00002H   _pParser
+                     00001H   _i
+          ADDR       0066EH   _makeList
+                     0000AH   _comm
+                     00014H   _buf
+                     00009H   _type
+                     00004H   _pMakePkt
+                     00003H   _i
+                     00000H   _len
+          ADDR       02340H   _MakePktAckFront
+                     00004H   _buf
+                     00002H   _len
+                     00001H   _LedId
+@cudiv
+          MOD                 @cudiv
+          CSEG                @@LCODE
+@curem
+          MOD                 @curem
+          CSEG                @@LCODE
+@divuw
+          MOD                 @divuw
+          CSEG                @@LCODE
+@iscmp
+          MOD                 @iscmp
+          CSEG                @@LCODE
+@SEGREG
+          MOD                 @SEGREG
+          DSEG                @@SEGREG
+@stkinit
+          MOD                 @stkinit
+          CSEG                @@LCODEL
+@RTARG0
+          MOD                 @RTARG0
+          DSEG                @@RTARG0
+sscanf_f
+          MOD                 sscanf_f
+          CSEG                @@LCODEL
+exit
+          MOD                 exit
+          CSEG                @@LCODEL
+memset_f
+          MOD                 memset_f
+          CSEG                @@LCODEL
+m_fcmp
+          MOD                 m_fcmp
+          CSEG                @@LCODE
+m_fcom5
+          MOD                 m_fcom5
+          CSEG                @@LCODE
+          CSEG                @@CNSTL
+m_fcom6
+          MOD                 m_fcom6
+          CSEG                @@LCODE
+@rom
+          MOD                 @rom
+          CSEG                @@R_INIT
+          CSEG                @@RLINIT
+          CSEG                @@R_INIS
+          DSEG                @@INIT
+          DSEG                @@INITL
+          DSEG                @@DATA
+          DSEG                @@DATAL
+          DSEG                @@INIS
+          DSEG                @@DATS
+
+
+
+*** Public symbol list ***
+
+MODULE    ATTR       VALUE    NAME
+
+@cstart
+          ADDR       000D8H   _@cstart
+          ADDR       00185H   _@cend
+          ADDR       FEF98H   _@BRKADR
+          ADDR       FEF9AH   _@MEMTOP
+          ADDR       FEFBAH   _@MEMBTM
+          ADDR       FEF00H   _@FNCTBL
+          ADDR       FEF80H   _@FNCENT
+          ADDR       FEF82H   _@SEED
+          ADDR       FEF86H   _@DIVR
+          ADDR       FEF8AH   _@LDIVR
+          ADDR       FEF92H   _@TOKPTR
+          ADDR       FEF96H   _errno
+main
+                     01B6FH   _main
+          NUM        FFED4H   _@STBEG
+          NUM        FF4FEH   _@STEND
+@stkinit
+          ADDR       023E9H   _stkinit
+r_systeminit
+                     00911H   _hdwinit
+          NUM        000C0H   _@SADSIZ
+          ADDR       FFE20H   _@SADBEG
+exit
+          ADDR       028DFH   _exit
+          NUM        00000H   _@MAA
+@rom
+          ADDR       00002H   _?R_INIT
+          ADDR       008F2H   _?RLINIT
+          ADDR       00002H   _?R_INIS
+          ADDR       FEFBAH   _?DATA
+          ADDR       FF4FEH   _?DATAL
+          ADDR       FEFBAH   _?DATS
+r_systeminit
+                     008F2H   _R_Systeminit
+r_cg_cgc_user
+                     00930H   _R_CGC_Get_ResetSource
+r_cg_cgc
+                     00919H   _R_CGC_Create
+r_cg_port
+                     00935H   _R_PORT_Create
+r_cg_serial
+                     00975H   _R_SAU0_Create
+r_cg_timer
+                     00AF6H   _R_TAU0_Create
+r_cg_wdt
+                     00BDDH   _R_WDT_Create
+r_cg_serial
+                     00987H   _R_UART1_Create
+                     00A17H   _R_UART1_Start
+                     00A48H   _R_UART1_Stop
+                     00A6FH   _R_UART1_Receive
+                     00AA5H   _R_UART1_Send
+                     FF16AH   _gp_uart1_tx_address
+                     FF16EH   _g_uart1_tx_count
+                     FF170H   _gp_uart1_rx_address
+                     FF174H   _g_uart1_rx_count
+                     FF176H   _g_uart1_rx_length
+r_cg_timer
+                     00B99H   _R_TAU0_Channel0_Start
+                     00BAAH   _R_TAU0_Channel0_Stop
+                     00BBBH   _R_TAU0_Channel1_Start
+                     00BCCH   _R_TAU0_Channel1_Stop
+r_cg_wdt
+                     00BEDH   _R_WDT_Restart
+r_cg_wdt_user
+          ADDR       00004H   _@vect04
+api_led
+                     00BF1H   _LedInit
+                     00BF5H   _LedOnOffSeg1A
+                     00C05H   _LedOnOffSeg1B
+                     00C15H   _LedOnOffSeg1C
+                     00C25H   _LedOnOffSeg1D
+                     00C35H   _LedOnOffSeg1E
+                     00C45H   _LedOnOffSeg1F
+                     00C55H   _LedOnOffSeg1G
+                     00C65H   _LedOnOffSeg2A
+                     00C75H   _LedOnOffSeg2B
+                     00C85H   _LedOnOffSeg2C
+                     00C95H   _LedOnOffSeg2D
+                     00CA5H   _LedOnOffSeg2E
+                     00CB5H   _LedOnOffSeg2F
+                     00CC5H   _LedOnOffSeg2G
+                     00CD5H   _LedOnOffSeg3A
+                     00CE5H   _LedOnOffSeg3B
+                     00CF5H   _LedOnOffSeg3C
+                     00D05H   _LedOnOffSeg3D
+                     00D15H   _LedOnOffSeg3E
+                     00D25H   _LedOnOffSeg3F
+                     00D35H   _LedOnOffSeg3G
+                     00D45H   _LedOnOffSeg4A
+                     00D55H   _LedOnOffSeg4B
+                     00D65H   _LedOnOffSeg4C
+                     00D75H   _LedOnOffSeg4D
+                     00D85H   _LedOnOffSeg4E
+                     00D95H   _LedOnOffSeg4F
+                     00DA5H   _LedOnOffSeg4G
+                     00DB5H   _LedOnOffSeg5A
+                     00DC5H   _LedOnOffSeg5B
+                     00DD5H   _LedOnOffSeg5C
+                     00DE5H   _LedOnOffSeg5D
+                     00DF5H   _LedOnOffSeg5E
+                     00E05H   _LedOnOffSeg5F
+                     00E15H   _LedOnOffSeg5G
+                     00E25H   _LedOnOffSeg6A
+                     00E35H   _LedOnOffSeg6B
+                     00E45H   _LedOnOffSeg6C
+                     00E55H   _LedOnOffSeg6D
+                     00E65H   _LedOnOffSeg6E
+                     00E75H   _LedOnOffSeg6F
+                     00E85H   _LedOnOffSeg6G
+comm
+                     00E95H   _InitComm
+                     00ECCH   _InitCommId
+                     00F5FH   _IsFullRecvBuffer
+                     0103CH   _InitRecvLength
+                     01068H   _InitSendLength
+                     01094H   _SetRecvBuffer
+                     011CAH   _SendByte
+                     01230H   _IsCompleteTx
+                     01266H   _SetCommHeader
+                     01278H   _GetCommHeader
+                     0128AH   _SendCommPacket
+                     012E0H   _RecvCommPacket
+                     01332H   _SetFrontRxErr
+                     0134AH   _GetMainRxErr
+                     01353H   _UpdateFrontRxErrTimer
+                     01361H   _DispFrontRxErr
+                     FF178H   _commHeader
+                     FF179H   _mainRecvBuf
+                     FF20FH   _mainSendBuf
+                     FF2A6H   _comm
+memset_f
+          ADDR       028FBH   _memset_f
+hal_serial
+                     0165DH   _HalUart1Start
+@SEGREG
+          ADDR       FFED4H   _@SEGAX
+          ADDR       FFED6H   _@SEGDE
+@RTARG0
+          ADDR       FFED8H   _@RTARG0
+@iscmp
+          ADDR       00223H   @@iscmp
+hal_serial
+                     0167CH   _HalUart1SendByte
+led
+                     017BEH   _AllOffLed
+                     0175DH   _OnOffLed
+crc16
+                     013B1H   _CalCrc16
+                     013FDH   _crc16_cal
+                     0045AH   _crc16tab
+parser
+                     0144CH   _RecvPacketHandler
+                     01542H   _SendPacketHandler
+                     FF2B8H   _pktRecv
+                     FEFBCH   _pktRecvLen
+                     FF3B7H   _pktSend
+                     FEFBEH   _pktSendLen
+parser_front
+                     02216H   _IsValidPktFront
+                     0224AH   _ParserPktFront
+                     022C9H   _MakePktFront
+                     0211AH   _Crc16Main
+timer
+                     01A42H   _IsExpiredTimer
+                     019F5H   _DisableTimer
+@RTARG0
+          ADDR       FFEDAH   _@RTARG2
+          ADDR       FFEDBH   _@RTARG3
+hal_serial
+                     01661H   _HalUart1Stop
+                     01665H   _HalUart1ReceiveByte
+                     01683H   _HalUart1EnableInterrupt
+          ADDR       00024H   _@vect24
+          ADDR       00026H   _@vect26
+                     FEFC0H   _the_rx1_err_count
+timer
+                     0199DH   _StartTimer
+hal_timer
+          ADDR       0002CH   _@vect2c
+          ADDR       0002EH   _@vect2e
+timer
+                     01B62H   _GetTimerISR
+@SEGREG
+          ADDR       FFED5H   _@SEGBC
+timer
+                     01AAFH   _UpdateTimer
+led
+                     018D9H   _ControlLed
+                     01693H   _InitLed
+                     017D5H   _ConvertDuty2Protocol
+                     01886H   _ConvertProtocol2Duty
+                     FF4B6H   _LedCnt
+                     FEFC2H   _LedList
+@divuw
+          ADDR       001EFH   @@divuw
+timer
+                     0193EH   _InitTimer
+                     01A30H   _StopTimer
+                     01B4BH   _RegisterTimerISR
+                     FF166H   _userISR
+                     FF4BAH   _Timer
+                     FF4EAH   _UserTimer
+util
+                     01E9CH   _Delay_MS
+process_sys_event
+                     01B98H   _InitSystem
+                     01BA4H   _InitStartTimer
+                     01CA9H   _ProcessEventHandler
+purifier
+                     01D20H   _InitPurifier
+                     01D43H   _ExportVersion
+                     01DA0H   _SetMainVerMajor
+                     01DABH   _GetMainVerMajor
+                     01DB4H   _SetMainVerEvent
+                     01DBFH   _GetMainVerEvent
+                     01DC8H   _SetMainVerPatch
+                     01DD3H   _GetMainVerPatch
+                     01DDCH   _SetMainVerMiner
+                     01DE7H   _GetMainVerMiner
+                     01DF0H   _GetFrontVerMajor
+                     01DF9H   _GetFrontVerEvent
+                     01E02H   _GetFrontVerPatch
+                     01E0BH   _GetFrontVerMiner
+                     FF4F6H   _Purifier
+sscanf_f
+          ADDR       0242DH   _sscanf_f
+util
+                     01E14H   _Hex2Dec
+                     01E2BH   _Dec2Hex
+                     01E4AH   _Conv_Asc2Byte
+                     01E8EH   _Delay_Us
+                     01ECFH   _Conv_ByteOrder
+                     01EF1H   _Reset
+                     01EF4H   _CheckLimitValue
+                     01F11H   _GetMin
+                     01F2AH   _GetMax
+                     01F43H   _SetMinMax8
+                     01F61H   _SetMinMax16
+                     01F80H   _SetMinMaxI16
+                     01FA6H   _SetMinMax32
+                     01FE0H   _SetMinMaxF32
+                     02023H   _SetBit
+                     02046H   _ClearBit
+                     0206BH   _GetBit
+@curem
+          ADDR       001B9H   @@curem
+@cudiv
+          ADDR       00185H   @@cudiv
+@RTARG0
+          ADDR       FFEDCH   _@RTARG4
+m_fcmp
+          ADDR       00257H   @@fcmp
+@divuw
+          ADDR       001EFH   @@divuwe
+@RTARG0
+          ADDR       FFED9H   _@RTARG1
+@rom
+          ADDR       FEFBAH   _?INIT
+          ADDR       FF16AH   _?INITL
+          ADDR       FEFBAH   _?INIS
+@SEGREG
+          ADDR       FFED7H   _@SEGHL
+@RTARG0
+          ADDR       FFEDDH   _@RTARG5
+          ADDR       FFEDEH   _@RTARG6
+          ADDR       FFEDFH   _@RTARG7
+          ADDR       FFED8H   @@CPR1
+          ADDR       FFED8H   @@FPRS
+          ADDR       FFEDCH   @@FPRXP
+          ADDR       FFEDCH   @@FPRXD
+          ADDR       FFEDDH   @@FPRXS
+          ADDR       FFEDEH   @@FPRFP
+          ADDR       FFEDEH   @@FPRF1
+          ADDR       FFEDFH   @@FPRF2
+sscanf_f
+          ADDR       0242DH   _sscanf
+memset_f
+          ADDR       028FBH   _memset
+m_fcom5
+          ADDR       002A2H   @@fmthrr
+m_fcom6
+          ADDR       002CCH   _matherr
+
+
+ Target chip : R5F100LE
+ Device file : V1.14
+

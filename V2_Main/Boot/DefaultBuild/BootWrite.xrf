@@ -1,0 +1,382 @@
+
+
+
+78K0R C Compiler V2.72 Cross reference List                                                               Date:30 Oct 2025 Page:   1
+
+Command   : -cf100sj -yC:\Program Files (x86)\Renesas Electronics\CS+\CACX\Device\RL78\Devicefile User\BootWrite.c -oDefaultBuild -_
+            msgoff -qx3 -iFDL -iFSL -iUser -i. -zpn -ml -zz02000h -zt02000h -mi0 -xDefaultBuild -g2
+In-file   : User\BootWrite.c
+Xref-file : DefaultBuild\BootWrite.xrf
+Para-file : 
+Inc-file  : [ 1] User\\BootMain.h
+            [ 2] FSL\fsl_types.h
+            [ 3] FSL\Fsl.h
+            [ 4] FDL\pfdl_types.h
+            [ 5] FDL\pfdl.h
+            [ 6] User\\BootWrite.h
+            [ 7] User\\BootDataflash.h
+            [ 8] FSL\Fsl_types.h
+            [ 9] FDL\pfdl_types.h
+
+ATTRIB MODIFY TYPE    SYMBOL          DEFINE   REFERENCE
+
+EXTERN RWSFR  uchar   TXD1                       301
+EXTERN RWSFR  uchar   RXD1                       232
+EXTERN RWSFR  uchar   WDTE                       310      328      360
+EXTERN RWSFR  bit     STIF1                      304      306
+EXTERN RWSFR  bit     SRIF1                      233      239
+EXTERN ROSFR  uint    SSR03                      241
+EXTERN RWSFR  uint    SIR03                      241
+EXTYP         uchar   U8                 15: 1
+EXTYP         uint    U16                16: 1
+EXTYP         ulong   U32                17: 1
+EXTYP         uchar   fsl_u08            32: 2
+EXTYP         uint    fsl_u16            33: 2
+EXTYP         ulong   fsl_u32            34: 2
+MEMBER        uchar   fsl_flash_voltage_u08
+                                         48: 2
+MEMBER        uchar   fsl_frequency_u08
+                                         49: 2
+MEMBER        uchar   fsl_auto_status_check_u08
+                                         50: 2
+EXTYP         struct  fsl_descriptor_t
+                                         51: 2
+MEMBER        pointer fsl_data_buffer_p_u08
+                                         58: 2    94
+MEMBER        ulong   fsl_destination_address_u32
+                                         59: 2    95
+MEMBER        uchar   fsl_word_count_u08
+                                         60: 2    96
+EXTYP         struct  fsl_write_t        61: 2
+MEMBER        ulong   fsl_destination_address_u32
+                                         68: 2
+MEMBER        uint    fsl_block_u16      69: 2
+EXTYP         struct  fsl_getblockendaddr_t
+                                         70: 2
+MEMBER        uint    fsl_start_block_u16
+                                         77: 2
+MEMBER        uint    fsl_end_block_u16
+                                         78: 2
+EXTYP         struct  fsl_fsw_t          79: 2
+EXTERN FAR    func    FSL_Init                    68: 3   158
+EXTERN FAR    func    FSL_Open                    79: 3   161
+EXTERN FAR    func    FSL_Close                   90: 3
+EXTERN FAR    func    FSL_PrepareFunctions
+                                                 102: 3   162
+EXTERN FAR    func    FSL_PrepareExtFunctions
+                                                 115: 3   163
+EXTERN FAR    func    FSL_ChangeInterruptTable
+                                                 126: 3
+EXTERN FAR    func    FSL_RestoreInterruptTable
+                                                 137: 3
+EXTERN FAR    func    FSL_BlankCheck             155: 3
+EXTERN FAR    func    FSL_Erase                  174: 3    88
+EXTERN FAR    func    FSL_IVerify                192: 3   102
+EXTERN FAR    func    FSL_Write                  217: 3    97
+EXTERN FAR    func    FSL_StatusCheck            237: 3
+EXTERN FAR    func    FSL_StandBy                263: 3
+EXTERN FAR    func    FSL_WakeUp                 282: 3
+EXTERN FAR    func    FSL_GetSecurityFlags
+                                                 304: 3
+EXTERN FAR    func    FSL_GetBootFlag            321: 3
+EXTERN FAR    func    FSL_GetSwapState
+                                                 339: 3
+EXTERN FAR    func    FSL_GetBlockEndAddr
+                                                 355: 3
+EXTERN FAR    func    FSL_GetFlashShieldWindow
+                                                 371: 3
+EXTERN FAR    func    FSL_SetBlockEraseProtectFlag
+                                                 399: 3
+EXTERN FAR    func    FSL_SetWriteProtectFlag
+                                                 400: 3
+EXTERN FAR    func    FSL_SetBootClusterProtectFlag
+                                                 401: 3
+EXTERN FAR    func    FSL_InvertBootFlag
+                                                 424: 3   128
+EXTERN FAR    func    FSL_SetFlashShieldWindow
+                                                 445: 3
+EXTERN FAR    func    FSL_SwapBootCluster
+                                                 465: 3
+EXTERN FAR    func    FSL_SwapActiveBootCluster
+                                                 488: 3
+EXTERN FAR    func    FSL_ForceReset             499: 3
+EXTERN FAR    func    FSL_GetVersionString
+                                                 510: 3
+EXTYP         uchar   pfdl_u08           42: 4
+EXTYP         uint    pfdl_u16           43: 4
+EXTYP         ulong   pfdl_u32           44: 4
+MEMBER FAR    int     PFDL_CMD_READ_BYTES
+                                         61: 4
+MEMBER FAR    int     PFDL_CMD_IVERIFY_BYTES
+                                         62: 4
+MEMBER FAR    int     PFDL_CMD_BLANKCHECK_BYTES
+                                         63: 4
+MEMBER FAR    int     PFDL_CMD_WRITE_BYTES
+                                         64: 4
+MEMBER FAR    int     PFDL_CMD_ERASE_BLOCK
+                                         66: 4
+EXTYP         enum    pfdl_command_t     66: 4
+MEMBER FAR    int     PFDL_IDLE          73: 4
+MEMBER FAR    int     PFDL_OK            74: 4
+MEMBER FAR    int     PFDL_BUSY          75: 4
+MEMBER FAR    int     PFDL_ERR_PROTECTION
+                                         77: 4
+MEMBER FAR    int     PFDL_ERR_ERASE     78: 4
+MEMBER FAR    int     PFDL_ERR_MARGIN    79: 4
+MEMBER FAR    int     PFDL_ERR_WRITE     80: 4
+MEMBER FAR    int     PFDL_ERR_PARAMETER
+                                         82: 4
+EXTYP         enum    pfdl_status_t      82: 4
+MEMBER        uint    index_u16          88: 4
+MEMBER        pointer data_pu08          89: 4
+MEMBER        uint    bytecount_u16      90: 4
+MEMBER        enum    command_enu        91: 4
+EXTYP         struct  pfdl_request_t     92: 4
+MEMBER        uchar   fx_MHz_u08         99: 4
+MEMBER        uchar   wide_voltage_mode_u08
+                                        100: 4
+EXTYP         struct  pfdl_descriptor_t
+                                        101: 4
+MEMBER FAR    int     R_PFDLT04_ASSERT_LINE_120
+                                        120: 4
+MEMBER FAR    int     R_PFDLT04_ASSERT_LINE_121
+                                        121: 4
+MEMBER FAR    int     R_PFDLT04_ASSERT_LINE_122
+                                        122: 4
+MEMBER FAR    int     R_PFDLT04_ASSERT_LINE_125
+                                        125: 4
+MEMBER FAR    int     R_PFDLT04_ASSERT_LINE_126
+                                        126: 4
+MEMBER FAR    int     R_PFDLT04_ASSERT_LINE_129
+                                        129: 4
+MEMBER FAR    int     R_PFDLT04_ASSERT_LINE_130
+                                        130: 4
+MEMBER FAR    int     R_PFDLT04_ASSERT_LINE_131
+                                        131: 4
+EXTERN FAR    func    PFDL_Open                   61: 5
+EXTERN FAR    func    PFDL_Close                  76: 5
+EXTERN FAR    func    PFDL_Execute                98: 5
+EXTERN FAR    func    PFDL_Handler               114: 5
+EXTERN FAR    func    PFDL_GetVersionString
+                                                 127: 5
+MEMBER FAR    int     AT_ICT_AUCONMODE
+                                         40: 6    20      261
+MEMBER FAR    int     AT_ICT_OTA_SEND_DATA
+                                         41: 6    21       63      110      265
+MEMBER FAR    int     AT_ICT_OTA_SEND_END
+                                         42: 6    22      121      141      277
+MEMBER FAR    int     AT_ICT_OTA_MAX     45: 6
+MEMBER FAR    int     ICT_OTA_SEND_DATA
+                                         49: 6    27       51
+MEMBER FAR    int     ICT_OTA_SEND_END
+                                         50: 6    28      113
+MEMBER FAR    int     ICT_OTA_MAX        53: 6   193
+MEMBER        uchar   mu8num             57: 6   198      259
+MEMBER        pointer pmu8Command        58: 6   195      255
+MEMBER        uint    mu16length         59: 6   197      253
+EXTYP         struct  BOOT_COMMAND_T     60: 6
+EXTERN NEAR   func    BOOT_writeProgram
+                                         32       62: 6
+EXTERN NEAR   func    BOOT_startFSL     153       63: 6
+EXTERN NEAR   func    BOOT_checkFslError
+                                                  64: 6
+EXTERN NEAR   func    BOOT_UartRxMsg    169       65: 6    46
+EXTERN NEAR   func    BOOT_UartRxData   228       66: 6   178
+EXTERN NEAR   func    BOOT_UartRxCheck
+                                        237       67: 6    43
+EXTERN NEAR   func    BOOT_UartTxMsg    248       68: 6    63      110      121      141
+EXTERN NEAR   func    BOOT_UartTxData   299       69: 6   256      262      268      270      272      274      281      283
+                                                 288      296
+EXTERN NEAR   func    CRC16_CCITT_FALSE
+                                        314       70: 6    69
+EXTERN NEAR   func    CRC16_CCITT_FALSE_BIN
+                                        336       71: 6   118
+EXTERN NEAR   func    ASCII_TO_HEX_ONE
+                                        368       72: 6    59       82       83
+EXTERN NEAR   func    BOOT_startFDL               18: 7
+EXTERN NEAR   func    BOOT_FDLWriteByte
+                                                  19: 7    72      123      131      139
+EXTERN NEAR   func    BOOT_FDLReadByte
+                                                  20: 7
+EXTERN NEAR   func    BOOT_R_CGC_Create
+                                                  88: 1
+EXTERN NEAR   func    BOOT_R_PORT_Create
+                                                  89: 1
+EXTERN NEAR   func    BOOT_R_TAU0_Create
+                                                  90: 1
+EXTERN NEAR   func    BOOT_R_TAU0_Channel0_Start
+                                                  91: 1
+EXTERN NEAR   func    BOOT_R_SAU0_Create
+                                                  92: 1
+EXTERN NEAR   func    BOOT_R_UART1_Create
+                                                  93: 1
+EXTERN NEAR   func    BOOT_R_UART1_Start
+                                                  94: 1
+EXTERN NEAR   func    BOOT_R_UART1_Stop
+                                                  95: 1
+EXTERN NEAR   func    BOOT_BaseTimer              96: 1
+EXTERN NEAR   func    BOOT_FotaLEDControl
+                                                  97: 1
+EXSTC  NEAR   func    BOOT_initModulePort
+                                         98: 1
+EXSTC  NEAR   func    BOOT_checkOTARequestCondition
+                                         99: 1
+EXSTC  NEAR   func    BOOT_checkOldBootErase
+                                        100: 1
+EXTERN NEAR   func    BOOT_setOTARequest
+                                                 101: 1
+EXTERN NEAR   array   gu8BootMsgBuffer
+                                          9       46       59       68       68       69       82       82       83       83
+                                                  94      118      136      137      138      139
+EXSTC  NEAR   uint    gu16RxBinCRC       10       82       83      118
+EXTERN NEAR   uint    gu16BootModuleRxCheck
+                                         11       53      115
+EXTERN NEAR   uint    gu16BootPacketCnt
+                                         12       61       80       91       91      109      266      273
+EXTERN NEAR   uchar   gu8BootEndResultCode
+                                         13      120      140      278      287
+EXTERN NEAR   uchar   gu8BootAuConValue
+                                         14      262
+EXTERN NEAR   uchar   gu8BootFailCnt              16       71       72      122      123      130      131
+EXSTC  FAR    array   sTxCommand         18      253      255      259
+       CONST
+EXSTC  FAR    array   sRxCommand         25      195      197      198
+       CONST
+INSTC  NEAR   uchar   mu8Command         34       46       49
+INSTC  NEAR   ulong   mu32WriteAddressIndex
+                                         35       78       95       98
+AUTO1         struct  msWriteBuff        36       94       95       96       97
+INSTC  NEAR   uint    mu16index          37       56       56       56       59       86       86       86       88
+AUTO1         uint    mu16RxCRC          38       68       69
+INSTC  NEAR   uint    mu16BlockCnt       39      102      103
+INSTC  NEAR   uchar   mu8VerifyCnt       40       99      100      104
+AUTO1         uint    mu16IndexValue     41       58       58       59       61
+INSTC  FAR    struct  fsl_descriptor_pstr
+       CONST                            155      158
+REG1          uchar   gu8RetValue       156      158      159      166
+PARAM         pointer pmu8DataBuffer    169      182      188      195
+PARAM         pointer pmu8Command       169      198
+AUTO1         uchar   mu8index          171      193      193      193      195      197      198
+INSTC  NEAR   uchar   mu8STXRx_F        172      180      183      206      217
+INSTC  NEAR   uint    mu16index         173      184      188      195      195      215      223
+INSTC  NEAR   uint    mu16RxLength      174      197      215
+INSTC  NEAR   uchar   mu8ParsingDone_F
+                                        175      189      199      204      218
+AUTO1         uchar   mu8RxData         176      178      180      182      188      191
+REG1          uchar   mu8RxData         230      232      234
+PARAM         uchar   mu8num            248      253      255      259
+AUTO1         uint    mu16index         250      253      253      253      255      266      267      269      271
+AUTO1         uchar   mu8index          251      255      256      267      268      269      270      271      272      273
+                                                 274      280      281      282      283      287      288      295      296
+REG1          pointer pmu8SendData      299      301
+PARAM
+PARAM         pointer puchMsg           314      324
+PARAM         uint    usDataLen         314      322
+AUTO1         uint    wCRCin            316      325      329      329      329      330      333
+AUTO1         uint    wCPoly            317      329
+AUTO1         uint    wChar             318      324      325
+AUTO1         uint    i                 319      326      326      326
+AUTO1         uint    wCRCin            338      357      361      361      361      362      365
+AUTO1         uint    wCPoly            339      361
+AUTO1         uint    wChar             340      350      351      352      353      354      355      357
+AUTO1         uint    i                 341      358      358      358
+AUTO1         ulong   cnt               342      348      350      351      352      353      354      356
+AUTO1         pointer pmu8Msg_1         343      353      355
+AUTO1         pointer pmu8Msg_2         344      352
+AUTO1         pointer pmu8Msg_3         345      351
+AUTO1         pointer pmu8Msg_4         346      350
+REG1          uchar   Upper             368      370      370      370      371      371      371      376
+PARAM
+REG1          uchar   Lower             368      373      373      373      374      374      374      376
+PARAM
+              #define __LINE__                   120: 4   121: 4   122: 4   125: 4   126: 4   129: 4   130: 4   131: 4
+              #define SET                19: 1   142      183      199      219      243
+              #define CLEAR              20: 1    43       46      150      175      180      189      204      206      207
+                                                 217      218      225      245
+              #define HIGH               21: 1
+              #define LOW                22: 1
+              #define BOOT_RX_NONE       24: 1
+              #define BOOT_RX_DOING      25: 1
+              #define BOOT_RX_DONE       26: 1
+              #define __FSL_H_INCLUDED
+                                         25: 3
+              #define __FSL_TYPES_H_INCLUDED
+                                         25: 2    24: 8
+              #define FSL_OK             39: 3   159
+              #define FSL_ERR_PARAMETER
+                                         40: 3
+              #define FSL_ERR_PROTECTION
+                                         41: 3
+              #define FSL_ERR_ERASE      42: 3
+              #define FSL_ERR_BLANKCHECK
+                                         43: 3
+              #define FSL_ERR_IVERIFY    44: 3
+              #define FSL_ERR_WRITE      45: 3
+              #define FSL_ERR_FLOW       46: 3
+              #define FSL_IDLE           47: 3
+              #define FSL_SUSPEND        48: 3
+              #define FSL_BUSY           49: 3
+              #define __PFDL_H_INCLUDED
+                                         36: 5
+              #define __PFDL_TYPES_H_INCLUDED
+                                         36: 4    35: 9
+              #define R_PFDLT04_ASSERT_CONCAT_
+                                        114: 4   120: 4   121: 4   122: 4   125: 4   126: 4   129: 4   130: 4   131: 4
+              #define R_PFDLT04_ASSERT_CONCAT
+                                        115: 4   120: 4   121: 4   122: 4   125: 4   126: 4   129: 4   130: 4   131: 4
+              #define R_PFDLT04_STATIC_ASSERT
+                                        116: 4   120: 4   121: 4   122: 4   125: 4   126: 4   129: 4   130: 4   131: 4
+              #define _BOOTWRITE_H_      10: 6
+              #define PR_MSG_PACKET_SIZE
+                                         12: 6    98
+              #define START_WRITEBLOCK
+                                         14: 6    39       86       88
+              #define START_WRITEADDR    15: 6    35
+              #define END_WRITEBLOCK     16: 6    86
+              #define END_WRITEADDRESS
+                                         17: 6    78      348
+              #define HEADER_BLOCK_SIZE
+                                         19: 6    80
+              #define START_SKIP_NEWBOOT_BLOCK
+                                         20: 6    91
+              #define END_SKIP_NEWBOOT_BLOCK
+                                         21: 6    91
+              #define PARAM_INDEX_START
+                                         24: 6    59
+              #define PARAM_DATASIZE_START
+                                         25: 6
+              #define PARAM_DATA_START
+                                         26: 6    69       82       82       83       83       94
+              #define PARAM_CRC_START    27: 6    68       68
+              #define PARAM_RESULTCODE
+                                         30: 6   118
+              #define BOOT_RxCheckTime
+                                         32: 6    11       53      115
+              #define AUCON_DEACTIVATE
+                                         34: 6
+              #define AUCON_ACTIVATE     35: 6
+              #define _BOOTDATAFLASH_H_
+                                          9: 7
+              #define R_PFDL_FDL_VOL     12: 7
+              #define DATAFLASH_ADDR_OTASTATUS
+                                         14: 7   139
+              #define DATAFLASH_ADDR_BOOTFAILCNT
+                                         15: 7    72      123      131
+              #define BOOT_MODULE_WIFI
+                                         39: 1    57: 1
+              #define OCO_CLOCK_32MHz    48: 1    80: 1
+              #define BOOT_PM_MODULE_POWER
+                                         54: 1
+              #define BOOT_P_MODULE_POWER
+                                         55: 1
+              #define BOOT_PM_MODULE_RESET
+                                         58: 1
+              #define BOOT_P_MODULE_RESET
+                                         59: 1
+              #define BOOT_P_UART_TX     75: 1
+              #define R_PFDL_FDL_FRQ     81: 1
+              #define Watchdog           86: 1   310      328      360
+
+
+ Target chip : R5F100SJ
+ Device file : V1.14 

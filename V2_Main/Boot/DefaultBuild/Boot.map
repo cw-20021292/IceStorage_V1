@@ -1,0 +1,2391 @@
+
+
+
+78K0R Linker V1.80                            Date:30 Oct 2025 Page:   1
+
+Command:   -yC:\Program Files (x86)\Renesas Electronics\CS+\CACX\Device\
+           RL78\Devicefile -_msgoff -dBoot.dr -oDefaultBuild\Boot.lmf -g
+           i00000000000000000000h -go84h,3FE00h,512 -gb0FD53E8H -mi0 -zb
+           2000h -s -pDefaultBuild\Boot.map -kl -kp C:\Program Files (x8
+           6)\Renesas Electronics\CS+\CACX\CA78K0R\V1.72\lib78k0r\s0rllb
+           .rel DefaultBuild\BootDataflash.rel DefaultBuild\BootMain.rel
+            DefaultBuild\BootWrite.rel -bFSL\fsl.lib -bFDL\pfdl.lib -bcl
+           0ral.lib -bcl0rlf.lib -bcl0rl.lib -iC:\Program Files (x86)\Re
+           nesas Electronics\CS+\CACX\CA78K0R\V1.72\lib78k0r
+Para-file:
+Out-file:  DefaultBuild\Boot.lmf
+Map-file:  DefaultBuild\Boot.map
+Direc-file:Boot.dr
+Directive: ;MEMORY - PH
+           ;MEMORY ROM : ( 00000000H, 00001000H ) / REGULAR
+           ;MEMORY OCD_ROM : ( 0002fe00H, 00000200H ) / REGULAR
+           ;MEMORY RAM : ( 000fbf00H, 00003f20H ) / REGULAR
+           ;MEMORY RAM_SADDR : ( 000ffe20H, 000001e0H ) / REGULAR
+           
+           ;MEMORY - PJ
+           
+           MEMORY ROM : ( 00000000H, 00001000H ) / REGULAR
+           MEMORY OCD_ROM : ( 0003fe00H, 00000200H ) / REGULAR
+           ;MEMORY RAM : ( 000faf00H, 00004f20H ) / REGULAR
+           MEMORY RAM : ( 000fb300H, 00004b20H ) / REGULAR
+           MEMORY RAM_SADDR : ( 000ffe20H, 000001e0H ) / REGULAR
+
+
+*** Link information ***
+
+    95 output segment(s)
+ 118DH byte(s) real data
+  2672 symbol(s) defined
+
+
+*** Memory map ***
+
+
+  SPACE=REGULAR
+
+  MEMORY=ROM
+  BASE ADDRESS=00000H   SIZE=01000H
+         OUTPUT   INPUT    INPUT      BASE      SIZE
+         SEGMENT  SEGMENT  MODULE     ADDRESS
+         @@VECT00                     00000H    00002H  CSEG AT
+                  @@VECT00 @cstart    00000H    00002H
+         @@CNST                       00002H    00000H  CSEG UNITP
+                  @@CNST   @cstart    00002H    00000H
+                  @@CNST   BootDataflash
+                                      00002H    00000H
+                  @@CNST   BootMain   00002H    00000H
+                  @@CNST   BootWrite
+                                      00002H    00000H
+         @@CALT                       00002H    00000H  CSEG
+                  @@CALT   @cstart    00002H    00000H
+                  @@CALT   BootDataflash
+                                      00002H    00000H
+                  @@CALT   BootMain   00002H    00000H
+                  @@CALT   BootWrite
+                                      00002H    00000H
+         ??NMIROM                     00002H    00002H  CSEG
+         @@VECT04                     00004H    00002H  CSEG AT
+                  @@VECT04 @vect04    00004H    00002H
+         @@VECT06                     00006H    00002H  CSEG AT
+                  @@VECT06 @vect06    00006H    00002H
+         @@VECT08                     00008H    00002H  CSEG AT
+                  @@VECT08 @vect08    00008H    00002H
+         @@VECT0A                     0000AH    00002H  CSEG AT
+                  @@VECT0A @vect0a    0000AH    00002H
+         @@VECT0C                     0000CH    00002H  CSEG AT
+                  @@VECT0C @vect0c    0000CH    00002H
+         @@VECT0E                     0000EH    00002H  CSEG AT
+                  @@VECT0E @vect0e    0000EH    00002H
+         @@VECT10                     00010H    00002H  CSEG AT
+                  @@VECT10 @vect10    00010H    00002H
+         @@VECT12                     00012H    00002H  CSEG AT
+                  @@VECT12 @vect12    00012H    00002H
+         @@VECT14                     00014H    00002H  CSEG AT
+                  @@VECT14 @vect14    00014H    00002H
+         @@VECT16                     00016H    00002H  CSEG AT
+                  @@VECT16 @vect16    00016H    00002H
+         @@VECT18                     00018H    00002H  CSEG AT
+                  @@VECT18 @vect18    00018H    00002H
+         @@VECT1A                     0001AH    00002H  CSEG AT
+                  @@VECT1A @vect1a    0001AH    00002H
+         @@VECT1C                     0001CH    00002H  CSEG AT
+                  @@VECT1C @vect1c    0001CH    00002H
+         @@VECT1E                     0001EH    00002H  CSEG AT
+                  @@VECT1E @vect1e    0001EH    00002H
+         @@VECT20                     00020H    00002H  CSEG AT
+                  @@VECT20 @vect20    00020H    00002H
+         @@VECT22                     00022H    00002H  CSEG AT
+                  @@VECT22 @vect22    00022H    00002H
+         @@VECT24                     00024H    00002H  CSEG AT
+                  @@VECT24 @vect24    00024H    00002H
+         @@VECT26                     00026H    00002H  CSEG AT
+                  @@VECT26 @vect26    00026H    00002H
+         @@VECT28                     00028H    00002H  CSEG AT
+                  @@VECT28 @vect28    00028H    00002H
+         @@VECT2A                     0002AH    00002H  CSEG AT
+                  @@VECT2A @vect2a    0002AH    00002H
+         @@VECT2C                     0002CH    00002H  CSEG AT
+                  @@VECT2C @vect2c    0002CH    00002H
+         @@VECT2E                     0002EH    00002H  CSEG AT
+                  @@VECT2E @vect2e    0002EH    00002H
+         @@VECT30                     00030H    00002H  CSEG AT
+                  @@VECT30 @vect30    00030H    00002H
+         @@VECT32                     00032H    00002H  CSEG AT
+                  @@VECT32 @vect32    00032H    00002H
+         @@VECT34                     00034H    00002H  CSEG AT
+                  @@VECT34 @vect34    00034H    00002H
+         @@VECT36                     00036H    00002H  CSEG AT
+                  @@VECT36 @vect36    00036H    00002H
+         @@VECT38                     00038H    00002H  CSEG AT
+                  @@VECT38 @vect38    00038H    00002H
+         @@VECT3A                     0003AH    00002H  CSEG AT
+                  @@VECT3A @vect3a    0003AH    00002H
+         @@VECT3C                     0003CH    00002H  CSEG AT
+                  @@VECT3C @vect3c    0003CH    00002H
+         @@VECT3E                     0003EH    00002H  CSEG AT
+                  @@VECT3E @vect3e    0003EH    00002H
+         @@VECT40                     00040H    00002H  CSEG AT
+                  @@VECT40 @vect40    00040H    00002H
+         @@VECT42                     00042H    00002H  CSEG AT
+                  @@VECT42 @vect42    00042H    00002H
+         @@VECT44                     00044H    00002H  CSEG AT
+                  @@VECT44 @vect44    00044H    00002H
+         @@VECT46                     00046H    00002H  CSEG AT
+                  @@VECT46 @vect46    00046H    00002H
+         @@VECT48                     00048H    00002H  CSEG AT
+                  @@VECT48 @vect48    00048H    00002H
+         @@VECT4A                     0004AH    00002H  CSEG AT
+                  @@VECT4A @vect4a    0004AH    00002H
+         @@VECT4C                     0004CH    00002H  CSEG AT
+                  @@VECT4C @vect4c    0004CH    00002H
+         @@VECT4E                     0004EH    00002H  CSEG AT
+                  @@VECT4E @vect4e    0004EH    00002H
+         @@VECT50                     00050H    00002H  CSEG AT
+                  @@VECT50 @vect50    00050H    00002H
+         @@VECT52                     00052H    00002H  CSEG AT
+                  @@VECT52 @vect52    00052H    00002H
+         @@VECT54                     00054H    00002H  CSEG AT
+                  @@VECT54 @vect54    00054H    00002H
+         @@VECT56                     00056H    00002H  CSEG AT
+                  @@VECT56 @vect56    00056H    00002H
+         @@VECT58                     00058H    00002H  CSEG AT
+                  @@VECT58 @vect58    00058H    00002H
+         @@VECT5A                     0005AH    00002H  CSEG AT
+                  @@VECT5A @vect5a    0005AH    00002H
+         @@VECT5C                     0005CH    00002H  CSEG AT
+                  @@VECT5C @vect5c    0005CH    00002H
+         @@VECT5E                     0005EH    00002H  CSEG AT
+                  @@VECT5E @vect5e    0005EH    00002H
+         @@VECT60                     00060H    00002H  CSEG AT
+                  @@VECT60 @vect60    00060H    00002H
+         @@VECT62                     00062H    00002H  CSEG AT
+                  @@VECT62 @vect62    00062H    00002H
+         @@VECT64                     00064H    00002H  CSEG AT
+                  @@VECT64 @vect64    00064H    00002H
+         @@VECT66                     00066H    00002H  CSEG AT
+                  @@VECT66 @vect66    00066H    00002H
+         @@VECT68                     00068H    00002H  CSEG AT
+                  @@VECT68 @vect68    00068H    00002H
+         @@VECT6A                     0006AH    00002H  CSEG AT
+                  @@VECT6A @vect6a    0006AH    00002H
+         @@VECT6C                     0006CH    00002H  CSEG AT
+                  @@VECT6C @vect6c    0006CH    00002H
+         @@VECT6E                     0006EH    00002H  CSEG AT
+                  @@VECT6E @vect6e    0006EH    00002H
+         @@VECT70                     00070H    00002H  CSEG AT
+                  @@VECT70 @vect70    00070H    00002H
+         @@VECT72                     00072H    00002H  CSEG AT
+                  @@VECT72 @vect72    00072H    00002H
+         @@VECT74                     00074H    00002H  CSEG AT
+                  @@VECT74 @vect74    00074H    00002H
+         @@VECT76                     00076H    00002H  CSEG AT
+                  @@VECT76 @vect76    00076H    00002H
+         @@VECT78                     00078H    00002H  CSEG AT
+                  @@VECT78 @vect78    00078H    00002H
+         @@VECT7A                     0007AH    00002H  CSEG AT
+                  @@VECT7A @vect7a    0007AH    00002H
+         @@VECT7C                     0007CH    00002H  CSEG AT
+                  @@VECT7C @vect7c    0007CH    00002H
+         @@VECT7E                     0007EH    00002H  CSEG AT
+                  @@VECT7E @vect7e    0007EH    00002H
+* gap *                               00080H    00040H
+         ?CSEGOB0                     000C0H    00004H  CSEG OPT_BYTE
+         @@BASE                       000C4H    00000H  CSEG BASE
+                  @@BASE   BootDataflash
+                                      000C4H    00000H
+                  @@BASE   BootMain   000C4H    00000H
+                  @@BASE   BootWrite
+                                      000C4H    00000H
+         @@CNSTL                      000C4H    00000H  CSEG PAGE64KP
+                  @@CNSTL  @cstart    000C4H    00000H
+         @@CNSTL                      000C4H    00000H  CSEG PAGE64KP
+                  @@CNSTL  BootDataflash
+                                      000C4H    00000H
+         @@RLINIT                     000C4H    00000H  CSEG UNIT64KP
+                  @@RLINIT @cstart    000C4H    00000H
+                  @@RLINIT BootDataflash
+                                      000C4H    00000H
+                  @@RLINIT BootMain   000C4H    00000H
+                  @@RLINIT BootWrite
+                                      000C4H    00000H
+                  @@RLINIT @rom       000C4H    00000H
+         @@R_INIS                     000C4H    00000H  CSEG UNIT64KP
+                  @@R_INIS @cstart    000C4H    00000H
+                  @@R_INIS BootDataflash
+                                      000C4H    00000H
+                  @@R_INIS BootMain   000C4H    00000H
+                  @@R_INIS BootWrite
+                                      000C4H    00000H
+                  @@R_INIS @rom       000C4H    00000H
+         ?CSEGSI                      000C4H    0000AH  CSEG
+         ?OCDSTAD                     000CEH    0000AH  CSEG
+         @@LCODE                      000D8H    000DEH  CSEG BASE
+                  @@LCODE  @cstart    000D8H    000AAH
+                  @@LCODE  @divuw     00182H    00034H
+         @@CODE                       001B6H    0080FH  CSEG BASE
+                  @@CODE   BootDataflash
+                                      001B6H    000AFH
+                  @@CODE   BootMain   00265H    001F7H
+                  @@CODE   BootWrite
+                                      0045CH    00569H
+* gap *                               009C5H    00001H
+         @@CNSTL                      009C6H    00004H  CSEG PAGE64KP
+                  @@CNSTL  BootMain   009C6H    00004H
+         @@CNSTL                      009CAH    00094H  CSEG PAGE64KP
+                  @@CNSTL  BootWrite
+                                      009CAH    00094H
+         @@R_INIT                     00A5EH    00016H  CSEG UNIT64KP
+                  @@R_INIT @cstart    00A5EH    00000H
+                  @@R_INIT BootDataflash
+                                      00A5EH    00000H
+                  @@R_INIT BootMain   00A5EH    00006H
+                  @@R_INIT BootWrite
+                                      00A64H    00010H
+                  @@R_INIT @rom       00A74H    00000H
+         @@CODEL                      00A74H    001FAH  CSEG
+                  @@CODEL  BootDataflash
+                                      00A74H    00000H
+                  @@CODEL  BootMain   00A74H    001FAH
+                  @@CODEL  BootWrite
+                                      00C6EH    00000H
+         FSL_FCD                      00C6EH    000B1H  CSEG UNIT64KP
+                  FSL_FCD  fsl_f_init
+                                      00C6EH    00062H
+                  FSL_FCD  fsl_f_open
+                                      00CD0H    00005H
+                  FSL_FCD  fsl_f_close
+                                      00CD6H    00005H
+                  FSL_FCD  fsl_f_pfunc
+                                      00CDCH    00029H
+                  FSL_FCD  fsl_f_pefunc
+                                      00D06H    00019H
+* gap *                               00D1FH    00001H
+         FSL_BCD                      00D20H    00100H  CSEG UNIT64KP
+                  FSL_BCD  fsl_b_common
+                                      00D20H    00100H
+         FSL_BECD                     00E20H    00080H  CSEG UNIT64KP
+                  FSL_BECD fsl_be_common
+                                      00E20H    00080H
+         FSL_RCD                      00EA0H    00057H  CSEG UNIT64KP
+                  FSL_RCD  fsl_r_std_cmd
+                                      00EA0H    0001AH
+                  FSL_RCD  fsl_r_check_flow
+                                      00EBAH    00028H
+                  FSL_RCD  fsl_r_ss_ibf
+                                      00EE2H    00008H
+                  FSL_RCD  fsl_r_br_becd
+                                      00EEAH    0000DH
+* gap *                               00EF7H    00001H
+         PFDL_COD                     00EF8H    00097H  CSEG UNIT64KP
+                  PFDL_COD pfdl       00EF8H    00097H
+         @@LCODEL                     00F8FH    00044H  CSEG
+                  @@LCODEL @stkinit   00F8FH    00044H
+* gap *                               00FD3H    0002DH
+
+  MEMORY=OCD_ROM
+  BASE ADDRESS=3FE00H   SIZE=00200H
+         OUTPUT   INPUT    INPUT      BASE      SIZE
+         SEGMENT  SEGMENT  MODULE     ADDRESS
+         ??OCDROM                     3FE00H    00200H  CSEG
+
+  MEMORY=RAM
+  BASE ADDRESS=FB300H   SIZE=04B20H
+         OUTPUT   INPUT    INPUT      BASE      SIZE
+         SEGMENT  SEGMENT  MODULE     ADDRESS
+         @@DATA                       FB300H    001EAH  DSEG BASEP
+                  @@DATA   @cstart    FB300H    000BAH
+                  @@DATA   BootDataflash
+                                      FB3BAH    00000H
+                  @@DATA   BootMain   FB3BAH    00002H
+                  @@DATA   BootWrite
+                                      FB3BCH    0012EH
+                  @@DATA   @rom       FB4EAH    00000H
+         @@INIT                       FB4EAH    00016H  DSEG BASEP
+                  @@INIT   @cstart    FB4EAH    00000H
+                  @@INIT   BootDataflash
+                                      FB4EAH    00000H
+                  @@INIT   BootMain   FB4EAH    00006H
+                  @@INIT   BootWrite
+                                      FB4F0H    00010H
+                  @@INIT   @rom       FB500H    00000H
+         @@INIS                       FB500H    00000H  DSEG UNITP
+                  @@INIS   @cstart    FB500H    00000H
+                  @@INIS   BootDataflash
+                                      FB500H    00000H
+                  @@INIS   BootMain   FB500H    00000H
+                  @@INIS   BootWrite
+                                      FB500H    00000H
+                  @@INIS   @rom       FB500H    00000H
+         @@DATS                       FB500H    00000H  DSEG UNITP
+                  @@DATS   @cstart    FB500H    00000H
+                  @@DATS   BootDataflash
+                                      FB500H    00000H
+                  @@DATS   BootMain   FB500H    00000H
+                  @@DATS   BootWrite
+                                      FB500H    00000H
+                  @@DATS   @rom       FB500H    00000H
+         @@INITL                      FB500H    00000H  DSEG UNIT64KP
+                  @@INITL  @cstart    FB500H    00000H
+                  @@INITL  BootDataflash
+                                      FB500H    00000H
+                  @@INITL  BootMain   FB500H    00000H
+                  @@INITL  BootWrite
+                                      FB500H    00000H
+                  @@INITL  @rom       FB500H    00000H
+         @@DATAL                      FB500H    00000H  DSEG UNIT64KP
+                  @@DATAL  @cstart    FB500H    00000H
+                  @@DATAL  BootDataflash
+                                      FB500H    00000H
+                  @@DATAL  BootMain   FB500H    00000H
+                  @@DATAL  BootWrite
+                                      FB500H    00000H
+                  @@DATAL  @rom       FB500H    00000H
+         @@BITS                       FB500H    00000H  BSEG
+                  @@BITS   @cstart    FB500H.0  00000H.0
+                  @@BITS   BootDataflash
+                                      FB500H.0  00000H.0
+                  @@BITS   BootMain   FB500H.0  00000H.0
+                  @@BITS   BootWrite
+                                      FB500H.0  00000H.0
+* gap *                               FB500H    04920H
+
+  MEMORY=RAM_SADDR
+  BASE ADDRESS=FFE20H   SIZE=001E0H
+         OUTPUT   INPUT    INPUT      BASE      SIZE
+         SEGMENT  SEGMENT  MODULE     ADDRESS
+* gap *                               FFE20H    000B4H
+         @@SEGREG                     FFED4H    00004H  DSEG AT
+                  @@SEGREG @SEGREG    FFED4H    00004H
+* gap *                               FFED8H    00028H
+* gap (Not Free Area) *               FFF00H    00100H
+
+
+
+*** Local symbol list ***
+
+MODULE    ATTR       VALUE    NAME
+
+@cstart
+          MOD                 @cstart
+          DSEG                @@DATA
+          CSEG                @@VECT00
+          CSEG                @@LCODE
+          CSEG                @@R_INIT
+          CSEG                @@RLINIT
+          CSEG                @@R_INIS
+          DSEG                @@INIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CALT
+          CSEG                @@CNST
+          CSEG                @@CNSTL
+          BSEG                @@BITS
+BootDataflash
+          MOD                 BootDataflash
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+                     00000H   .5fake
+                     00030H   _PFDL_IDLE
+                     00000H   _PFDL_OK
+                     000FFH   _PFDL_BUSY
+                     00010H   _PFDL_ERR_PROTECTION
+                     0001AH   _PFDL_ERR_ERASE
+                     0001BH   _PFDL_ERR_MARGIN
+                     0001CH   _PFDL_ERR_WRITE
+                     00005H   _PFDL_ERR_PARAMETER
+                     00000H   .7fake
+                     00000H   _fx_MHz_u08
+                     00001H   _wide_voltage_mode_u08
+                     00000H   .4fake
+                     00000H   _PFDL_CMD_READ_BYTES
+                     00006H   _PFDL_CMD_IVERIFY_BYTES
+                     00008H   _PFDL_CMD_BLANKCHECK_BYTES
+                     00004H   _PFDL_CMD_WRITE_BYTES
+                     00003H   _PFDL_CMD_ERASE_BLOCK
+                     00000H   .6fake
+                     00000H   _index_u16
+                     00002H   _data_pu08
+                     00004H   _bytecount_u16
+                     00006H   _command_enu
+          ADDR       001B6H   bs_F0024
+          ADDR       001BEH   es_F0024
+          ADDR       001BEH   bs_F0023
+          ADDR       001C7H   es_F0023
+                     00003H   _dtyFdlResult
+                     00000H   _dtyDescriptor
+                     0000AH   _mu16WriteBlock
+                     00012H   _mu8WriteBuffer
+                     00014H   _mu16Writelength
+                     00009H   _dtyFdlResult
+                     00000H   _dtyRequester
+                     0000AH   _mu16ReadBlock
+                     00012H   _mu8RxDataBuffer
+                     00014H   _mu16Readlength
+                     00009H   _dtyFdlResult
+                     00000H   _dtyRequester
+BootMain
+          MOD                 BootMain
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+                     00000H   .5fake
+                     00030H   _PFDL_IDLE
+                     00000H   _PFDL_OK
+                     000FFH   _PFDL_BUSY
+                     00010H   _PFDL_ERR_PROTECTION
+                     0001AH   _PFDL_ERR_ERASE
+                     0001BH   _PFDL_ERR_MARGIN
+                     0001CH   _PFDL_ERR_WRITE
+                     00005H   _PFDL_ERR_PARAMETER
+          ADDR       00265H   bs_S0129
+          ADDR       00270H   es_S0129
+          ADDR       00270H   bs_S0130
+          ADDR       0027BH   es_S0130
+          ADDR       0027BH   bs_S0131
+          ADDR       00286H   es_S0131
+          ADDR       00286H   bs_F0127
+          ADDR       00292H   es_F0127
+          ADDR       00A74H   bs_F0128
+          ADDR       00A80H   es_F0128
+          ADDR       FB4EEH   _mu16FotaLEDCnt
+          ADDR       003CEH   _BOOT_initModulePort
+          ADDR       003F2H   _BOOT_checkOTARequestCondition
+                     00103H   _mu8RxData
+          ADDR       00410H   _BOOT_checkOldBootErase
+                     00103H   _mu8RxData
+                     00001H   _mu8Var
+                     00005H   _mu8FDLRxData
+                     00004H   _mu8index
+                     00003H   _mu8RxData
+                     00002H   _mu8RxDataSaved
+                     00001H   _mu8DeviceReady
+                     00000H   _mu8BootState
+                     009C6H   L0056
+BootWrite
+          MOD                 BootWrite
+          BSEG                @@BITS
+          CSEG                @@CNST
+          CSEG                @@R_INIT
+          DSEG                @@INIT
+          DSEG                @@DATA
+          CSEG                @@R_INIS
+          DSEG                @@INIS
+          DSEG                @@DATS
+          CSEG                @@CNSTL
+          CSEG                @@RLINIT
+          DSEG                @@INITL
+          DSEG                @@DATAL
+          CSEG                @@CALT
+          CSEG                @@CODE
+          CSEG                @@CODEL
+          CSEG                @@BASE
+                     00000H   .18fake
+                     00000H   _mu8num
+                     00002H   _pmu8Command
+                     00006H   _mu16length
+                     00000H   .1fake
+                     00000H   _fsl_data_buffer_p_u08
+                     00002H   _fsl_destination_address_u32
+                     00006H   _fsl_word_count_u08
+                     00000H   .0fake
+                     00000H   _fsl_flash_voltage_u08
+                     00001H   _fsl_frequency_u08
+                     00002H   _fsl_auto_status_check_u08
+          ADDR       0045CH   bs_F0172
+          ADDR       00461H   es_F0172
+          ADDR       00461H   bs_S0170
+          ADDR       0046CH   es_S0170
+          ADDR       0046CH   bs_S0171
+          ADDR       00475H   es_S0171
+          ADDR       00475H   bs_F0168
+          ADDR       00481H   es_F0168
+          ADDR       00481H   bs_S0169
+          ADDR       0048DH   es_S0169
+          ADDR       0048DH   bs_S0167
+          ADDR       0049AH   es_S0167
+          ADDR       0049AH   bs_S0166
+          ADDR       004A9H   es_S0166
+          ADDR       FB4E0H   _gu16RxBinCRC
+          ADDR       00A0AH   _sTxCommand
+          ADDR       00A4AH   _sRxCommand
+          ADDR       FB4E6H   _mu8Command
+          ADDR       FB4F2H   _mu32WriteAddressIndex
+                     00004H   _msWriteBuff
+          ADDR       FB4E8H   _mu16index
+                     00002H   _mu16RxCRC
+          ADDR       FB4F6H   _mu16BlockCnt
+          ADDR       FB4F8H   _mu8VerifyCnt
+                     00000H   _mu16IndexValue
+          ADDR       00A5AH   _fsl_descriptor_pstr
+                     00006H   _gu8RetValue
+                     00002H   _pmu8DataBuffer
+                     0000AH   _pmu8Command
+                     00001H   _mu8index
+          ADDR       FB4F9H   _mu8STXRx_F
+          ADDR       FB4FAH   _mu16index
+          ADDR       FB4FCH   _mu16RxLength
+          ADDR       FB4FEH   _mu8ParsingDone_F
+                     00000H   _mu8RxData
+                     00006H   _mu8RxData
+                     00004H   _mu8num
+                     00002H   _mu16index
+                     00001H   _mu8index
+                     00103H   _pmu8SendData
+                     00008H   _puchMsg
+                     00010H   _usDataLen
+                     00006H   _wCRCin
+                     00004H   _wCPoly
+                     00002H   _wChar
+                     00000H   _i
+                     0001AH   _wCRCin
+                     00018H   _wCPoly
+                     00016H   _wChar
+                     00014H   _i
+                     00010H   _cnt
+                     0000CH   _pmu8Msg_1
+                     00008H   _pmu8Msg_2
+                     00004H   _pmu8Msg_3
+                     00000H   _pmu8Msg_4
+                     00006H   _Upper
+                     00007H   _Lower
+                     009CAH   L0001
+                     009DEH   L0002
+                     009F4H   L0003
+                     00A22H   L0004
+                     00A36H   L0005
+fsl_f_init
+          MOD                 fsl_f_init
+          CSEG                FSL_FCD
+fsl_f_open
+          MOD                 fsl_f_open
+          CSEG                FSL_FCD
+fsl_f_close
+          MOD                 fsl_f_close
+          CSEG                FSL_FCD
+fsl_f_pfunc
+          MOD                 fsl_f_pfunc
+          CSEG                FSL_FCD
+fsl_b_common
+          MOD                 fsl_b_common
+          CSEG                FSL_BCD
+fsl_f_pefunc
+          MOD                 fsl_f_pefunc
+          CSEG                FSL_FCD
+fsl_be_common
+          MOD                 fsl_be_common
+          CSEG                FSL_BECD
+fsl_r_std_cmd
+          MOD                 fsl_r_std_cmd
+          CSEG                FSL_RCD
+fsl_r_check_flow
+          MOD                 fsl_r_check_flow
+          CSEG                FSL_RCD
+fsl_r_ss_ibf
+          MOD                 fsl_r_ss_ibf
+          CSEG                FSL_RCD
+fsl_r_br_becd
+          MOD                 fsl_r_br_becd
+          CSEG                FSL_RCD
+pfdl
+          MOD                 pfdl
+          CSEG                PFDL_COD
+@divuw
+          MOD                 @divuw
+          CSEG                @@LCODE
+@SEGREG
+          MOD                 @SEGREG
+          DSEG                @@SEGREG
+@stkinit
+          MOD                 @stkinit
+          CSEG                @@LCODEL
+@vect04
+          MOD                 @vect04
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT04
+@vect06
+          MOD                 @vect06
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT06
+@vect08
+          MOD                 @vect08
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT08
+@vect0a
+          MOD                 @vect0a
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT0A
+@vect0c
+          MOD                 @vect0c
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT0C
+@vect0e
+          MOD                 @vect0e
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT0E
+@vect10
+          MOD                 @vect10
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT10
+@vect12
+          MOD                 @vect12
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT12
+@vect14
+          MOD                 @vect14
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT14
+@vect16
+          MOD                 @vect16
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT16
+@vect18
+          MOD                 @vect18
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT18
+@vect1a
+          MOD                 @vect1a
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT1A
+@vect1c
+          MOD                 @vect1c
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT1C
+@vect1e
+          MOD                 @vect1e
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT1E
+@vect20
+          MOD                 @vect20
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT20
+@vect22
+          MOD                 @vect22
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT22
+@vect24
+          MOD                 @vect24
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT24
+@vect26
+          MOD                 @vect26
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT26
+@vect28
+          MOD                 @vect28
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT28
+@vect2a
+          MOD                 @vect2a
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT2A
+@vect2c
+          MOD                 @vect2c
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT2C
+@vect2e
+          MOD                 @vect2e
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT2E
+@vect30
+          MOD                 @vect30
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT30
+@vect32
+          MOD                 @vect32
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT32
+@vect34
+          MOD                 @vect34
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT34
+@vect36
+          MOD                 @vect36
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT36
+@vect38
+          MOD                 @vect38
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT38
+@vect3a
+          MOD                 @vect3a
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT3A
+@vect3c
+          MOD                 @vect3c
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT3C
+@vect3e
+          MOD                 @vect3e
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT3E
+@vect40
+          MOD                 @vect40
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT40
+@vect42
+          MOD                 @vect42
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT42
+@vect44
+          MOD                 @vect44
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT44
+@vect46
+          MOD                 @vect46
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT46
+@vect48
+          MOD                 @vect48
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT48
+@vect4a
+          MOD                 @vect4a
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT4A
+@vect4c
+          MOD                 @vect4c
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT4C
+@vect4e
+          MOD                 @vect4e
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT4E
+@vect50
+          MOD                 @vect50
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT50
+@vect52
+          MOD                 @vect52
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT52
+@vect54
+          MOD                 @vect54
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT54
+@vect56
+          MOD                 @vect56
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT56
+@vect58
+          MOD                 @vect58
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT58
+@vect5a
+          MOD                 @vect5a
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT5A
+@vect5c
+          MOD                 @vect5c
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT5C
+@vect5e
+          MOD                 @vect5e
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT5E
+@vect60
+          MOD                 @vect60
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT60
+@vect62
+          MOD                 @vect62
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT62
+@vect64
+          MOD                 @vect64
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT64
+@vect66
+          MOD                 @vect66
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT66
+@vect68
+          MOD                 @vect68
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT68
+@vect6a
+          MOD                 @vect6a
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT6A
+@vect6c
+          MOD                 @vect6c
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT6C
+@vect6e
+          MOD                 @vect6e
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT6E
+@vect70
+          MOD                 @vect70
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT70
+@vect72
+          MOD                 @vect72
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT72
+@vect74
+          MOD                 @vect74
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT74
+@vect76
+          MOD                 @vect76
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT76
+@vect78
+          MOD                 @vect78
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT78
+@vect7a
+          MOD                 @vect7a
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT7A
+@vect7c
+          MOD                 @vect7c
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT7C
+@vect7e
+          MOD                 @vect7e
+          NUM        00001H   MIRROR
+          NUM        00001H   LARGE
+          NUM        00000H   _STATIC
+          NUM        00000H   _PASCAL
+          NUM        00000H   _SAVERSVD
+          NUM        00000H   _OLDFUNC
+          NUM        00000H   _RL78_2
+          NUM        00000H   _XMAC
+          NUM        00000H   _XMULDIV
+          NUM        00000H   _XMUL
+          NUM        00000H   _FLASH
+          NUM        00000H   _RAMFUNC
+          NUM        00001H   _MIRROR
+          NUM        00001H   _ESCOPY
+          NUM        00001H   _LIBCNSTFAR
+          NUM        00001H   _ORGFUNC
+          NUM        00001H   _CODEFAR
+          NUM        00001H   _DATAFAR
+          NUM        00000H   _DHRYSTONE
+          NUM        00001H   _PATCH01
+          NUM        02000H   ITBLTOP
+          CSEG                @@VECT7E
+@rom
+          MOD                 @rom
+          CSEG                @@R_INIT
+          CSEG                @@RLINIT
+          CSEG                @@R_INIS
+          DSEG                @@INIT
+          DSEG                @@INITL
+          DSEG                @@DATA
+          DSEG                @@DATAL
+          DSEG                @@INIS
+          DSEG                @@DATS
+
+
+
+*** Public symbol list ***
+
+MODULE    ATTR       VALUE    NAME
+
+@cstart
+          ADDR       000D8H   _@cstart
+          ADDR       00182H   _@cend
+          ADDR       FB398H   _@BRKADR
+          ADDR       FB39AH   _@MEMTOP
+          ADDR       FB3BAH   _@MEMBTM
+          ADDR       FB300H   _@FNCTBL
+          ADDR       FB380H   _@FNCENT
+          ADDR       FB382H   _@SEED
+          ADDR       FB386H   _@DIVR
+          ADDR       FB38AH   _@LDIVR
+          ADDR       FB392H   _@TOKPTR
+          ADDR       FB396H   _errno
+BootMain
+                     00A80H   _boot_main
+          NUM        FFE20H   _@STBEG
+          NUM        FB500H   _@STEND
+@stkinit
+          ADDR       00F8FH   _stkinit
+BootMain
+                     003B2H   _hdwinit
+          NUM        000C0H   _@SADSIZ
+          ADDR       FFE20H   _@SADBEG
+@vect04
+          ADDR       00004H   _@vect04
+@vect06
+          ADDR       00006H   _@vect06
+@vect08
+          ADDR       00008H   _@vect08
+@vect0a
+          ADDR       0000AH   _@vect0a
+@vect0c
+          ADDR       0000CH   _@vect0c
+@vect0e
+          ADDR       0000EH   _@vect0e
+@vect10
+          ADDR       00010H   _@vect10
+@vect12
+          ADDR       00012H   _@vect12
+@vect14
+          ADDR       00014H   _@vect14
+@vect16
+          ADDR       00016H   _@vect16
+@vect18
+          ADDR       00018H   _@vect18
+@vect1a
+          ADDR       0001AH   _@vect1a
+@vect1c
+          ADDR       0001CH   _@vect1c
+@vect1e
+          ADDR       0001EH   _@vect1e
+@vect20
+          ADDR       00020H   _@vect20
+@vect22
+          ADDR       00022H   _@vect22
+@vect24
+          ADDR       00024H   _@vect24
+@vect26
+          ADDR       00026H   _@vect26
+@vect28
+          ADDR       00028H   _@vect28
+@vect2a
+          ADDR       0002AH   _@vect2a
+@vect2c
+          ADDR       0002CH   _@vect2c
+@vect2e
+          ADDR       0002EH   _@vect2e
+@vect30
+          ADDR       00030H   _@vect30
+@vect32
+          ADDR       00032H   _@vect32
+@vect34
+          ADDR       00034H   _@vect34
+@vect36
+          ADDR       00036H   _@vect36
+@vect38
+          ADDR       00038H   _@vect38
+@vect3a
+          ADDR       0003AH   _@vect3a
+@vect3c
+          ADDR       0003CH   _@vect3c
+@vect3e
+          ADDR       0003EH   _@vect3e
+@vect40
+          ADDR       00040H   _@vect40
+@vect42
+          ADDR       00042H   _@vect42
+@vect44
+          ADDR       00044H   _@vect44
+@vect46
+          ADDR       00046H   _@vect46
+@vect48
+          ADDR       00048H   _@vect48
+@vect4a
+          ADDR       0004AH   _@vect4a
+@vect4c
+          ADDR       0004CH   _@vect4c
+@vect4e
+          ADDR       0004EH   _@vect4e
+@vect50
+          ADDR       00050H   _@vect50
+@vect52
+          ADDR       00052H   _@vect52
+@vect54
+          ADDR       00054H   _@vect54
+@vect56
+          ADDR       00056H   _@vect56
+@vect58
+          ADDR       00058H   _@vect58
+@vect5a
+          ADDR       0005AH   _@vect5a
+@vect5c
+          ADDR       0005CH   _@vect5c
+@vect5e
+          ADDR       0005EH   _@vect5e
+@vect60
+          ADDR       00060H   _@vect60
+@vect62
+          ADDR       00062H   _@vect62
+@vect64
+          ADDR       00064H   _@vect64
+@vect66
+          ADDR       00066H   _@vect66
+@vect68
+          ADDR       00068H   _@vect68
+@vect6a
+          ADDR       0006AH   _@vect6a
+@vect6c
+          ADDR       0006CH   _@vect6c
+@vect6e
+          ADDR       0006EH   _@vect6e
+@vect70
+          ADDR       00070H   _@vect70
+@vect72
+          ADDR       00072H   _@vect72
+@vect74
+          ADDR       00074H   _@vect74
+@vect76
+          ADDR       00076H   _@vect76
+@vect78
+          ADDR       00078H   _@vect78
+@vect7a
+          ADDR       0007AH   _@vect7a
+@vect7c
+          ADDR       0007CH   _@vect7c
+@vect7e
+          ADDR       0007EH   _@vect7e
+          NUM        00000H   _@MAA
+@rom
+          ADDR       00A74H   _?R_INIT
+          ADDR       000C4H   _?RLINIT
+          ADDR       000C4H   _?R_INIS
+          ADDR       FB4EAH   _?DATA
+          ADDR       FB500H   _?DATAL
+          ADDR       FB500H   _?DATS
+BootDataflash
+                     001C7H   _BOOT_startFDL
+                     001E2H   _BOOT_FDLWriteByte
+                     0023AH   _BOOT_FDLReadByte
+pfdl
+          ADDR       00F7CH   _PFDL_Handler
+          ADDR       00F14H   _PFDL_Execute
+          ADDR       00EF8H   _PFDL_Open
+BootMain
+                     00292H   _BOOT_R_CGC_Create
+                     002A9H   _BOOT_R_PORT_Create
+                     002B6H   _BOOT_R_TAU0_Create
+                     002DFH   _BOOT_R_TAU0_Channel0_Start
+                     002EAH   _BOOT_R_SAU0_Create
+                     002F9H   _BOOT_R_UART1_Create
+                     0034DH   _BOOT_R_UART1_Start
+                     0035EH   _BOOT_R_UART1_Stop
+                     0036CH   _BOOT_BaseTimer
+                     0039AH   _BOOT_FotaLEDControl
+                     0042EH   _BOOT_setOTARequest
+                     FB4EAH   _gu16BootModuleInitCnt
+                     FB4ECH   _gu16BootInitTimeoutCnt
+                     FB3BAH   _gu8BootModuleInit_F
+                     FB3BBH   _gu8BootFailCnt
+BootWrite
+                     FB4F0H   _gu16BootModuleRxCheck
+                     00659H   _BOOT_startFSL
+                     00739H   _BOOT_UartRxCheck
+                     0072DH   _BOOT_UartRxData
+                     FB4E4H   _gu8BootEndResultCode
+                     00753H   _BOOT_UartTxMsg
+                     FB4E5H   _gu8BootAuConValue
+                     004A9H   _BOOT_writeProgram
+fsl_r_std_cmd
+          ADDR       00EA4H   _FSL_Erase
+fsl_f_close
+          ADDR       00CD6H   _FSL_Close
+BootWrite
+                     0067AH   _BOOT_UartRxMsg
+                     00801H   _BOOT_UartTxData
+                     00816H   _CRC16_CCITT_FALSE
+                     0087CH   _CRC16_CCITT_FALSE_BIN
+                     0098FH   _ASCII_TO_HEX_ONE
+                     FB3BCH   _gu8BootMsgBuffer
+                     FB4E2H   _gu16BootPacketCnt
+@SEGREG
+          ADDR       FFED4H   _@SEGAX
+@divuw
+          ADDR       00182H   @@divuw
+fsl_r_std_cmd
+          ADDR       00EACH   _FSL_Write
+          ADDR       00EA8H   _FSL_IVerify
+fsl_r_ss_ibf
+          ADDR       00EE2H   _FSL_InvertBootFlag
+fsl_f_init
+          ADDR       00C6EH   _FSL_Init
+fsl_f_open
+          ADDR       00CD0H   _FSL_Open
+fsl_f_pfunc
+          ADDR       00CDCH   _FSL_PrepareFunctions
+fsl_f_pefunc
+          ADDR       00D06H   _FSL_PrepareExtFunctions
+fsl_f_pfunc
+          ADDR       00CF2H   _FSL_Prepare_common
+fsl_b_common
+          ADDR       00D20H   _ASM_BCD_Start
+          ADDR       00E20H   _ASM_BCD_End
+fsl_be_common
+          ADDR       00E20H   _ASM_BECD_Start
+          ADDR       00EA0H   _ASM_BECD_End
+fsl_r_std_cmd
+          ADDR       00EA0H   _FSL_BlankCheck
+fsl_r_check_flow
+          ADDR       00ED6H   _ASM_RCD_Check_Flow
+          ADDR       00EBAH   _ASM_RCD_Check_Ext_Flow
+          ADDR       00EC1H   _ASM_RCD_Check_Status_Flow
+          ADDR       00EC8H   _ASM_RCD_Check_StandBy_Flow
+          ADDR       00ECFH   _ASM_RCD_Check_WakeUp_Flow
+fsl_r_br_becd
+          ADDR       00EEAH   _ASM_RCD_Branch_BECD_Entry
+pfdl
+          ADDR       00EF8H   PFDL_Open
+          ADDR       00F81H   _PFDL_Close
+          ADDR       00F81H   PFDL_Close
+          ADDR       00F14H   PFDL_Execute
+          ADDR       00F7CH   PFDL_Handler
+@divuw
+          ADDR       00182H   @@divuwe
+@rom
+          ADDR       FB500H   _?INIT
+          ADDR       FB500H   _?INITL
+          ADDR       FB500H   _?INIS
+@SEGREG
+          ADDR       FFED5H   _@SEGBC
+          ADDR       FFED6H   _@SEGDE
+          ADDR       FFED7H   _@SEGHL
+
+
+ Target chip : R5F100SJ
+ Device file : V1.14
+

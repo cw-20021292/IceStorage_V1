@@ -5,36 +5,23 @@
 #include <stdlib.h>
 
 #include "parser_main.h"
+
+#include "api_key.h"
+
 #include "util.h"
 #include "timer.h"
-
-#include "hal_led.h"
-#include "hal_key.h"
-#include "hal_input.h"
-#include "hal_adc.h"
-#include "hal_uv.h"
+#include "purifier.h"
+#include "config.h"
+#include "led.h"
 #include "voice.h"
-#include "mode.h"
-
 
 /***********************************************************************************************
  * DEFINITION 
  */
+#define STX                 (0xAA)
+#define ETX                 (0x55)
 
-#define STX                 0xAA
-#define ETX                 0x55
-
-#define PKT_REQ_LED         0x01
-#define PKT_REQ_VOICE       0x02
-#define PKT_REQ_LED_2       0x03
-#define PKT_REQ_LED_3       0x04
-
-#define PKT_ACK_LED         0x81
-#define PKT_ACK_VOICE       0x82
-#define PKT_ACK_LED_2       0x83
-#define PKT_ACK_LED_3       0x84
-
-#define MIN_PKT_SZ          5
+#define MIN_PKT_SZ          (5)
 
 U16 Rx_CRC_CCITT(U8 *puchMsg, U16 usDataLen)
 {
@@ -63,7 +50,7 @@ U16 Rx_CRC_CCITT(U8 *puchMsg, U16 usDataLen)
     return (wCRCin);
 }
 
-static U8   check_crc( U8 *buf, I16 len )
+static U8 Check_Crc(U8 *buf, I16 len)
 {
     U16 crc16 = 0;
 
@@ -78,7 +65,7 @@ static U8   check_crc( U8 *buf, I16 len )
     return TRUE;
 }
 
-I16 IsValidPkt_Main( U8 *buf, I16 len )
+I16 IsValidPktMain(U8 *buf, I16 len)
 {
     if( buf == NULL )
     {
@@ -90,7 +77,7 @@ I16 IsValidPkt_Main( U8 *buf, I16 len )
         return FALSE;
     }
 
-    if( check_crc( buf, len ) == FALSE )
+    if( Check_Crc( buf, len ) == FALSE )
     {
         return FALSE;
     }
@@ -99,42 +86,38 @@ I16 IsValidPkt_Main( U8 *buf, I16 len )
 }
 
 
-static I16 ParserReqLed(U8 *buf);
-static I16 ParserReqLed_3(U8 *buf);
-static I16 ParserReqVoice(U8 *buf);
 
-typedef I16 (*action_t)( U8 *buf );
-typedef struct _parser_list_t
+static I16 ParserReqMain(U8 *buf);
+
+typedef I16 (*FPAction_t)(U8 *buf);
+typedef struct _parser_list_
 {
-    U8 Type;
-    action_t Parser;
-} parser_list_t;
-const static parser_list_t parser_list[] = 
+    U8 type;
+    FPAction_t pParserPkt;
+} SParserList_T;
+const static SParserList_T parserList[] = 
 {
-    //{ PKT_REQ_LED,      ParserReqLed    },
-    { PKT_REQ_LED_3,    ParserReqLed_3  },
-    { PKT_REQ_VOICE,    ParserReqVoice  },
+    { PKT_REQ_MAIN,     ParserReqMain },
 };
 
-#define SZ_PS_TABLE ( sizeof( parser_list ) / sizeof( parser_list_t ))
+#define SZ_PARSER_LIST ( sizeof(parserList) / sizeof(SParserList_T))
 
-I16 ParserPkt_Main( U8 *buf, I16 len)
+I16 ParserPktMain(U8 *buf, I16 len)
 {
-    U8 mu8Type;
-    action_t	pParser;
-    U8 i;
+    U8 type = 0U;
+    FPAction_t pParser = NULL;
+    U8 i = 0U;
 
-
-    for( i = 0; i < SZ_PS_TABLE; i++ )
+    for( i=0; i < SZ_PARSER_LIST; i++ )
     {
-        mu8Type = parser_list[ i ].Type;
-        pParser = parser_list[ i ].Parser;
+        type = parserList[i].type;
+        pParser = parserList[i].pParserPkt;
 
-        if( mu8Type == buf[1] )
+        if( type == buf[1] )
         {
             if( pParser != NULL )
             {
-                len = pParser( &buf[2] );
+                len = pParser(&buf[2]);
             }
             break;
         }
@@ -143,159 +126,88 @@ I16 ParserPkt_Main( U8 *buf, I16 len)
     return len;
 }
 
-I16 Crc16_Main( U8 *buf, I16 len )
+I16 Crc16Main(U8 *buf, I16 len)
 {
-    U16 mu16Chksum = 0;
-
+    U16 checksum = 0;
 
     if( len < MIN_PKT_SZ )
     {
         return 0; // error..
     }
 
-    mu16Chksum = Rx_CRC_CCITT( buf, (U16)(len - 3));
-    buf[ len - 3 ] = GET_HIGH_BYTE(mu16Chksum);
-    buf[ len - 2 ] = GET_LOW_BYTE(mu16Chksum);
+    checksum = Rx_CRC_CCITT(buf, (U16)(len - 3));
+    buf[ len - 3 ] = GET_16_HIGH_BYTE(checksum);
+    buf[ len - 2 ] = GET_16_LOW_BYTE(checksum);
 
     return len;
 }
 
-static I16 ParserReqLed(U8 *buf)
+// STX(1) + PKT_ACK_MAIN(1) + LED(69) +  CRC(2) + EXT(1)
+// SIZE : 74bytes
+/**
+ * @brief MAIN으로부터 온 정상 데이터 처리
+ * 
+ * @param buf : RX DATA
+ * @return I16 
+ */
+static I16 ParserReqMain(U8 *buf)
 {
     U32 mu32Val;
     VoiceId_T VoiceId;
+    U8 i = 0U;
 
-
-    // LED 
-    HAL_SetOnOffLED( &buf[0], MAX_LED );
-
-    // DIMMING
-#if CONFIG_DIMMING
-    HAL_SetDimmingLED( &buf[12], MAX_LED );      // LED DIMMING ON/OFF
-
-    HAL_SetDimmingDuty( buf[24] );       // LED DIMMING DUTY
-    HAL_SetOnOffDuty( buf[25] );           // LED LED DUTY
-#else
-    HAL_SetDimmingLED( 0UL );
-#endif
-
-    // UV
-    HAL_SetUvOnOffId( UV_WATER, buf[26] );
-    HAL_SetUvOnOffId( UV_ICE,   buf[27] );
-
-    // Voice ID
-    VoiceId = (VoiceId_T)buf[28];
-    if( VoiceId != ID_NONE )
+    /* LED 정보 반영 */
+    for( i=0; i< LED_ID_MAX; i++ )
     {
-        PlayVoice( VoiceId );
-    }
-
-    // Send ACK 
-    SetCommHeader( COMM_ID_MAIN, PKT_ACK_LED );
-    StartTimer( TIMER_ID_COMM_MAIN_TX, 1 );
-    return TRUE;
-}
-
-static I16 ParserReqLed_3(U8 *buf)
-{
-    U32 mu32Val;
-    VoiceId_T VoiceId;
-
-
-    SetMode( buf[30] );
-    if( GetMode() == MODE_NONE )
-    {
-        // LED 
-        HAL_SetOnOffLED( &buf[0], MAX_LED );
-
-        // DIMMING
-#if CONFIG_DIMMING
-        HAL_SetDimmingLED( &buf[12], MAX_LED );      // LED DIMMING ON/OFF
-
-        HAL_SetDimmingDuty( buf[24] );       // LED DIMMING DUTY
-        HAL_SetOnOffDuty( buf[25] );           // LED LED DUTY
-#else
-        HAL_SetDimmingLED( 0UL );
-#endif
-
-        // UV
-        HAL_SetUvOnOffId( UV_WATER, buf[26] );
-        HAL_SetUvOnOffId( UV_ICE,   buf[27] );
-    }
-    else
-    {
-        HAL_SetUvOnOffId( UV_WATER, OFF );
-        HAL_SetUvOnOffId( UV_ICE,   OFF );
+        OnOffLed((ELedId_T)i, buf[i]);
     }
 
     // Voice ID
-    VoiceId = (VoiceId_T)buf[28];
+    VoiceId = (VoiceId_T)buf[123];
     if( VoiceId != ID_NONE )
     {
         PlayVoice( VoiceId );
     }
 
     // Voice volume
-    SetVoiceVolume( buf[29 ] );
-
+    SetVoiceVolume( buf[124] );
+    
     // Send ACK 
-    SetCommHeader( COMM_ID_MAIN, PKT_ACK_LED_3 );
-    StartTimer( TIMER_ID_COMM_MAIN_TX, 1 );
+    SetCommHeader(COMM_ID_MAIN, PKT_ACK_MAIN);
+    StartTimer(TIMER_USER, TIMER_USER_ID_COMM_MAIN_TX, 1UL);
     return TRUE;
 }
 
-
-static I16 ParserReqVoice(U8 *buf)
+typedef struct _make_list_
 {
-    VoiceId_T id;
+    U8 type;
+    FPAction_t makePkt;
+} SMakeList_T;
 
-
-    // VOICE 
-    id = (U8)buf[0];
-    PlayVoice( id );
-
-    // Send ACK 
-    SetCommHeader( COMM_ID_MAIN, PKT_ACK_VOICE );
-    StartTimer( TIMER_ID_COMM_MAIN_TX, 1 );
-    return TRUE;
-}
-
-
-typedef struct _make_list_t
+static I16 MakePktAckMain(U8 *buf);
+const static SMakeList_T makeList[] = 
 {
-    U8  Type;
-    action_t    MakePkt;
-} make_list_t;
-
-static I16 MakePktAckLed( U8 *buf );
-static I16 MakePktAckLed_3( U8 *buf );
-static I16 MakePktAckVoice( U8 *buf );
-const static make_list_t make_list[] = 
-{
-    //{ PKT_ACK_LED,             MakePktAckLed    },
-    { PKT_ACK_LED_3,           MakePktAckLed_3  },
-    { PKT_ACK_VOICE,           MakePktAckVoice  },
+    { PKT_ACK_MAIN,            MakePktAckMain },
 };
-#define SZ_TABLE    ( sizeof( make_list ) / sizeof( make_list_t ))
+#define SZ_MAKE_LIST    ( sizeof(makeList) / sizeof(SMakeList_T) )
 
-I16 MakePkt_Main( CommHeader_T *p_comm, U8 *buf )
+I16 MakePktMain(CommHeader_T *comm, U8 *buf)
 {
-    U8 mu8Type;
-    action_t	p_make_pkt;
-    U8 i;
+    U8 type = 0U;
+    FPAction_t pMakePkt = NULL;
+    U8 i = 0U;
     I16	len	= -1;
 
-
-    for( i = 0; i < SZ_TABLE; i++ )
+    for( i=0; i<SZ_MAKE_LIST; i++ )
     {
-        mu8Type = make_list[ i ].Type;
-        p_make_pkt = make_list[ i ].MakePkt;
+        type = makeList[i].type;
+        pMakePkt = makeList[i].makePkt;
 
-        if( mu8Type == (U8)p_comm )
+        if( type == (U8)comm )
         {
-            if( p_make_pkt != NULL )
+            if( pMakePkt != NULL )
             {
-                len = p_make_pkt( buf );
+                len = pMakePkt(buf);
             }
             break;
         }
@@ -304,123 +216,42 @@ I16 MakePkt_Main( CommHeader_T *p_comm, U8 *buf )
     return len;
 }
 
-
-
-// STX(1) + PKT_ACK_LED(1) + KEY(2) + INPUT(1) + ADC(6) + CRC(2) + EXT(1)
-// SIZE : 14bytes
-static I16 MakePktAckLed( U8 *buf )
+// STX(1) + PKT_ACK_MAIN(1) + F_VERSION(4) + KEY(4) + UNUSED1(1) + UNUSED1(1) + CRC(2) + EXT(1)
+// SIZE : 15bytes
+static I16 MakePktAckMain(U8 *buf)
 {
-    I16 mi16Len = 0;
-    U16 mu16Val = 0;
-    U32 mu32Val = 0;
-
+    I16 len = 0;
+    U16 val_16 = 0;
+    U32 val_32 = 0;
 
     // STX 
-    buf[ mi16Len++ ] = STX;
+    buf[len++] = STX;
 
     // MESSAGE TYPE
-    buf[ mi16Len++ ] = PKT_ACK_LED;
+    buf[len++] = PKT_ACK_MAIN;
 
-    // KEY 
-    mu32Val = HAL_GetKeyVal();
-    buf[ mi16Len++ ] = GET_32_BYTE_32( mu32Val );
-    buf[ mi16Len++ ] = GET_32_BYTE_24( mu32Val );
-    buf[ mi16Len++ ] = GET_32_BYTE_16( mu32Val );
-    buf[ mi16Len++ ] = GET_32_BYTE_8( mu32Val );
+    // VERSION INFO
+    ExportVersion(PROGRAM_VERSION);
+    buf[len++] = GetFrontVerMajor();
+    buf[len++] = GetFrontVerEvent();
+    buf[len++] = GetFrontVerPatch();
+    buf[len++] = GetFrontVerMiner();
+    
+    // KEY
+    val_32 = GetKey();
+    buf[ len++ ] = GET_32_BYTE_32(val_32);
+    buf[ len++ ] = GET_32_BYTE_24(val_32);
+    buf[ len++ ] = GET_32_BYTE_16(val_32);
+    buf[ len++ ] = GET_32_BYTE_8(val_32);
 
-    // INPUT 
-    buf[ mi16Len++ ] = HAL_GetInput();
-
-    // ADC
-    mu16Val = HAL_GetAdcValue( ANI_UV_WATER_FB );
-    buf[ mi16Len++ ] = GET_HIGH_BYTE( mu16Val );
-    buf[ mi16Len++ ] = GET_LOW_BYTE( mu16Val );
-
-    mu16Val = HAL_GetAdcValue( ANI_UV_ICE_FB );
-    buf[ mi16Len++ ] = GET_HIGH_BYTE( mu16Val );
-    buf[ mi16Len++ ] = GET_LOW_BYTE( mu16Val );
-
-    buf[ mi16Len++ ] = 0;   // UNUSED
-    buf[ mi16Len++ ] = 0;   // UNUSED
-
-    buf[ mi16Len++ ] = 0;   // UNUSED
-    buf[ mi16Len++ ] = 0;   // UNUSED
+    buf[ len++ ] = 0;   // UNUSED
+    buf[ len++ ] = 0;   // UNUSED
 
     // CRC-16
-    buf[ mi16Len++ ] = 0;
-    buf[ mi16Len++ ] = 0;
+    buf[ len++ ] = 0;
+    buf[ len++ ] = 0;
 
-    buf[ mi16Len++ ] = ETX;
-    return mi16Len;
+    buf[ len++ ] = ETX;
+
+    return len;
 }
-
-static I16 MakePktAckLed_3( U8 *buf )
-{
-    I16 mi16Len = 0;
-    U16 mu16Val = 0;
-    U32 mu32Val = 0;
-
-
-    // STX 
-    buf[ mi16Len++ ] = STX;
-
-    // MESSAGE TYPE
-    buf[ mi16Len++ ] = PKT_ACK_LED_3;
-
-    // KEY 
-    mu32Val = HAL_GetKeyVal();
-    buf[ mi16Len++ ] = GET_32_BYTE_32( mu32Val );
-    buf[ mi16Len++ ] = GET_32_BYTE_24( mu32Val );
-    buf[ mi16Len++ ] = GET_32_BYTE_16( mu32Val );
-    buf[ mi16Len++ ] = GET_32_BYTE_8( mu32Val );
-
-    // INPUT 
-    buf[ mi16Len++ ] = HAL_GetInput();
-
-    // ADC
-    mu16Val = HAL_GetAdcValue( ANI_UV_WATER_FB );
-    buf[ mi16Len++ ] = GET_HIGH_BYTE( mu16Val );
-    buf[ mi16Len++ ] = GET_LOW_BYTE( mu16Val );
-
-    mu16Val = HAL_GetAdcValue( ANI_UV_ICE_FB );
-    buf[ mi16Len++ ] = GET_HIGH_BYTE( mu16Val );
-    buf[ mi16Len++ ] = GET_LOW_BYTE( mu16Val );
-
-    //mu16Val = HAL_GetAdcValue( ANI_SENSOR_PHOTO );
-    //buf[ mi16Len++ ] = GET_HIGH_BYTE( mu16Val );
-    //buf[ mi16Len++ ] = GET_LOW_BYTE( mu16Val );
-
-    buf[ mi16Len++ ] = 0;   // UNUSED
-    buf[ mi16Len++ ] = 0;   // UNUSED
-
-    buf[ mi16Len++ ] = 0;   // UNUSED
-    buf[ mi16Len++ ] = 0;   // UNUSED
-
-    // CRC-16
-    buf[ mi16Len++ ] = 0;
-    buf[ mi16Len++ ] = 0;
-
-    buf[ mi16Len++ ] = ETX;
-    return mi16Len;
-}
-
-static I16 MakePktAckVoice( U8 *buf )
-{
-    I16 mi16Len = 0;
-
-
-    // STX 
-    buf[ mi16Len++ ] = STX;
-
-    // MESSAGE TYPE
-    buf[ mi16Len++ ] = PKT_ACK_VOICE;
-
-    // CRC-16
-    buf[ mi16Len++ ] = 0;
-    buf[ mi16Len++ ] = 0;
-
-    buf[ mi16Len++ ] = ETX;
-    return mi16Len;
-}
-
-

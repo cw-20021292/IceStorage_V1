@@ -7,89 +7,90 @@ Command:   -yC:\Program Files (x86)\Renesas Electronics\CS+\CACX\Device\
            RL78\Devicefile -_msgoff -dFlash.dr -oDefaultBuild\Flash.lmf 
            -mi0 -s -pDefaultBuild\Flash.map C:\Program Files (x86)\Renes
            as Electronics\CS+\CACX\CA78K0R\V1.72\lib78k0r\s0rlle.rel Def
-           aultBuild\main.rel DefaultBuild\process_sys_event.rel Default
-           Build\util.rel DefaultBuild\comm.rel DefaultBuild\crc16.rel D
-           efaultBuild\parser.rel DefaultBuild\parser_comp.rel DefaultBu
-           ild\parser_debug.rel DefaultBuild\parser_eol.rel DefaultBuild
-           \parser_front.rel DefaultBuild\display.rel DefaultBuild\displ
-           ay_eol.rel DefaultBuild\display_error.rel DefaultBuild\displa
-           y_lib.rel DefaultBuild\front.rel DefaultBuild\process_display
-           .rel DefaultBuild\drain.rel DefaultBuild\eeprom.rel DefaultBu
-           ild\rtc.rel DefaultBuild\eol.rel DefaultBuild\eol_lever_handl
-           er.rel DefaultBuild\key_eol_handler.rel DefaultBuild\process_
-           eol.rel DefaultBuild\error.rel DefaultBuild\err_comp_bldc.rel
-            DefaultBuild\err_comp_bldc_comm.rel DefaultBuild\err_drain_p
-           ump.rel DefaultBuild\err_ice_tray.rel DefaultBuild\err_leak.r
-           el DefaultBuild\err_outage_hot_water.rel DefaultBuild\err_out
-           age_water.rel DefaultBuild\err_temp.rel DefaultBuild\err_temp
-           _ambient.rel DefaultBuild\err_temp_cold_water.rel DefaultBuil
-           d\err_temp_eva_1.rel DefaultBuild\err_temp_heater.rel Default
-           Build\err_temp_hot_overheat.rel DefaultBuild\err_temp_hot_wat
-           er.rel DefaultBuild\err_temp_hot_water_in.rel DefaultBuild\er
-           r_temp_room_water.rel DefaultBuild\process_error.rel DefaultB
-           uild\fct.rel DefaultBuild\fct_lever_handler.rel DefaultBuild\
-           key_fct_handler.rel DefaultBuild\process_fct.rel DefaultBuild
-           \filter.rel DefaultBuild\hal_adc.rel DefaultBuild\hal_eeprom.
-           rel DefaultBuild\hal_fan_motor.rel DefaultBuild\hal_i2c.rel D
-           efaultBuild\hal_input.rel DefaultBuild\hal_key.rel DefaultBui
-           ld\hal_led.rel DefaultBuild\hal_level.rel DefaultBuild\hal_pu
-           mp.rel DefaultBuild\hal_relay.rel DefaultBuild\hal_serial.rel
-            DefaultBuild\hal_step_motor.rel DefaultBuild\hal_uv.rel Defa
-           ultBuild\hal_valve.rel DefaultBuild\drain_water.rel DefaultBu
-           ild\health.rel DefaultBuild\health_maker.rel DefaultBuild\pro
-           cess_uv.rel DefaultBuild\uv.rel DefaultBuild\deicing_table.re
-           l DefaultBuild\dummy_deicing_table.rel DefaultBuild\ice.rel D
-           efaultBuild\ice_maker.rel DefaultBuild\icing_table.rel Defaul
-           tBuild\comp.rel DefaultBuild\comp_bldc.rel DefaultBuild\drain
-           _pump.rel DefaultBuild\fan_motor.rel DefaultBuild\flow_meter.
-           rel DefaultBuild\flow_valve.rel DefaultBuild\gas_switch_valve
-           .rel DefaultBuild\heater_out.rel DefaultBuild\hot_water_flow.
-           rel DefaultBuild\hot_water_heater.rel DefaultBuild\ice_door.r
-           el DefaultBuild\ice_full.rel DefaultBuild\ice_tray.rel Defaul
-           tBuild\leak.rel DefaultBuild\process_make.rel DefaultBuild\re
-           lay.rel DefaultBuild\smps.rel DefaultBuild\swing_bar.rel Defa
-           ultBuild\valve.rel DefaultBuild\energy.rel DefaultBuild\user.
-           rel DefaultBuild\key.rel DefaultBuild\key_event_lib.rel Defau
-           ltBuild\key_handler.rel DefaultBuild\key_normal_handler.rel D
-           efaultBuild\process_key.rel DefaultBuild\lever.rel DefaultBui
-           ld\lever_handler.rel DefaultBuild\process_lever.rel DefaultBu
-           ild\metering.rel DefaultBuild\power_saving.rel DefaultBuild\l
-           evel.rel DefaultBuild\temp.rel DefaultBuild\temp_table.rel De
-           faultBuild\ice_tray_test.rel DefaultBuild\service.rel Default
-           Build\sound.rel DefaultBuild\voice.rel DefaultBuild\timer.rel
-            DefaultBuild\time_short.rel DefaultBuild\cold_water.rel Defa
-           ultBuild\cold_water_out.rel DefaultBuild\flush_water_out.rel 
-           DefaultBuild\hot_water.rel DefaultBuild\hot_water_out.rel Def
-           aultBuild\room_water_out.rel DefaultBuild\water_out.rel Defau
-           ltBuild\water_out_common.rel DefaultBuild\r_cg_adc.rel Defaul
-           tBuild\r_cg_cgc.rel DefaultBuild\r_cg_cgc_user.rel DefaultBui
-           ld\r_cg_intc.rel DefaultBuild\r_cg_port.rel DefaultBuild\r_cg
-           _serial.rel DefaultBuild\r_cg_timer.rel DefaultBuild\r_cg_wdt
-           .rel DefaultBuild\r_cg_wdt_user.rel DefaultBuild\r_systeminit
-           .rel DefaultBuild\WIFI_DataCheck.rel DefaultBuild\WIFI_Initia
-           lize.rel DefaultBuild\WIFI_ProcessApmode.rel DefaultBuild\WIF
-           I_Status.rel DefaultBuild\WIFI_UartInterrupt.rel DefaultBuild
-           \WIFI_Fota.rel DefaultBuild\WIFI_RxProcess.rel DefaultBuild\W
-           IFI_RxServer.rel DefaultBuild\WIFI_SetAccumulateData.rel Defa
-           ultBuild\WIFI_SetCommon.rel DefaultBuild\WIFI_SetErrorData.re
-           l DefaultBuild\WIFI_SetFunctionData.rel DefaultBuild\WIFI_Set
-           InformationData.rel DefaultBuild\WIFI_SetPartData.rel Default
-           Build\WIFI_SetSensorData.rel DefaultBuild\WIFI_TxForm.rel Def
-           aultBuild\WIFI_TxMake.rel DefaultBuild\WIFI_TxProtocol.rel De
-           faultBuild\WIFI_Common.rel DefaultBuild\WIFI_Control.rel Defa
-           ultBuild\WIFI_UserInterface.rel DefaultBuild\WIFI_UserInterfa
-           ce_IconAIS.rel DefaultBuild\cody_kit.rel DefaultBuild\cody_wa
-           ter_out.rel DefaultBuild\empty_cold_tank.rel DefaultBuild\dis
-           play_clock.rel DefaultBuild\smart_check.rel DefaultBuild\heat
-           er_table.rel DefaultBuild\diagnosis.rel DefaultBuild\monitori
-           ng.rel DefaultBuild\hot_water_temp_table.rel DefaultBuild\dia
-           gnosis_12v.rel DefaultBuild\diagnosis_24v.rel DefaultBuild\di
-           agnosis_feedback.rel DefaultBuild\diagnosis_sensor.rel Defaul
-           tBuild\diagnosis_ac.rel DefaultBuild\hot_water_out_preheat.re
-           l DefaultBuild\WIFI_SetMonitorData.rel DefaultBuild\WIFI_Moni
-           torFixRAM.rel -bcl0rale.lib -bcl0rlfe.lib -bcl0rle.lib -iC:\P
-           rogram Files (x86)\Renesas Electronics\CS+\CACX\CA78K0R\V1.72
-           \lib78k0r ..\Boot\DefaultBuild\Boot.lmf
+           aultBuild\comm.rel DefaultBuild\crc16.rel DefaultBuild\parser
+           .rel DefaultBuild\parser_comp.rel DefaultBuild\parser_debug.r
+           el DefaultBuild\parser_eol.rel DefaultBuild\parser_front.rel 
+           DefaultBuild\display.rel DefaultBuild\display_eol.rel Default
+           Build\display_error.rel DefaultBuild\display_lib.rel DefaultB
+           uild\front.rel DefaultBuild\process_display.rel DefaultBuild\
+           drain.rel DefaultBuild\eeprom.rel DefaultBuild\rtc.rel Defaul
+           tBuild\eol.rel DefaultBuild\eol_lever_handler.rel DefaultBuil
+           d\key_eol_handler.rel DefaultBuild\process_eol.rel DefaultBui
+           ld\error.rel DefaultBuild\err_comp_bldc.rel DefaultBuild\err_
+           comp_bldc_comm.rel DefaultBuild\err_drain_pump.rel DefaultBui
+           ld\err_ice_tray.rel DefaultBuild\err_leak.rel DefaultBuild\er
+           r_outage_hot_water.rel DefaultBuild\err_outage_water.rel Defa
+           ultBuild\err_temp.rel DefaultBuild\err_temp_ambient.rel Defau
+           ltBuild\err_temp_cold_water.rel DefaultBuild\err_temp_eva_1.r
+           el DefaultBuild\err_temp_heater.rel DefaultBuild\err_temp_hot
+           _overheat.rel DefaultBuild\err_temp_hot_water.rel DefaultBuil
+           d\err_temp_hot_water_in.rel DefaultBuild\err_temp_room_water.
+           rel DefaultBuild\process_error.rel DefaultBuild\fct.rel Defau
+           ltBuild\fct_lever_handler.rel DefaultBuild\key_fct_handler.re
+           l DefaultBuild\process_fct.rel DefaultBuild\filter.rel Defaul
+           tBuild\hal_adc.rel DefaultBuild\hal_eeprom.rel DefaultBuild\h
+           al_fan_motor.rel DefaultBuild\hal_i2c.rel DefaultBuild\hal_in
+           put.rel DefaultBuild\hal_key.rel DefaultBuild\hal_led.rel Def
+           aultBuild\hal_level.rel DefaultBuild\hal_pump.rel DefaultBuil
+           d\hal_relay.rel DefaultBuild\hal_serial.rel DefaultBuild\hal_
+           step_motor.rel DefaultBuild\hal_uv.rel DefaultBuild\hal_valve
+           .rel DefaultBuild\drain_water.rel DefaultBuild\health.rel Def
+           aultBuild\health_maker.rel DefaultBuild\process_uv.rel Defaul
+           tBuild\uv.rel DefaultBuild\deicing_table.rel DefaultBuild\dum
+           my_deicing_table.rel DefaultBuild\ice.rel DefaultBuild\ice_ma
+           ker.rel DefaultBuild\icing_table.rel DefaultBuild\comp.rel De
+           faultBuild\comp_bldc.rel DefaultBuild\drain_pump.rel DefaultB
+           uild\fan_motor.rel DefaultBuild\flow_meter.rel DefaultBuild\f
+           low_valve.rel DefaultBuild\gas_switch_valve.rel DefaultBuild\
+           heater_out.rel DefaultBuild\hot_water_flow.rel DefaultBuild\h
+           ot_water_heater.rel DefaultBuild\ice_door.rel DefaultBuild\ic
+           e_full.rel DefaultBuild\ice_tray.rel DefaultBuild\leak.rel De
+           faultBuild\process_make.rel DefaultBuild\relay.rel DefaultBui
+           ld\smps.rel DefaultBuild\swing_bar.rel DefaultBuild\valve.rel
+            DefaultBuild\energy.rel DefaultBuild\user.rel DefaultBuild\k
+           ey.rel DefaultBuild\key_event_lib.rel DefaultBuild\key_handle
+           r.rel DefaultBuild\key_normal_handler.rel DefaultBuild\proces
+           s_key.rel DefaultBuild\lever.rel DefaultBuild\lever_handler.r
+           el DefaultBuild\process_lever.rel DefaultBuild\metering.rel D
+           efaultBuild\power_saving.rel DefaultBuild\level.rel DefaultBu
+           ild\temp.rel DefaultBuild\temp_table.rel DefaultBuild\ice_tra
+           y_test.rel DefaultBuild\service.rel DefaultBuild\sound.rel De
+           faultBuild\voice.rel DefaultBuild\timer.rel DefaultBuild\time
+           _short.rel DefaultBuild\cold_water.rel DefaultBuild\cold_wate
+           r_out.rel DefaultBuild\flush_water_out.rel DefaultBuild\hot_w
+           ater.rel DefaultBuild\hot_water_out.rel DefaultBuild\room_wat
+           er_out.rel DefaultBuild\water_out.rel DefaultBuild\water_out_
+           common.rel DefaultBuild\r_cg_adc.rel DefaultBuild\r_cg_cgc.re
+           l DefaultBuild\r_cg_cgc_user.rel DefaultBuild\r_cg_intc.rel D
+           efaultBuild\r_cg_port.rel DefaultBuild\r_cg_serial.rel Defaul
+           tBuild\r_cg_timer.rel DefaultBuild\r_cg_wdt.rel DefaultBuild\
+           r_cg_wdt_user.rel DefaultBuild\r_systeminit.rel DefaultBuild\
+           WIFI_DataCheck.rel DefaultBuild\WIFI_Initialize.rel DefaultBu
+           ild\WIFI_ProcessApmode.rel DefaultBuild\WIFI_Status.rel Defau
+           ltBuild\WIFI_UartInterrupt.rel DefaultBuild\WIFI_Fota.rel Def
+           aultBuild\WIFI_RxProcess.rel DefaultBuild\WIFI_RxServer.rel D
+           efaultBuild\WIFI_SetAccumulateData.rel DefaultBuild\WIFI_SetC
+           ommon.rel DefaultBuild\WIFI_SetErrorData.rel DefaultBuild\WIF
+           I_SetFunctionData.rel DefaultBuild\WIFI_SetInformationData.re
+           l DefaultBuild\WIFI_SetPartData.rel DefaultBuild\WIFI_SetSens
+           orData.rel DefaultBuild\WIFI_TxForm.rel DefaultBuild\WIFI_TxM
+           ake.rel DefaultBuild\WIFI_TxProtocol.rel DefaultBuild\WIFI_Co
+           mmon.rel DefaultBuild\WIFI_Control.rel DefaultBuild\WIFI_User
+           Interface.rel DefaultBuild\WIFI_UserInterface_IconAIS.rel Def
+           aultBuild\cody_kit.rel DefaultBuild\cody_water_out.rel Defaul
+           tBuild\empty_cold_tank.rel DefaultBuild\display_clock.rel Def
+           aultBuild\smart_check.rel DefaultBuild\heater_table.rel Defau
+           ltBuild\diagnosis.rel DefaultBuild\monitoring.rel DefaultBuil
+           d\hot_water_temp_table.rel DefaultBuild\diagnosis_12v.rel Def
+           aultBuild\diagnosis_24v.rel DefaultBuild\diagnosis_feedback.r
+           el DefaultBuild\diagnosis_sensor.rel DefaultBuild\diagnosis_a
+           c.rel DefaultBuild\hot_water_out_preheat.rel DefaultBuild\WIF
+           I_SetMonitorData.rel DefaultBuild\WIFI_MonitorFixRAM.rel Defa
+           ultBuild\led.rel DefaultBuild\main.rel DefaultBuild\process_s
+           ys_event.rel DefaultBuild\purifier.rel DefaultBuild\util.rel 
+           -bcl0rale.lib -bcl0rlfe.lib -bcl0rle.lib -iC:\Program Files (
+           x86)\Renesas Electronics\CS+\CACX\CA78K0R\V1.72\lib78k0r ..\B
+           oot\DefaultBuild\Boot.lmf
 Para-file:
 Out-file:  DefaultBuild\Flash.lmf
 Map-file:  DefaultBuild\Flash.map
@@ -113,9 +114,9 @@ Directive: ;MEMORY - PH
 
 *** Link information ***
 
-   305 output segment(s)
-329BCH byte(s) real data
- 48686 symbol(s) defined
+   308 output segment(s)
+3375BH byte(s) real data
+ 49193 symbol(s) defined
 
 
 *** Memory map ***
@@ -394,10 +395,6 @@ Directive: ;MEMORY - PH
                   @EVECT00 @cstarte   02000H    00004H
          @ECNST                       02004H    00000H  CSEG UNITP
                   @ECNST   @cstarte   02004H    00000H
-                  @ECNST   main       02004H    00000H
-                  @ECNST   process_sys_event
-                                      02004H    00000H
-                  @ECNST   util       02004H    00000H
                   @ECNST   comm       02004H    00000H
                   @ECNST   crc16      02004H    00000H
                   @ECNST   parser     02004H    00000H
@@ -680,12 +677,14 @@ Directive: ;MEMORY - PH
                                       02004H    00000H
                   @ECNST   WIFI_MonitorFixRAM
                                       02004H    00000H
+                  @ECNST   led        02004H    00000H
+                  @ECNST   main       02004H    00000H
+                  @ECNST   process_sys_event
+                                      02004H    00000H
+                  @ECNST   purifier   02004H    00000H
+                  @ECNST   util       02004H    00000H
          @ECNSTL                      02004H    00000H  CSEG PAGE64KP
                   @ECNSTL  @cstarte   02004H    00000H
-         @ECNSTL                      02004H    00000H  CSEG PAGE64KP
-                  @ECNSTL  main       02004H    00000H
-         @ECNSTL                      02004H    00000H  CSEG PAGE64KP
-                  @ECNSTL  util       02004H    00000H
          @ECNSTL                      02004H    00000H  CSEG PAGE64KP
                   @ECNSTL  comm       02004H    00000H
          @ECNSTL                      02004H    00006H  CSEG PAGE64KP
@@ -1010,12 +1009,14 @@ Directive: ;MEMORY - PH
          @ECNSTL                      02024H    00000H  CSEG PAGE64KP
                   @ECNSTL  hot_water_out_preheat
                                       02024H    00000H
+         @ECNSTL                      02024H    00000H  CSEG PAGE64KP
+                  @ECNSTL  led        02024H    00000H
+         @ECNSTL                      02024H    00000H  CSEG PAGE64KP
+                  @ECNSTL  main       02024H    00000H
+         @ECNSTL                      02024H    00000H  CSEG PAGE64KP
+                  @ECNSTL  util       02024H    00000H
          @ER_INIT                     02024H    00000H  CSEG UNIT64KP
                   @ER_INIT @cstarte   02024H    00000H
-                  @ER_INIT main       02024H    00000H
-                  @ER_INIT process_sys_event
-                                      02024H    00000H
-                  @ER_INIT util       02024H    00000H
                   @ER_INIT comm       02024H    00000H
                   @ER_INIT crc16      02024H    00000H
                   @ER_INIT parser     02024H    00000H
@@ -1298,13 +1299,15 @@ Directive: ;MEMORY - PH
                                       02024H    00000H
                   @ER_INIT WIFI_MonitorFixRAM
                                       02024H    00000H
+                  @ER_INIT led        02024H    00000H
+                  @ER_INIT main       02024H    00000H
+                  @ER_INIT process_sys_event
+                                      02024H    00000H
+                  @ER_INIT purifier   02024H    00000H
+                  @ER_INIT util       02024H    00000H
                   @ER_INIT @rome      02024H    00000H
          @ER_INIS                     02024H    00000H  CSEG UNIT64KP
                   @ER_INIS @cstarte   02024H    00000H
-                  @ER_INIS main       02024H    00000H
-                  @ER_INIS process_sys_event
-                                      02024H    00000H
-                  @ER_INIS util       02024H    00000H
                   @ER_INIS comm       02024H    00000H
                   @ER_INIS crc16      02024H    00000H
                   @ER_INIS parser     02024H    00000H
@@ -1587,12 +1590,14 @@ Directive: ;MEMORY - PH
                                       02024H    00000H
                   @ER_INIS WIFI_MonitorFixRAM
                                       02024H    00000H
+                  @ER_INIS led        02024H    00000H
+                  @ER_INIS main       02024H    00000H
+                  @ER_INIS process_sys_event
+                                      02024H    00000H
+                  @ER_INIS purifier   02024H    00000H
+                  @ER_INIS util       02024H    00000H
                   @ER_INIS @rome      02024H    00000H
          @ECALT                       02024H    00000H  CSEG
-                  @ECALT   main       02024H    00000H
-                  @ECALT   process_sys_event
-                                      02024H    00000H
-                  @ECALT   util       02024H    00000H
                   @ECALT   comm       02024H    00000H
                   @ECALT   crc16      02024H    00000H
                   @ECALT   parser     02024H    00000H
@@ -1875,11 +1880,13 @@ Directive: ;MEMORY - PH
                                       02024H    00000H
                   @ECALT   WIFI_MonitorFixRAM
                                       02024H    00000H
-         @ECODE                       02024H    00000H  CSEG
-                  @ECODE   main       02024H    00000H
-                  @ECODE   process_sys_event
+                  @ECALT   led        02024H    00000H
+                  @ECALT   main       02024H    00000H
+                  @ECALT   process_sys_event
                                       02024H    00000H
-                  @ECODE   util       02024H    00000H
+                  @ECALT   purifier   02024H    00000H
+                  @ECALT   util       02024H    00000H
+         @ECODE                       02024H    00000H  CSEG
                   @ECODE   comm       02024H    00000H
                   @ECODE   crc16      02024H    00000H
                   @ECODE   parser     02024H    00000H
@@ -2162,11 +2169,13 @@ Directive: ;MEMORY - PH
                                       02024H    00000H
                   @ECODE   WIFI_MonitorFixRAM
                                       02024H    00000H
-         @EBASE                       02024H    00000H  CSEG
-                  @EBASE   main       02024H    00000H
-                  @EBASE   process_sys_event
+                  @ECODE   led        02024H    00000H
+                  @ECODE   main       02024H    00000H
+                  @ECODE   process_sys_event
                                       02024H    00000H
-                  @EBASE   util       02024H    00000H
+                  @ECODE   purifier   02024H    00000H
+                  @ECODE   util       02024H    00000H
+         @EBASE                       02024H    00000H  CSEG
                   @EBASE   comm       02024H    00000H
                   @EBASE   crc16      02024H    00000H
                   @EBASE   parser     02024H    00000H
@@ -2449,6 +2458,12 @@ Directive: ;MEMORY - PH
                                       02024H    00000H
                   @EBASE   WIFI_MonitorFixRAM
                                       02024H    00000H
+                  @EBASE   led        02024H    00000H
+                  @EBASE   main       02024H    00000H
+                  @EBASE   process_sys_event
+                                      02024H    00000H
+                  @EBASE   purifier   02024H    00000H
+                  @EBASE   util       02024H    00000H
 * gap *                               02024H    00004H
          @EVECT14                     02028H    00008H  CSEG AT
                   @EVECT14 hal_serial
@@ -2478,13 +2493,17 @@ Directive: ;MEMORY - PH
          @ECNSTL                      02064H    0000EH  CSEG PAGE64KP
                   @ECNSTL  WIFI_TxProtocol
                                       02064H    0000EH
-* gap *                               02072H    00006H
+         @ECNSTL                      02072H    00006H  CSEG PAGE64KP
+                  @ECNSTL  m___atof_f
+                                      02072H    00006H
          @EVECT3C                     02078H    00008H  CSEG AT
                   @EVECT3C hal_serial
                                       02078H    00008H
          @ECNSTL                      02080H    00018H  CSEG PAGE64KP
                   @ECNSTL  rtc        02080H    00018H
-* gap *                               02098H    00010H
+         @ECNSTL                      02098H    0000EH  CSEG PAGE64KP
+                  @ECNSTL  purifier   02098H    0000EH
+* gap *                               020A6H    00002H
          @EVECT54                     020A8H    00004H  CSEG AT
                   @EVECT54 flow_meter
                                       020A8H    00004H
@@ -2493,7 +2512,7 @@ Directive: ;MEMORY - PH
                                       020ACH    00014H
          @EVECT60                     020C0H    00004H  CSEG AT
                   @EVECT60 hal_i2c    020C0H    00004H
-         @LECODEL                     020C4H    019FFH  CSEG
+         @LECODEL                     020C4H    02206H  CSEG
                   @LECODEL @cstarte   020C4H    00088H
                   @LECODEL @imul      0214CH    00011H
                   @LECODEL @lmul      0215DH    0002BH
@@ -2531,726 +2550,733 @@ Directive: ;MEMORY - PH
                   @LECODEL m_fdivx    036CEH    00121H
                   @LECODEL m_fcom2    037EFH    0003FH
                   @LECODEL m_flogx    0382EH    000CBH
-                  @LECODEL @lcom      038F9H    0000DH
-                  @LECODEL @ladd      03906H    0000FH
-                  @LECODEL @lsub      03915H    00012H
-                  @LECODEL @llsh      03927H    0001BH
-                  @LECODEL @lursh     03942H    0001FH
-                  @LECODEL @iscmp     03961H    0000CH
-                  @LECODEL @lscmp     0396DH    00014H
-                  @LECODEL @lband     03981H    00014H
-                  @LECODEL @lbor      03995H    00014H
-                  @LECODEL @lbxor     039A9H    00014H
-                  @LECODEL exit       039BDH    0001CH
-                  @LECODEL memcpy_f   039D9H    00032H
-                  @LECODEL strcpy_f   03A0BH    00023H
-                  @LECODEL memcmp_f   03A2EH    00037H
+                  @LECODEL sscanf_f   038F9H    00515H
+                  @LECODEL m___atof_f
+                                      03E0EH    002EDH
+                  @LECODEL @lcom      040FBH    0000DH
+                  @LECODEL @ladd      04108H    0000FH
+                  @LECODEL @lsub      04117H    00012H
+                  @LECODEL @llsh      04129H    0001BH
+                  @LECODEL @lursh     04144H    0001FH
+                  @LECODEL @iscmp     04163H    0000CH
+                  @LECODEL @lscmp     0416FH    00014H
+                  @LECODEL @lband     04183H    00014H
+                  @LECODEL @lbor      04197H    00014H
+                  @LECODEL @lbxor     041ABH    00014H
+                  @LECODEL exit       041BFH    0001CH
+                  @LECODEL memcpy_f   041DBH    00032H
+                  @LECODEL strcpy_f   0420DH    00023H
+                  @LECODEL memcmp_f   04230H    00037H
                   @LECODEL strncmp_f
-                                      03A65H    0002BH
-                  @LECODEL memset_f   03A90H    0001FH
-                  @LECODEL strlen_f   03AAFH    0000EH
-                  @LECODEL putchar    03ABDH    00006H
-* gap *                               03AC3H    00001H
-         @ECNSTL                      03AC4H    000FCH  CSEG PAGE64KP
-                  @ECNSTL  process_sys_event
-                                      03AC4H    000FCH
-         @ECNSTL                      03BC0H    00200H  CSEG PAGE64KP
-                  @ECNSTL  crc16      03BC0H    00200H
-         @ECNSTL                      03DC0H    0003CH  CSEG PAGE64KP
-                  @ECNSTL  parser     03DC0H    0003CH
-         @ECNSTL                      03DFCH    002D6H  CSEG PAGE64KP
+                                      04267H    0002BH
+                  @LECODEL memset_f   04292H    0001FH
+                  @LECODEL strlen_f   042B1H    0000EH
+                  @LECODEL putchar    042BFH    00006H
+                  @LECODEL getchar    042C5H    00005H
+         @ECNSTL                      042CAH    00200H  CSEG PAGE64KP
+                  @ECNSTL  crc16      042CAH    00200H
+         @ECNSTL                      044CAH    0003CH  CSEG PAGE64KP
+                  @ECNSTL  parser     044CAH    0003CH
+         @ECNSTL                      04506H    002D6H  CSEG PAGE64KP
                   @ECNSTL  parser_debug
-                                      03DFCH    002D6H
-         @ECNSTL                      040D2H    00470H  CSEG PAGE64KP
+                                      04506H    002D6H
+         @ECNSTL                      047DCH    00470H  CSEG PAGE64KP
                   @ECNSTL  parser_eol
-                                      040D2H    00470H
-         @ECNSTL                      04542H    00050H  CSEG PAGE64KP
-                  @ECNSTL  display    04542H    00050H
-         @ECNSTL                      04592H    00064H  CSEG PAGE64KP
-                  @ECNSTL  eeprom     04592H    00064H
-         @ECNSTL                      045F6H    00020H  CSEG PAGE64KP
+                                      047DCH    00470H
+         @ECNSTL                      04C4CH    00050H  CSEG PAGE64KP
+                  @ECNSTL  display    04C4CH    00050H
+         @ECNSTL                      04C9CH    00064H  CSEG PAGE64KP
+                  @ECNSTL  eeprom     04C9CH    00064H
+         @ECNSTL                      04D00H    00020H  CSEG PAGE64KP
                   @ECNSTL  eol_lever_handler
-                                      045F6H    00020H
-         @ECNSTL                      04616H    00428H  CSEG PAGE64KP
+                                      04D00H    00020H
+         @ECNSTL                      04D20H    00428H  CSEG PAGE64KP
                   @ECNSTL  key_eol_handler
-                                      04616H    00428H
-         @ECNSTL                      04A3EH    00020H  CSEG PAGE64KP
+                                      04D20H    00428H
+         @ECNSTL                      05148H    00020H  CSEG PAGE64KP
                   @ECNSTL  fct_lever_handler
-                                      04A3EH    00020H
-         @ECNSTL                      04A5EH    001A4H  CSEG PAGE64KP
+                                      05148H    00020H
+         @ECNSTL                      05168H    001A4H  CSEG PAGE64KP
                   @ECNSTL  key_fct_handler
-                                      04A5EH    001A4H
-         @ECNSTL                      04C02H    01088H  CSEG PAGE64KP
+                                      05168H    001A4H
+         @ECNSTL                      0530CH    01088H  CSEG PAGE64KP
                   @ECNSTL  icing_table
-                                      04C02H    01088H
-         @ECNSTL                      05C8AH    0004EH  CSEG PAGE64KP
+                                      0530CH    01088H
+         @ECNSTL                      06394H    0004EH  CSEG PAGE64KP
                   @ECNSTL  drain_pump
-                                      05C8AH    0004EH
-         @ECNSTL                      05CD8H    00018H  CSEG PAGE64KP
+                                      06394H    0004EH
+         @ECNSTL                      063E2H    00018H  CSEG PAGE64KP
                   @ECNSTL  flow_valve
-                                      05CD8H    00018H
-         @ECNSTL                      05CF0H    0002AH  CSEG PAGE64KP
+                                      063E2H    00018H
+         @ECNSTL                      063FAH    0002AH  CSEG PAGE64KP
                   @ECNSTL  hot_water_flow
-                                      05CF0H    0002AH
-         @ECNSTL                      05D1AH    00090H  CSEG PAGE64KP
-                  @ECNSTL  ice_tray   05D1AH    00090H
-         @ECNSTL                      05DAAH    00060H  CSEG PAGE64KP
+                                      063FAH    0002AH
+         @ECNSTL                      06424H    00090H  CSEG PAGE64KP
+                  @ECNSTL  ice_tray   06424H    00090H
+         @ECNSTL                      064B4H    00060H  CSEG PAGE64KP
                   @ECNSTL  lever_handler
-                                      05DAAH    00060H
-         @ECNSTL                      05E0AH    02530H  CSEG PAGE64KP
+                                      064B4H    00060H
+         @ECNSTL                      06514H    02530H  CSEG PAGE64KP
                   @ECNSTL  temp_table
-                                      05E0AH    02530H
-         @ECNSTL                      0833AH    00220H  CSEG PAGE64KP
-                  @ECNSTL  sound      0833AH    00220H
-         @ECNSTL                      0855AH    0009CH  CSEG PAGE64KP
+                                      06514H    02530H
+         @ECNSTL                      08A44H    00220H  CSEG PAGE64KP
+                  @ECNSTL  sound      08A44H    00220H
+         @ECNSTL                      08C64H    0009CH  CSEG PAGE64KP
                   @ECNSTL  cold_water
-                                      0855AH    0009CH
-         @ECNSTL                      085F6H    00024H  CSEG PAGE64KP
+                                      08C64H    0009CH
+         @ECNSTL                      08D00H    00024H  CSEG PAGE64KP
                   @ECNSTL  flush_water_out
-                                      085F6H    00024H
-         @ECNSTL                      0861AH    00018H  CSEG PAGE64KP
+                                      08D00H    00024H
+         @ECNSTL                      08D24H    00018H  CSEG PAGE64KP
                   @ECNSTL  hot_water
-                                      0861AH    00018H
-         @ECNSTL                      08632H    00036H  CSEG PAGE64KP
+                                      08D24H    00018H
+         @ECNSTL                      08D3CH    00036H  CSEG PAGE64KP
                   @ECNSTL  water_out_common
-                                      08632H    00036H
-         @ECNSTL                      08668H    00108H  CSEG PAGE64KP
+                                      08D3CH    00036H
+         @ECNSTL                      08D72H    00108H  CSEG PAGE64KP
                   @ECNSTL  WIFI_DataCheck
-                                      08668H    00108H
-         @ECNSTL                      08770H    000B4H  CSEG PAGE64KP
+                                      08D72H    00108H
+         @ECNSTL                      08E7AH    000B4H  CSEG PAGE64KP
                   @ECNSTL  WIFI_Initialize
-                                      08770H    000B4H
-         @ECNSTL                      08824H    0006EH  CSEG PAGE64KP
+                                      08E7AH    000B4H
+         @ECNSTL                      08F2EH    0006EH  CSEG PAGE64KP
                   @ECNSTL  WIFI_Fota
-                                      08824H    0006EH
-         @ECNSTL                      08892H    00408H  CSEG PAGE64KP
+                                      08F2EH    0006EH
+         @ECNSTL                      08F9CH    00408H  CSEG PAGE64KP
                   @ECNSTL  WIFI_RxProcess
-                                      08892H    00408H
-         @ECNSTL                      08C9AH    00138H  CSEG PAGE64KP
+                                      08F9CH    00408H
+         @ECNSTL                      093A4H    00138H  CSEG PAGE64KP
                   @ECNSTL  WIFI_RxServer
-                                      08C9AH    00138H
-         @ECNSTL                      08DD2H    0005AH  CSEG PAGE64KP
+                                      093A4H    00138H
+         @ECNSTL                      094DCH    0005AH  CSEG PAGE64KP
                   @ECNSTL  WIFI_SetAccumulateData
-                                      08DD2H    0005AH
-         @ECNSTL                      08E2CH    00424H  CSEG PAGE64KP
+                                      094DCH    0005AH
+         @ECNSTL                      09536H    00424H  CSEG PAGE64KP
                   @ECNSTL  WIFI_SetErrorData
-                                      08E2CH    00424H
-         @ECNSTL                      09250H    00370H  CSEG PAGE64KP
+                                      09536H    00424H
+         @ECNSTL                      0995AH    00370H  CSEG PAGE64KP
                   @ECNSTL  WIFI_SetFunctionData
-                                      09250H    00370H
-         @ECNSTL                      095C0H    002B2H  CSEG PAGE64KP
+                                      0995AH    00370H
+         @ECNSTL                      09CCAH    002B2H  CSEG PAGE64KP
                   @ECNSTL  WIFI_SetInformationData
-                                      095C0H    002B2H
-         @ECNSTL                      09872H    00758H  CSEG PAGE64KP
+                                      09CCAH    002B2H
+         @ECNSTL                      09F7CH    00758H  CSEG PAGE64KP
                   @ECNSTL  WIFI_SetPartData
-                                      09872H    00758H
-         @ECNSTL                      09FCAH    000BEH  CSEG PAGE64KP
+                                      09F7CH    00758H
+         @ECNSTL                      0A6D4H    000BEH  CSEG PAGE64KP
                   @ECNSTL  WIFI_SetSensorData
-                                      09FCAH    000BEH
-         @ECNSTL                      0A088H    00898H  CSEG PAGE64KP
+                                      0A6D4H    000BEH
+         @ECNSTL                      0A792H    00898H  CSEG PAGE64KP
                   @ECNSTL  WIFI_TxForm
-                                      0A088H    00898H
-         @ECNSTL                      0A920H    00058H  CSEG PAGE64KP
+                                      0A792H    00898H
+         @ECNSTL                      0B02AH    00058H  CSEG PAGE64KP
                   @ECNSTL  WIFI_UserInterface_IconAIS
-                                      0A920H    00058H
-         @ECNSTL                      0A978H    00032H  CSEG PAGE64KP
+                                      0B02AH    00058H
+         @ECNSTL                      0B082H    00032H  CSEG PAGE64KP
                   @ECNSTL  diagnosis_24v
-                                      0A978H    00032H
-         @ECNSTL                      0A9AAH    00032H  CSEG PAGE64KP
+                                      0B082H    00032H
+         @ECNSTL                      0B0B4H    00032H  CSEG PAGE64KP
                   @ECNSTL  diagnosis_feedback
-                                      0A9AAH    00032H
-         @ECNSTL                      0A9DCH    00028H  CSEG PAGE64KP
+                                      0B0B4H    00032H
+         @ECNSTL                      0B0E6H    00028H  CSEG PAGE64KP
                   @ECNSTL  diagnosis_sensor
-                                      0A9DCH    00028H
-         @ECNSTL                      0AA04H    000A8H  CSEG PAGE64KP
+                                      0B0E6H    00028H
+         @ECNSTL                      0B10EH    000A8H  CSEG PAGE64KP
                   @ECNSTL  WIFI_MonitorFixRAM
-                                      0AA04H    000A8H
-         @ECNSTL                      0AAACH    000CEH  CSEG PAGE64KP
-                  @ECNSTL  m_fcom5    0AAACH    000CEH
-         @ECNSTL                      0AB7AH    00012H  CSEG PAGE64KP
+                                      0B10EH    000A8H
+         @ECNSTL                      0B1B6H    000FCH  CSEG PAGE64KP
+                  @ECNSTL  process_sys_event
+                                      0B1B6H    000FCH
+         @ECNSTL                      0B2B2H    000CEH  CSEG PAGE64KP
+                  @ECNSTL  m_fcom5    0B2B2H    000CEH
+         @ECNSTL                      0B380H    00012H  CSEG PAGE64KP
                   @ECNSTL  m___ftoa_f
-                                      0AB7AH    00012H
-         @ECNSTL                      0AB8CH    00078H  CSEG PAGE64KP
-                  @ECNSTL  m_fexpx    0AB8CH    00078H
-         @ECNSTL                      0AC04H    0001EH  CSEG PAGE64KP
-                  @ECNSTL  m_flogx    0AC04H    0001EH
-         @ERLINIT                     0AC22H    0167EH  CSEG UNIT64KP
-                  @ERLINIT @cstarte   0AC22H    00000H
-                  @ERLINIT main       0AC22H    00000H
-                  @ERLINIT process_sys_event
-                                      0AC22H    00004H
-                  @ERLINIT util       0AC26H    00000H
-                  @ERLINIT comm       0AC26H    00000H
-                  @ERLINIT crc16      0AC26H    00000H
-                  @ERLINIT parser     0AC26H    00004H
+                                      0B380H    00012H
+         @ECNSTL                      0B392H    00078H  CSEG PAGE64KP
+                  @ECNSTL  m_fexpx    0B392H    00078H
+         @ECNSTL                      0B40AH    0001EH  CSEG PAGE64KP
+                  @ECNSTL  m_flogx    0B40AH    0001EH
+         @ERLINIT                     0B428H    01954H  CSEG UNIT64KP
+                  @ERLINIT @cstarte   0B428H    00000H
+                  @ERLINIT comm       0B428H    00000H
+                  @ERLINIT crc16      0B428H    00000H
+                  @ERLINIT parser     0B428H    00004H
                   @ERLINIT parser_comp
-                                      0AC2AH    00002H
+                                      0B42CH    00002H
                   @ERLINIT parser_debug
-                                      0AC2CH    00000H
+                                      0B42EH    00000H
                   @ERLINIT parser_eol
-                                      0AC2CH    00000H
+                                      0B42EH    00000H
                   @ERLINIT parser_front
-                                      0AC2CH    0000AH
-                  @ERLINIT display    0AC36H    0000EH
+                                      0B42EH    0000AH
+                  @ERLINIT display    0B438H    0000EH
                   @ERLINIT display_eol
-                                      0AC44H    00006H
+                                      0B446H    00006H
                   @ERLINIT display_error
-                                      0AC4AH    00016H
+                                      0B44CH    00016H
                   @ERLINIT display_lib
-                                      0AC60H    00000H
-                  @ERLINIT front      0AC60H    00006H
+                                      0B462H    00000H
+                  @ERLINIT front      0B462H    00006H
                   @ERLINIT process_display
-                                      0AC66H    0007EH
-                  @ERLINIT drain      0ACE4H    00002H
-                  @ERLINIT eeprom     0ACE6H    00050H
-                  @ERLINIT rtc        0AD36H    00000H
-                  @ERLINIT eol        0AD36H    00000H
+                                      0B468H    0007EH
+                  @ERLINIT drain      0B4E6H    00002H
+                  @ERLINIT eeprom     0B4E8H    00050H
+                  @ERLINIT rtc        0B538H    00000H
+                  @ERLINIT eol        0B538H    00000H
                   @ERLINIT eol_lever_handler
-                                      0AD36H    00000H
+                                      0B538H    00000H
                   @ERLINIT key_eol_handler
-                                      0AD36H    00000H
+                                      0B538H    00000H
                   @ERLINIT process_eol
-                                      0AD36H    0001CH
-                  @ERLINIT error      0AD52H    00000H
+                                      0B538H    0001CH
+                  @ERLINIT error      0B554H    00000H
                   @ERLINIT err_comp_bldc
-                                      0AD52H    00000H
+                                      0B554H    00000H
                   @ERLINIT err_comp_bldc_comm
-                                      0AD52H    00000H
+                                      0B554H    00000H
                   @ERLINIT err_drain_pump
-                                      0AD52H    00000H
+                                      0B554H    00000H
                   @ERLINIT err_ice_tray
-                                      0AD52H    00000H
-                  @ERLINIT err_leak   0AD52H    00000H
+                                      0B554H    00000H
+                  @ERLINIT err_leak   0B554H    00000H
                   @ERLINIT err_outage_hot_water
-                                      0AD52H    00002H
+                                      0B554H    00002H
                   @ERLINIT err_outage_water
-                                      0AD54H    00002H
-                  @ERLINIT err_temp   0AD56H    00000H
+                                      0B556H    00002H
+                  @ERLINIT err_temp   0B558H    00000H
                   @ERLINIT err_temp_ambient
-                                      0AD56H    00004H
+                                      0B558H    00004H
                   @ERLINIT err_temp_cold_water
-                                      0AD5AH    00004H
+                                      0B55CH    00004H
                   @ERLINIT err_temp_eva_1
-                                      0AD5EH    00004H
+                                      0B560H    00004H
                   @ERLINIT err_temp_heater
-                                      0AD62H    00004H
+                                      0B564H    00004H
                   @ERLINIT err_temp_hot_overheat
-                                      0AD66H    00002H
+                                      0B568H    00002H
                   @ERLINIT err_temp_hot_water
-                                      0AD68H    00004H
+                                      0B56AH    00004H
                   @ERLINIT err_temp_hot_water_in
-                                      0AD6CH    00004H
+                                      0B56EH    00004H
                   @ERLINIT err_temp_room_water
-                                      0AD70H    00004H
+                                      0B572H    00004H
                   @ERLINIT process_error
-                                      0AD74H    00154H
-                  @ERLINIT fct        0AEC8H    00000H
+                                      0B576H    00154H
+                  @ERLINIT fct        0B6CAH    00000H
                   @ERLINIT fct_lever_handler
-                                      0AEC8H    00000H
+                                      0B6CAH    00000H
                   @ERLINIT key_fct_handler
-                                      0AEC8H    00000H
+                                      0B6CAH    00000H
                   @ERLINIT process_fct
-                                      0AEC8H    00012H
-                  @ERLINIT filter     0AEDAH    00008H
-                  @ERLINIT hal_adc    0AEE2H    00140H
+                                      0B6CAH    00012H
+                  @ERLINIT filter     0B6DCH    00008H
+                  @ERLINIT hal_adc    0B6E4H    00140H
                   @ERLINIT hal_eeprom
-                                      0B022H    00000H
+                                      0B824H    00000H
                   @ERLINIT hal_fan_motor
-                                      0B022H    00000H
-                  @ERLINIT hal_i2c    0B022H    00020H
+                                      0B824H    00000H
+                  @ERLINIT hal_i2c    0B824H    00020H
                   @ERLINIT hal_input
-                                      0B042H    00050H
-                  @ERLINIT hal_key    0B092H    00000H
-                  @ERLINIT hal_led    0B092H    00000H
+                                      0B844H    00050H
+                  @ERLINIT hal_key    0B894H    00000H
+                  @ERLINIT hal_led    0B894H    00000H
                   @ERLINIT hal_level
-                                      0B092H    00000H
-                  @ERLINIT hal_pump   0B092H    00000H
+                                      0B894H    00000H
+                  @ERLINIT hal_pump   0B894H    00000H
                   @ERLINIT hal_relay
-                                      0B092H    00000H
+                                      0B894H    00000H
                   @ERLINIT hal_serial
-                                      0B092H    00004H
+                                      0B894H    00004H
                   @ERLINIT hal_step_motor
-                                      0B096H    0001CH
-                  @ERLINIT hal_uv     0B0B2H    00002H
+                                      0B898H    0001CH
+                  @ERLINIT hal_uv     0B8B4H    00002H
                   @ERLINIT hal_valve
-                                      0B0B4H    00000H
+                                      0B8B6H    00000H
                   @ERLINIT drain_water
-                                      0B0B4H    00008H
-                  @ERLINIT health     0B0BCH    00002H
+                                      0B8B6H    00008H
+                  @ERLINIT health     0B8BEH    00002H
                   @ERLINIT health_maker
-                                      0B0BEH    00000H
+                                      0B8C0H    00000H
                   @ERLINIT process_uv
-                                      0B0BEH    00026H
-                  @ERLINIT uv         0B0E4H    0007EH
+                                      0B8C0H    00026H
+                  @ERLINIT uv         0B8E6H    0007EH
                   @ERLINIT deicing_table
-                                      0B162H    0001EH
+                                      0B964H    0001EH
                   @ERLINIT dummy_deicing_table
-                                      0B180H    00000H
-                  @ERLINIT ice        0B180H    00002H
+                                      0B982H    00000H
+                  @ERLINIT ice        0B982H    00002H
                   @ERLINIT ice_maker
-                                      0B182H    00066H
+                                      0B984H    00066H
                   @ERLINIT icing_table
-                                      0B1E8H    00000H
-                  @ERLINIT comp       0B1E8H    00004H
+                                      0B9EAH    00000H
+                  @ERLINIT comp       0B9EAH    00004H
                   @ERLINIT comp_bldc
-                                      0B1ECH    00002H
+                                      0B9EEH    00002H
                   @ERLINIT drain_pump
-                                      0B1EEH    00000H
+                                      0B9F0H    00000H
                   @ERLINIT fan_motor
-                                      0B1EEH    00000H
+                                      0B9F0H    00000H
                   @ERLINIT flow_meter
-                                      0B1EEH    00000H
+                                      0B9F0H    00000H
                   @ERLINIT flow_valve
-                                      0B1EEH    00002H
+                                      0B9F0H    00002H
                   @ERLINIT gas_switch_valve
-                                      0B1F0H    00004H
+                                      0B9F2H    00004H
                   @ERLINIT heater_out
-                                      0B1F4H    00010H
+                                      0B9F6H    00010H
                   @ERLINIT hot_water_flow
-                                      0B204H    00010H
+                                      0BA06H    00010H
                   @ERLINIT hot_water_heater
-                                      0B214H    00002H
-                  @ERLINIT ice_door   0B216H    00006H
-                  @ERLINIT ice_full   0B21CH    00000H
-                  @ERLINIT ice_tray   0B21CH    00004H
-                  @ERLINIT leak       0B220H    00000H
+                                      0BA16H    00002H
+                  @ERLINIT ice_door   0BA18H    00006H
+                  @ERLINIT ice_full   0BA1EH    00000H
+                  @ERLINIT ice_tray   0BA1EH    00004H
+                  @ERLINIT leak       0BA22H    00000H
                   @ERLINIT process_make
-                                      0B220H    00006H
-                  @ERLINIT relay      0B226H    00000H
-                  @ERLINIT smps       0B226H    00000H
+                                      0BA22H    00006H
+                  @ERLINIT relay      0BA28H    00000H
+                  @ERLINIT smps       0BA28H    00000H
                   @ERLINIT swing_bar
-                                      0B226H    00000H
-                  @ERLINIT valve      0B226H    00000H
-                  @ERLINIT energy     0B226H    00006H
-                  @ERLINIT user       0B22CH    00000H
-                  @ERLINIT key        0B22CH    00014H
+                                      0BA28H    00000H
+                  @ERLINIT valve      0BA28H    00000H
+                  @ERLINIT energy     0BA28H    00006H
+                  @ERLINIT user       0BA2EH    00000H
+                  @ERLINIT key        0BA2EH    00014H
                   @ERLINIT key_event_lib
-                                      0B240H    00004H
+                                      0BA42H    00004H
                   @ERLINIT key_handler
-                                      0B244H    0000AH
+                                      0BA46H    0000AH
                   @ERLINIT key_normal_handler
-                                      0B24EH    006E8H
+                                      0BA50H    006E8H
                   @ERLINIT process_key
-                                      0B936H    00008H
-                  @ERLINIT lever      0B93EH    00000H
+                                      0C138H    00008H
+                  @ERLINIT lever      0C140H    00000H
                   @ERLINIT lever_handler
-                                      0B93EH    00000H
+                                      0C140H    00000H
                   @ERLINIT process_lever
-                                      0B93EH    00006H
-                  @ERLINIT metering   0B944H    00000H
+                                      0C140H    00006H
+                  @ERLINIT metering   0C146H    00000H
                   @ERLINIT power_saving
-                                      0B944H    00000H
-                  @ERLINIT level      0B944H    0000CH
-                  @ERLINIT temp       0B950H    0009EH
+                                      0C146H    00000H
+                  @ERLINIT level      0C146H    0000CH
+                  @ERLINIT temp       0C152H    0009EH
                   @ERLINIT temp_table
-                                      0B9EEH    00000H
+                                      0C1F0H    00000H
                   @ERLINIT ice_tray_test
-                                      0B9EEH    00000H
-                  @ERLINIT service    0B9EEH    00002H
-                  @ERLINIT sound      0B9F0H    00002H
-                  @ERLINIT voice      0B9F2H    00000H
-                  @ERLINIT timer      0B9F2H    00004H
+                                      0C1F0H    00000H
+                  @ERLINIT service    0C1F0H    00002H
+                  @ERLINIT sound      0C1F2H    00002H
+                  @ERLINIT voice      0C1F4H    00000H
+                  @ERLINIT timer      0C1F4H    00004H
                   @ERLINIT time_short
-                                      0B9F6H    00002H
+                                      0C1F8H    00002H
                   @ERLINIT cold_water
-                                      0B9F8H    00004H
+                                      0C1FAH    00004H
                   @ERLINIT cold_water_out
-                                      0B9FCH    00000H
+                                      0C1FEH    00000H
                   @ERLINIT flush_water_out
-                                      0B9FCH    0004AH
+                                      0C1FEH    0004AH
                   @ERLINIT hot_water
-                                      0BA46H    00030H
+                                      0C248H    00030H
                   @ERLINIT hot_water_out
-                                      0BA76H    00058H
+                                      0C278H    00058H
                   @ERLINIT room_water_out
-                                      0BACEH    00000H
+                                      0C2D0H    00000H
                   @ERLINIT water_out
-                                      0BACEH    00000H
+                                      0C2D0H    00000H
                   @ERLINIT water_out_common
-                                      0BACEH    00000H
-                  @ERLINIT r_cg_adc   0BACEH    00000H
-                  @ERLINIT r_cg_cgc   0BACEH    00000H
+                                      0C2D0H    00000H
+                  @ERLINIT r_cg_adc   0C2D0H    00000H
+                  @ERLINIT r_cg_cgc   0C2D0H    00000H
                   @ERLINIT r_cg_cgc_user
-                                      0BACEH    00002H
+                                      0C2D0H    00002H
                   @ERLINIT r_cg_intc
-                                      0BAD0H    00000H
+                                      0C2D2H    00000H
                   @ERLINIT r_cg_port
-                                      0BAD0H    00000H
+                                      0C2D2H    00000H
                   @ERLINIT r_cg_serial
-                                      0BAD0H    00000H
+                                      0C2D2H    00000H
                   @ERLINIT r_cg_timer
-                                      0BAD0H    00000H
-                  @ERLINIT r_cg_wdt   0BAD0H    00000H
+                                      0C2D2H    00000H
+                  @ERLINIT r_cg_wdt   0C2D2H    00000H
                   @ERLINIT r_cg_wdt_user
-                                      0BAD0H    00000H
+                                      0C2D2H    00000H
                   @ERLINIT r_systeminit
-                                      0BAD0H    00000H
+                                      0C2D2H    00000H
                   @ERLINIT WIFI_DataCheck
-                                      0BAD0H    00002H
+                                      0C2D2H    00002H
                   @ERLINIT WIFI_Initialize
-                                      0BAD2H    00002H
+                                      0C2D4H    00002H
                   @ERLINIT WIFI_ProcessApmode
-                                      0BAD4H    00000H
+                                      0C2D6H    00000H
                   @ERLINIT WIFI_Status
-                                      0BAD4H    00000H
+                                      0C2D6H    00000H
                   @ERLINIT WIFI_UartInterrupt
-                                      0BAD4H    00000H
+                                      0C2D6H    00000H
                   @ERLINIT WIFI_Fota
-                                      0BAD4H    00000H
+                                      0C2D6H    00000H
                   @ERLINIT WIFI_RxProcess
-                                      0BAD4H    00002H
+                                      0C2D6H    00002H
                   @ERLINIT WIFI_RxServer
-                                      0BAD6H    00000H
+                                      0C2D8H    00000H
                   @ERLINIT WIFI_SetAccumulateData
-                                      0BAD6H    00000H
+                                      0C2D8H    00000H
                   @ERLINIT WIFI_SetCommon
-                                      0BAD6H    00000H
+                                      0C2D8H    00000H
                   @ERLINIT WIFI_SetErrorData
-                                      0BAD6H    00000H
+                                      0C2D8H    00000H
                   @ERLINIT WIFI_SetFunctionData
-                                      0BAD6H    00000H
+                                      0C2D8H    00000H
                   @ERLINIT WIFI_SetInformationData
-                                      0BAD6H    00000H
+                                      0C2D8H    00000H
                   @ERLINIT WIFI_SetPartData
-                                      0BAD6H    00000H
+                                      0C2D8H    00000H
                   @ERLINIT WIFI_SetSensorData
-                                      0BAD6H    00000H
+                                      0C2D8H    00000H
                   @ERLINIT WIFI_TxForm
-                                      0BAD6H    00000H
+                                      0C2D8H    00000H
                   @ERLINIT WIFI_TxMake
-                                      0BAD6H    00000H
+                                      0C2D8H    00000H
                   @ERLINIT WIFI_TxProtocol
-                                      0BAD6H    00002H
+                                      0C2D8H    00002H
                   @ERLINIT WIFI_Common
-                                      0BAD8H    00000H
+                                      0C2DAH    00000H
                   @ERLINIT WIFI_Control
-                                      0BAD8H    00002H
+                                      0C2DAH    00002H
                   @ERLINIT WIFI_UserInterface
-                                      0BADAH    00000H
+                                      0C2DCH    00000H
                   @ERLINIT WIFI_UserInterface_IconAIS
-                                      0BADAH    0011AH
-                  @ERLINIT cody_kit   0BBF4H    00000H
+                                      0C2DCH    0011AH
+                  @ERLINIT cody_kit   0C3F6H    00000H
                   @ERLINIT cody_water_out
-                                      0BBF4H    00000H
+                                      0C3F6H    00000H
                   @ERLINIT empty_cold_tank
-                                      0BBF4H    00002H
+                                      0C3F6H    00002H
                   @ERLINIT display_clock
-                                      0BBF6H    00002H
+                                      0C3F8H    00002H
                   @ERLINIT smart_check
-                                      0BBF8H    001A4H
+                                      0C3FAH    001A4H
                   @ERLINIT heater_table
-                                      0BD9CH    00000H
+                                      0C59EH    00000H
                   @ERLINIT diagnosis
-                                      0BD9CH    00000H
+                                      0C59EH    00000H
                   @ERLINIT monitoring
-                                      0BD9CH    0015AH
+                                      0C59EH    0015AH
                   @ERLINIT hot_water_temp_table
-                                      0BEF6H    00360H
+                                      0C6F8H    00360H
                   @ERLINIT diagnosis_12v
-                                      0C256H    00000H
+                                      0CA58H    00000H
                   @ERLINIT diagnosis_24v
-                                      0C256H    00000H
+                                      0CA58H    00000H
                   @ERLINIT diagnosis_feedback
-                                      0C256H    00000H
+                                      0CA58H    00000H
                   @ERLINIT diagnosis_sensor
-                                      0C256H    00000H
+                                      0CA58H    00000H
                   @ERLINIT diagnosis_ac
-                                      0C256H    00028H
+                                      0CA58H    00028H
                   @ERLINIT hot_water_out_preheat
-                                      0C27EH    00006H
+                                      0CA80H    00006H
                   @ERLINIT WIFI_SetMonitorData
-                                      0C284H    00000H
+                                      0CA86H    00000H
                   @ERLINIT WIFI_MonitorFixRAM
-                                      0C284H    0001CH
-                  @ERLINIT @rome      0C2A0H    00000H
-         @ECODEL                      0C2A0H    275B4H  CSEG
-                  @ECODEL  main       0C2A0H    00145H
-                  @ECODEL  process_sys_event
-                                      0C3E5H    007B2H
-                  @ECODEL  util       0CB97H    0020CH
-                  @ECODEL  comm       0CDA3H    000C7H
-                  @ECODEL  crc16      0CE6AH    0009CH
-                  @ECODEL  parser     0CF06H    001F9H
+                                      0CA86H    0001CH
+                  @ERLINIT led        0CAA2H    002D6H
+                  @ERLINIT main       0CD78H    00000H
+                  @ERLINIT process_sys_event
+                                      0CD78H    00004H
+                  @ERLINIT purifier   0CD7CH    00000H
+                  @ERLINIT util       0CD7CH    00000H
+                  @ERLINIT @rome      0CD7CH    00000H
+         @ECODEL                      0CD7CH    27862H  CSEG
+                  @ECODEL  comm       0CD7CH    000C7H
+                  @ECODEL  crc16      0CE43H    0009CH
+                  @ECODEL  parser     0CEDFH    001F9H
                   @ECODEL  parser_comp
-                                      0D0FFH    001BEH
+                                      0D0D8H    001BEH
                   @ECODEL  parser_debug
-                                      0D2BDH    00CD6H
+                                      0D296H    00CD6H
                   @ECODEL  parser_eol
-                                      0DF93H    01694H
+                                      0DF6CH    01694H
                   @ECODEL  parser_front
-                                      0F627H    00895H
-                  @ECODEL  display    0FEBCH    019D1H
+                                      0F600H    00739H
+                  @ECODEL  display    0FD39H    019D1H
                   @ECODEL  display_eol
-                                      1188DH    00846H
+                                      1170AH    00846H
                   @ECODEL  display_error
-                                      120D3H    0010DH
+                                      11F50H    0010DH
                   @ECODEL  display_lib
-                                      121E0H    000F5H
-                  @ECODEL  front      122D5H    00205H
+                                      1205DH    000F5H
+                  @ECODEL  front      12152H    00205H
                   @ECODEL  process_display
-                                      124DAH    011A8H
-                  @ECODEL  drain      13682H    001EFH
-                  @ECODEL  eeprom     13871H    00EF3H
-                  @ECODEL  rtc        14764H    006C1H
-                  @ECODEL  eol        14E25H    00223H
+                                      12357H    011A8H
+                  @ECODEL  drain      134FFH    001EFH
+                  @ECODEL  eeprom     136EEH    00EF3H
+                  @ECODEL  rtc        145E1H    006C1H
+                  @ECODEL  eol        14CA2H    00223H
                   @ECODEL  eol_lever_handler
-                                      15048H    00118H
+                                      14EC5H    00118H
                   @ECODEL  key_eol_handler
-                                      15160H    0028EH
+                                      14FDDH    0028EH
                   @ECODEL  process_eol
-                                      153EEH    0078AH
-                  @ECODEL  error      15B78H    00650H
+                                      1526BH    0078AH
+                  @ECODEL  error      159F5H    00650H
                   @ECODEL  err_comp_bldc
-                                      161C8H    00401H
+                                      16045H    00401H
                   @ECODEL  err_comp_bldc_comm
-                                      165C9H    0007BH
+                                      16446H    0007BH
                   @ECODEL  err_drain_pump
-                                      16644H    00009H
+                                      164C1H    00009H
                   @ECODEL  err_ice_tray
-                                      1664DH    00012H
-                  @ECODEL  err_leak   1665FH    00012H
+                                      164CAH    00012H
+                  @ECODEL  err_leak   164DCH    00012H
                   @ECODEL  err_outage_hot_water
-                                      16671H    00041H
+                                      164EEH    00041H
                   @ECODEL  err_outage_water
-                                      166B2H    0003BH
-                  @ECODEL  err_temp   166EDH    000B6H
+                                      1652FH    0003BH
+                  @ECODEL  err_temp   1656AH    000B6H
                   @ECODEL  err_temp_ambient
-                                      167A3H    00031H
+                                      16620H    00031H
                   @ECODEL  err_temp_cold_water
-                                      167D4H    00051H
+                                      16651H    00051H
                   @ECODEL  err_temp_eva_1
-                                      16825H    00032H
+                                      166A2H    00032H
                   @ECODEL  err_temp_heater
-                                      16857H    00030H
+                                      166D4H    00030H
                   @ECODEL  err_temp_hot_overheat
-                                      16887H    000FCH
+                                      16704H    000FCH
                   @ECODEL  err_temp_hot_water
-                                      16983H    00030H
+                                      16800H    00030H
                   @ECODEL  err_temp_hot_water_in
-                                      169B3H    00032H
+                                      16830H    00032H
                   @ECODEL  err_temp_room_water
-                                      169E5H    0003CH
+                                      16862H    0003CH
                   @ECODEL  process_error
-                                      16A21H    001D1H
-                  @ECODEL  fct        16BF2H    00128H
+                                      1689EH    001D1H
+                  @ECODEL  fct        16A6FH    00128H
                   @ECODEL  fct_lever_handler
-                                      16D1AH    00056H
+                                      16B97H    00056H
                   @ECODEL  key_fct_handler
-                                      16D70H    000E6H
+                                      16BEDH    000E6H
                   @ECODEL  process_fct
-                                      16E56H    00A84H
-                  @ECODEL  filter     178DAH    002CDH
-                  @ECODEL  hal_adc    17BA7H    003D2H
+                                      16CD3H    00A84H
+                  @ECODEL  filter     17757H    002CDH
+                  @ECODEL  hal_adc    17A24H    003D2H
                   @ECODEL  hal_eeprom
-                                      17F79H    005A0H
+                                      17DF6H    005A0H
                   @ECODEL  hal_fan_motor
-                                      18519H    00008H
-                  @ECODEL  hal_i2c    18521H    00442H
+                                      18396H    00008H
+                  @ECODEL  hal_i2c    1839EH    00442H
                   @ECODEL  hal_input
-                                      18963H    00144H
-                  @ECODEL  hal_key    18AA7H    00060H
-                  @ECODEL  hal_led    18B07H    002B0H
+                                      187E0H    00144H
+                  @ECODEL  hal_key    18924H    00060H
+                  @ECODEL  hal_led    18984H    002B0H
                   @ECODEL  hal_level
-                                      18DB7H    00017H
-                  @ECODEL  hal_pump   18DCEH    000E0H
+                                      18C34H    00017H
+                  @ECODEL  hal_pump   18C4BH    000E0H
                   @ECODEL  hal_relay
-                                      18EAEH    00064H
+                                      18D2BH    00064H
                   @ECODEL  hal_serial
-                                      18F12H    006EFH
+                                      18D8FH    006EFH
                   @ECODEL  hal_step_motor
-                                      19601H    00795H
-                  @ECODEL  hal_uv     19D96H    0009AH
+                                      1947EH    00795H
+                  @ECODEL  hal_uv     19C13H    0009AH
                   @ECODEL  hal_valve
-                                      19E30H    00122H
+                                      19CADH    00122H
                   @ECODEL  drain_water
-                                      19F52H    00243H
-                  @ECODEL  health     1A195H    004F7H
+                                      19DCFH    00243H
+                  @ECODEL  health     1A012H    004F7H
                   @ECODEL  health_maker
-                                      1A68CH    0013AH
+                                      1A509H    0013AH
                   @ECODEL  process_uv
-                                      1A7C6H    00346H
-                  @ECODEL  uv         1AB0CH    004ADH
+                                      1A643H    00346H
+                  @ECODEL  uv         1A989H    004ADH
                   @ECODEL  deicing_table
-                                      1AFB9H    001B2H
+                                      1AE36H    001B2H
                   @ECODEL  dummy_deicing_table
-                                      1B16BH    00007H
-                  @ECODEL  ice        1B172H    003E0H
+                                      1AFE8H    00007H
+                  @ECODEL  ice        1AFEFH    003E0H
                   @ECODEL  ice_maker
-                                      1B552H    010DEH
+                                      1B3CFH    010DEH
                   @ECODEL  icing_table
-                                      1C630H    00137H
-                  @ECODEL  comp       1C767H    0029DH
+                                      1C4ADH    00137H
+                  @ECODEL  comp       1C5E4H    0029DH
                   @ECODEL  comp_bldc
-                                      1CA04H    0026DH
+                                      1C881H    0026DH
                   @ECODEL  drain_pump
-                                      1CC71H    001B9H
+                                      1CAEEH    001B9H
                   @ECODEL  fan_motor
-                                      1CE2AH    00098H
+                                      1CCA7H    00098H
                   @ECODEL  flow_meter
-                                      1CEC2H    00385H
+                                      1CD3FH    00385H
                   @ECODEL  flow_valve
-                                      1D247H    0043FH
+                                      1D0C4H    0043FH
                   @ECODEL  gas_switch_valve
-                                      1D686H    0056DH
+                                      1D503H    0056DH
                   @ECODEL  heater_out
-                                      1DBF3H    004AAH
+                                      1DA70H    004AAH
                   @ECODEL  hot_water_flow
-                                      1E09DH    00A48H
+                                      1DF1AH    00A48H
                   @ECODEL  hot_water_heater
-                                      1EAE5H    0079BH
-                  @ECODEL  ice_door   1F280H    00486H
-                  @ECODEL  ice_full   1F706H    000F4H
-                  @ECODEL  ice_tray   1F7FAH    008A9H
-                  @ECODEL  leak       200A3H    000D5H
+                                      1E962H    0079BH
+                  @ECODEL  ice_door   1F0FDH    00486H
+                  @ECODEL  ice_full   1F583H    000F4H
+                  @ECODEL  ice_tray   1F677H    008A9H
+                  @ECODEL  leak       1FF20H    000D5H
                   @ECODEL  process_make
-                                      20178H    0036BH
-                  @ECODEL  relay      204E3H    00204H
-                  @ECODEL  smps       206E7H    00046H
+                                      1FFF5H    0036BH
+                  @ECODEL  relay      20360H    00204H
+                  @ECODEL  smps       20564H    00046H
                   @ECODEL  swing_bar
-                                      2072DH    000AFH
-                  @ECODEL  valve      207DCH    00150H
-                  @ECODEL  energy     2092CH    00292H
-                  @ECODEL  user       20BBEH    00176H
-                  @ECODEL  key        20D34H    0015CH
+                                      205AAH    000AFH
+                  @ECODEL  valve      20659H    00150H
+                  @ECODEL  energy     207A9H    00292H
+                  @ECODEL  user       20A3BH    00176H
+                  @ECODEL  key        20BB1H    0015CH
                   @ECODEL  key_event_lib
-                                      20E90H    000C2H
+                                      20D0DH    000C2H
                   @ECODEL  key_handler
-                                      20F52H    00078H
+                                      20DCFH    00078H
                   @ECODEL  key_normal_handler
-                                      20FCAH    0101EH
+                                      20E47H    0101EH
                   @ECODEL  process_key
-                                      21FE8H    004E6H
-                  @ECODEL  lever      224CEH    001D0H
+                                      21E65H    004E6H
+                  @ECODEL  lever      2234BH    001D0H
                   @ECODEL  lever_handler
-                                      2269EH    002C7H
+                                      2251BH    002C7H
                   @ECODEL  process_lever
-                                      22965H    00375H
-                  @ECODEL  metering   22CDAH    00195H
+                                      227E2H    00375H
+                  @ECODEL  metering   22B57H    00195H
                   @ECODEL  power_saving
-                                      22E6FH    00263H
-                  @ECODEL  level      230D2H    00225H
-                  @ECODEL  temp       232F7H    00328H
+                                      22CECH    00263H
+                  @ECODEL  level      22F4FH    00225H
+                  @ECODEL  temp       23174H    00328H
                   @ECODEL  temp_table
-                                      2361FH    001C5H
+                                      2349CH    001C5H
                   @ECODEL  ice_tray_test
-                                      237E4H    00290H
-                  @ECODEL  service    23A74H    0026CH
-                  @ECODEL  sound      23CE0H    000F9H
-                  @ECODEL  voice      23DD9H    00097H
-                  @ECODEL  timer      23E70H    00184H
+                                      23661H    00290H
+                  @ECODEL  service    238F1H    0026CH
+                  @ECODEL  sound      23B5DH    000F9H
+                  @ECODEL  voice      23C56H    00097H
+                  @ECODEL  timer      23CEDH    00184H
                   @ECODEL  time_short
-                                      23FF4H    00125H
+                                      23E71H    00125H
                   @ECODEL  cold_water
-                                      24119H    00665H
+                                      23F96H    00665H
                   @ECODEL  cold_water_out
-                                      2477EH    002B6H
+                                      245FBH    002B6H
                   @ECODEL  flush_water_out
-                                      24A34H    010E1H
+                                      248B1H    010E1H
                   @ECODEL  hot_water
-                                      25B15H    001EEH
+                                      25992H    001EEH
                   @ECODEL  hot_water_out
-                                      25D03H    0194CH
+                                      25B80H    0194CH
                   @ECODEL  room_water_out
-                                      2764FH    00240H
+                                      274CCH    00240H
                   @ECODEL  water_out
-                                      2788FH    0081CH
+                                      2770CH    0081CH
                   @ECODEL  water_out_common
-                                      280ABH    00153H
-                  @ECODEL  r_cg_adc   281FEH    0007FH
-                  @ECODEL  r_cg_cgc   2827DH    00017H
+                                      27F28H    00153H
+                  @ECODEL  r_cg_adc   2807BH    0007FH
+                  @ECODEL  r_cg_cgc   280FAH    00017H
                   @ECODEL  r_cg_cgc_user
-                                      28294H    0000BH
+                                      28111H    0000BH
                   @ECODEL  r_cg_intc
-                                      2829FH    00066H
+                                      2811CH    00066H
                   @ECODEL  r_cg_port
-                                      28305H    00050H
+                                      28182H    00050H
                   @ECODEL  r_cg_serial
-                                      28355H    006A2H
+                                      281D2H    006A2H
                   @ECODEL  r_cg_timer
-                                      289F7H    0020DH
-                  @ECODEL  r_cg_wdt   28C04H    0000BH
+                                      28874H    0020DH
+                  @ECODEL  r_cg_wdt   28A81H    0000BH
                   @ECODEL  r_cg_wdt_user
-                                      28C0FH    00000H
+                                      28A8CH    00000H
                   @ECODEL  r_systeminit
-                                      28C0FH    0003BH
+                                      28A8CH    0003BH
                   @ECODEL  WIFI_DataCheck
-                                      28C4AH    004DBH
+                                      28AC7H    004DBH
                   @ECODEL  WIFI_Initialize
-                                      29125H    00239H
+                                      28FA2H    00239H
                   @ECODEL  WIFI_ProcessApmode
-                                      2935EH    00000H
+                                      291DBH    00000H
                   @ECODEL  WIFI_Status
-                                      2935EH    004E2H
+                                      291DBH    004E2H
                   @ECODEL  WIFI_UartInterrupt
-                                      29840H    001F9H
+                                      296BDH    001F9H
                   @ECODEL  WIFI_Fota
-                                      29A39H    00338H
+                                      298B6H    00338H
                   @ECODEL  WIFI_RxProcess
-                                      29D71H    00639H
+                                      29BEEH    00639H
                   @ECODEL  WIFI_RxServer
-                                      2A3AAH    01326H
+                                      2A227H    01326H
                   @ECODEL  WIFI_SetAccumulateData
-                                      2B6D0H    0004DH
+                                      2B54DH    0004DH
                   @ECODEL  WIFI_SetCommon
-                                      2B71DH    00968H
+                                      2B59AH    00968H
                   @ECODEL  WIFI_SetErrorData
-                                      2C085H    0005CH
+                                      2BF02H    0005CH
                   @ECODEL  WIFI_SetFunctionData
-                                      2C0E1H    000DDH
+                                      2BF5EH    000DDH
                   @ECODEL  WIFI_SetInformationData
-                                      2C1BEH    00089H
+                                      2C03BH    00089H
                   @ECODEL  WIFI_SetPartData
-                                      2C247H    0005CH
+                                      2C0C4H    0005CH
                   @ECODEL  WIFI_SetSensorData
-                                      2C2A3H    00066H
+                                      2C120H    00066H
                   @ECODEL  WIFI_TxForm
-                                      2C309H    00260H
+                                      2C186H    00260H
                   @ECODEL  WIFI_TxMake
-                                      2C569H    007E5H
+                                      2C3E6H    007E5H
                   @ECODEL  WIFI_TxProtocol
-                                      2CD4EH    00514H
+                                      2CBCBH    00514H
                   @ECODEL  WIFI_Common
-                                      2D262H    00176H
+                                      2D0DFH    00176H
                   @ECODEL  WIFI_Control
-                                      2D3D8H    00568H
+                                      2D255H    00568H
                   @ECODEL  WIFI_UserInterface
-                                      2D940H    00442H
+                                      2D7BDH    00442H
                   @ECODEL  WIFI_UserInterface_IconAIS
-                                      2DD82H    013D8H
-                  @ECODEL  cody_kit   2F15AH    00033H
+                                      2DBFFH    013D8H
+                  @ECODEL  cody_kit   2EFD7H    00033H
                   @ECODEL  cody_water_out
-                                      2F18DH    002A4H
+                                      2F00AH    002A4H
                   @ECODEL  empty_cold_tank
-                                      2F431H    00245H
+                                      2F2AEH    00245H
                   @ECODEL  display_clock
-                                      2F676H    002A4H
+                                      2F4F3H    002A4H
                   @ECODEL  smart_check
-                                      2F91AH    00583H
+                                      2F797H    00583H
                   @ECODEL  heater_table
-                                      2FE9DH    00126H
+                                      2FD1AH    00126H
                   @ECODEL  diagnosis
-                                      2FFC3H    00254H
+                                      2FE40H    00254H
                   @ECODEL  monitoring
-                                      30217H    005D4H
+                                      30094H    005D4H
                   @ECODEL  hot_water_temp_table
-                                      307EBH    000BFH
+                                      30668H    000BFH
                   @ECODEL  diagnosis_12v
-                                      308AAH    002E1H
+                                      30727H    002E1H
                   @ECODEL  diagnosis_24v
-                                      30B8BH    008D6H
+                                      30A08H    008D6H
                   @ECODEL  diagnosis_feedback
-                                      31461H    0046AH
+                                      312DEH    0046AH
                   @ECODEL  diagnosis_sensor
-                                      318CBH    0033BH
+                                      31748H    0033BH
                   @ECODEL  diagnosis_ac
-                                      31C06H    00479H
+                                      31A83H    00479H
                   @ECODEL  hot_water_out_preheat
-                                      3207FH    0150DH
+                                      31EFCH    0150DH
                   @ECODEL  WIFI_SetMonitorData
-                                      3358CH    00064H
+                                      33409H    00064H
                   @ECODEL  WIFI_MonitorFixRAM
-                                      335F0H    00264H
-* gap *                               33854H    0C5ACH
+                                      3346DH    00264H
+                  @ECODEL  led        336D1H    002CAH
+                  @ECODEL  main       3399BH    00145H
+                  @ECODEL  process_sys_event
+                                      33AE0H    007B2H
+                  @ECODEL  purifier   34292H    00140H
+                  @ECODEL  util       343D2H    0020CH
+* gap *                               345DEH    0B822H
 
   MEMORY=OCD_ROM
   BASE ADDRESS=3FE00H   SIZE=00200H
@@ -3287,10 +3313,6 @@ Directive: ;MEMORY - PH
                                       FB500H.0  00000H.0
          @EINIT                       FB500H    00000H  DSEG BASEP
                   @EINIT   @cstarte   FB500H    00000H
-                  @EINIT   main       FB500H    00000H
-                  @EINIT   process_sys_event
-                                      FB500H    00000H
-                  @EINIT   util       FB500H    00000H
                   @EINIT   comm       FB500H    00000H
                   @EINIT   crc16      FB500H    00000H
                   @EINIT   parser     FB500H    00000H
@@ -3573,13 +3595,15 @@ Directive: ;MEMORY - PH
                                       FB500H    00000H
                   @EINIT   WIFI_MonitorFixRAM
                                       FB500H    00000H
+                  @EINIT   led        FB500H    00000H
+                  @EINIT   main       FB500H    00000H
+                  @EINIT   process_sys_event
+                                      FB500H    00000H
+                  @EINIT   purifier   FB500H    00000H
+                  @EINIT   util       FB500H    00000H
                   @EINIT   @rome      FB500H    00000H
          @EDATA                       FB500H    00000H  DSEG BASEP
                   @EDATA   @cstarte   FB500H    00000H
-                  @EDATA   main       FB500H    00000H
-                  @EDATA   process_sys_event
-                                      FB500H    00000H
-                  @EDATA   util       FB500H    00000H
                   @EDATA   comm       FB500H    00000H
                   @EDATA   crc16      FB500H    00000H
                   @EDATA   parser     FB500H    00000H
@@ -3862,13 +3886,15 @@ Directive: ;MEMORY - PH
                                       FB500H    00000H
                   @EDATA   WIFI_MonitorFixRAM
                                       FB500H    00000H
+                  @EDATA   led        FB500H    00000H
+                  @EDATA   main       FB500H    00000H
+                  @EDATA   process_sys_event
+                                      FB500H    00000H
+                  @EDATA   purifier   FB500H    00000H
+                  @EDATA   util       FB500H    00000H
                   @EDATA   @rome      FB500H    00000H
          @EINIS                       FB500H    00000H  DSEG UNITP
                   @EINIS   @cstarte   FB500H    00000H
-                  @EINIS   main       FB500H    00000H
-                  @EINIS   process_sys_event
-                                      FB500H    00000H
-                  @EINIS   util       FB500H    00000H
                   @EINIS   comm       FB500H    00000H
                   @EINIS   crc16      FB500H    00000H
                   @EINIS   parser     FB500H    00000H
@@ -4151,13 +4177,15 @@ Directive: ;MEMORY - PH
                                       FB500H    00000H
                   @EINIS   WIFI_MonitorFixRAM
                                       FB500H    00000H
+                  @EINIS   led        FB500H    00000H
+                  @EINIS   main       FB500H    00000H
+                  @EINIS   process_sys_event
+                                      FB500H    00000H
+                  @EINIS   purifier   FB500H    00000H
+                  @EINIS   util       FB500H    00000H
                   @EINIS   @rome      FB500H    00000H
          @EDATS                       FB500H    00000H  DSEG UNITP
                   @EDATS   @cstarte   FB500H    00000H
-                  @EDATS   main       FB500H    00000H
-                  @EDATS   process_sys_event
-                                      FB500H    00000H
-                  @EDATS   util       FB500H    00000H
                   @EDATS   comm       FB500H    00000H
                   @EDATS   crc16      FB500H    00000H
                   @EDATS   parser     FB500H    00000H
@@ -4440,586 +4468,596 @@ Directive: ;MEMORY - PH
                                       FB500H    00000H
                   @EDATS   WIFI_MonitorFixRAM
                                       FB500H    00000H
+                  @EDATS   led        FB500H    00000H
+                  @EDATS   main       FB500H    00000H
+                  @EDATS   process_sys_event
+                                      FB500H    00000H
+                  @EDATS   purifier   FB500H    00000H
+                  @EDATS   util       FB500H    00000H
                   @EDATS   @rome      FB500H    00000H
-         @EINITL                      FB500H    0167EH  DSEG UNIT64KP
+         @EINITL                      FB500H    01954H  DSEG UNIT64KP
                   @EINITL  @cstarte   FB500H    00000H
-                  @EINITL  main       FB500H    00000H
-                  @EINITL  process_sys_event
-                                      FB500H    00004H
-                  @EINITL  util       FB504H    00000H
-                  @EINITL  comm       FB504H    00000H
-                  @EINITL  crc16      FB504H    00000H
-                  @EINITL  parser     FB504H    00004H
+                  @EINITL  comm       FB500H    00000H
+                  @EINITL  crc16      FB500H    00000H
+                  @EINITL  parser     FB500H    00004H
                   @EINITL  parser_comp
-                                      FB508H    00002H
+                                      FB504H    00002H
                   @EINITL  parser_debug
-                                      FB50AH    00000H
+                                      FB506H    00000H
                   @EINITL  parser_eol
-                                      FB50AH    00000H
+                                      FB506H    00000H
                   @EINITL  parser_front
-                                      FB50AH    0000AH
-                  @EINITL  display    FB514H    0000EH
+                                      FB506H    0000AH
+                  @EINITL  display    FB510H    0000EH
                   @EINITL  display_eol
-                                      FB522H    00006H
+                                      FB51EH    00006H
                   @EINITL  display_error
-                                      FB528H    00016H
+                                      FB524H    00016H
                   @EINITL  display_lib
-                                      FB53EH    00000H
-                  @EINITL  front      FB53EH    00006H
+                                      FB53AH    00000H
+                  @EINITL  front      FB53AH    00006H
                   @EINITL  process_display
-                                      FB544H    0007EH
-                  @EINITL  drain      FB5C2H    00002H
-                  @EINITL  eeprom     FB5C4H    00050H
-                  @EINITL  rtc        FB614H    00000H
-                  @EINITL  eol        FB614H    00000H
+                                      FB540H    0007EH
+                  @EINITL  drain      FB5BEH    00002H
+                  @EINITL  eeprom     FB5C0H    00050H
+                  @EINITL  rtc        FB610H    00000H
+                  @EINITL  eol        FB610H    00000H
                   @EINITL  eol_lever_handler
-                                      FB614H    00000H
+                                      FB610H    00000H
                   @EINITL  key_eol_handler
-                                      FB614H    00000H
+                                      FB610H    00000H
                   @EINITL  process_eol
-                                      FB614H    0001CH
-                  @EINITL  error      FB630H    00000H
+                                      FB610H    0001CH
+                  @EINITL  error      FB62CH    00000H
                   @EINITL  err_comp_bldc
-                                      FB630H    00000H
+                                      FB62CH    00000H
                   @EINITL  err_comp_bldc_comm
-                                      FB630H    00000H
+                                      FB62CH    00000H
                   @EINITL  err_drain_pump
-                                      FB630H    00000H
+                                      FB62CH    00000H
                   @EINITL  err_ice_tray
-                                      FB630H    00000H
-                  @EINITL  err_leak   FB630H    00000H
+                                      FB62CH    00000H
+                  @EINITL  err_leak   FB62CH    00000H
                   @EINITL  err_outage_hot_water
-                                      FB630H    00002H
+                                      FB62CH    00002H
                   @EINITL  err_outage_water
-                                      FB632H    00002H
-                  @EINITL  err_temp   FB634H    00000H
+                                      FB62EH    00002H
+                  @EINITL  err_temp   FB630H    00000H
                   @EINITL  err_temp_ambient
-                                      FB634H    00004H
+                                      FB630H    00004H
                   @EINITL  err_temp_cold_water
-                                      FB638H    00004H
+                                      FB634H    00004H
                   @EINITL  err_temp_eva_1
-                                      FB63CH    00004H
+                                      FB638H    00004H
                   @EINITL  err_temp_heater
-                                      FB640H    00004H
+                                      FB63CH    00004H
                   @EINITL  err_temp_hot_overheat
-                                      FB644H    00002H
+                                      FB640H    00002H
                   @EINITL  err_temp_hot_water
-                                      FB646H    00004H
+                                      FB642H    00004H
                   @EINITL  err_temp_hot_water_in
-                                      FB64AH    00004H
+                                      FB646H    00004H
                   @EINITL  err_temp_room_water
-                                      FB64EH    00004H
+                                      FB64AH    00004H
                   @EINITL  process_error
-                                      FB652H    00154H
-                  @EINITL  fct        FB7A6H    00000H
+                                      FB64EH    00154H
+                  @EINITL  fct        FB7A2H    00000H
                   @EINITL  fct_lever_handler
-                                      FB7A6H    00000H
+                                      FB7A2H    00000H
                   @EINITL  key_fct_handler
-                                      FB7A6H    00000H
+                                      FB7A2H    00000H
                   @EINITL  process_fct
-                                      FB7A6H    00012H
-                  @EINITL  filter     FB7B8H    00008H
-                  @EINITL  hal_adc    FB7C0H    00140H
+                                      FB7A2H    00012H
+                  @EINITL  filter     FB7B4H    00008H
+                  @EINITL  hal_adc    FB7BCH    00140H
                   @EINITL  hal_eeprom
-                                      FB900H    00000H
+                                      FB8FCH    00000H
                   @EINITL  hal_fan_motor
-                                      FB900H    00000H
-                  @EINITL  hal_i2c    FB900H    00020H
+                                      FB8FCH    00000H
+                  @EINITL  hal_i2c    FB8FCH    00020H
                   @EINITL  hal_input
-                                      FB920H    00050H
-                  @EINITL  hal_key    FB970H    00000H
-                  @EINITL  hal_led    FB970H    00000H
+                                      FB91CH    00050H
+                  @EINITL  hal_key    FB96CH    00000H
+                  @EINITL  hal_led    FB96CH    00000H
                   @EINITL  hal_level
-                                      FB970H    00000H
-                  @EINITL  hal_pump   FB970H    00000H
+                                      FB96CH    00000H
+                  @EINITL  hal_pump   FB96CH    00000H
                   @EINITL  hal_relay
-                                      FB970H    00000H
+                                      FB96CH    00000H
                   @EINITL  hal_serial
-                                      FB970H    00004H
+                                      FB96CH    00004H
                   @EINITL  hal_step_motor
-                                      FB974H    0001CH
-                  @EINITL  hal_uv     FB990H    00002H
+                                      FB970H    0001CH
+                  @EINITL  hal_uv     FB98CH    00002H
                   @EINITL  hal_valve
-                                      FB992H    00000H
+                                      FB98EH    00000H
                   @EINITL  drain_water
-                                      FB992H    00008H
-                  @EINITL  health     FB99AH    00002H
+                                      FB98EH    00008H
+                  @EINITL  health     FB996H    00002H
                   @EINITL  health_maker
-                                      FB99CH    00000H
+                                      FB998H    00000H
                   @EINITL  process_uv
-                                      FB99CH    00026H
-                  @EINITL  uv         FB9C2H    0007EH
+                                      FB998H    00026H
+                  @EINITL  uv         FB9BEH    0007EH
                   @EINITL  deicing_table
-                                      FBA40H    0001EH
+                                      FBA3CH    0001EH
                   @EINITL  dummy_deicing_table
-                                      FBA5EH    00000H
-                  @EINITL  ice        FBA5EH    00002H
+                                      FBA5AH    00000H
+                  @EINITL  ice        FBA5AH    00002H
                   @EINITL  ice_maker
-                                      FBA60H    00066H
+                                      FBA5CH    00066H
                   @EINITL  icing_table
-                                      FBAC6H    00000H
-                  @EINITL  comp       FBAC6H    00004H
+                                      FBAC2H    00000H
+                  @EINITL  comp       FBAC2H    00004H
                   @EINITL  comp_bldc
-                                      FBACAH    00002H
+                                      FBAC6H    00002H
                   @EINITL  drain_pump
-                                      FBACCH    00000H
+                                      FBAC8H    00000H
                   @EINITL  fan_motor
-                                      FBACCH    00000H
+                                      FBAC8H    00000H
                   @EINITL  flow_meter
-                                      FBACCH    00000H
+                                      FBAC8H    00000H
                   @EINITL  flow_valve
-                                      FBACCH    00002H
+                                      FBAC8H    00002H
                   @EINITL  gas_switch_valve
-                                      FBACEH    00004H
+                                      FBACAH    00004H
                   @EINITL  heater_out
-                                      FBAD2H    00010H
+                                      FBACEH    00010H
                   @EINITL  hot_water_flow
-                                      FBAE2H    00010H
+                                      FBADEH    00010H
                   @EINITL  hot_water_heater
-                                      FBAF2H    00002H
-                  @EINITL  ice_door   FBAF4H    00006H
-                  @EINITL  ice_full   FBAFAH    00000H
-                  @EINITL  ice_tray   FBAFAH    00004H
-                  @EINITL  leak       FBAFEH    00000H
+                                      FBAEEH    00002H
+                  @EINITL  ice_door   FBAF0H    00006H
+                  @EINITL  ice_full   FBAF6H    00000H
+                  @EINITL  ice_tray   FBAF6H    00004H
+                  @EINITL  leak       FBAFAH    00000H
                   @EINITL  process_make
-                                      FBAFEH    00006H
-                  @EINITL  relay      FBB04H    00000H
-                  @EINITL  smps       FBB04H    00000H
+                                      FBAFAH    00006H
+                  @EINITL  relay      FBB00H    00000H
+                  @EINITL  smps       FBB00H    00000H
                   @EINITL  swing_bar
-                                      FBB04H    00000H
-                  @EINITL  valve      FBB04H    00000H
-                  @EINITL  energy     FBB04H    00006H
-                  @EINITL  user       FBB0AH    00000H
-                  @EINITL  key        FBB0AH    00014H
+                                      FBB00H    00000H
+                  @EINITL  valve      FBB00H    00000H
+                  @EINITL  energy     FBB00H    00006H
+                  @EINITL  user       FBB06H    00000H
+                  @EINITL  key        FBB06H    00014H
                   @EINITL  key_event_lib
-                                      FBB1EH    00004H
+                                      FBB1AH    00004H
                   @EINITL  key_handler
-                                      FBB22H    0000AH
+                                      FBB1EH    0000AH
                   @EINITL  key_normal_handler
-                                      FBB2CH    006E8H
+                                      FBB28H    006E8H
                   @EINITL  process_key
-                                      FC214H    00008H
-                  @EINITL  lever      FC21CH    00000H
+                                      FC210H    00008H
+                  @EINITL  lever      FC218H    00000H
                   @EINITL  lever_handler
-                                      FC21CH    00000H
+                                      FC218H    00000H
                   @EINITL  process_lever
-                                      FC21CH    00006H
-                  @EINITL  metering   FC222H    00000H
+                                      FC218H    00006H
+                  @EINITL  metering   FC21EH    00000H
                   @EINITL  power_saving
-                                      FC222H    00000H
-                  @EINITL  level      FC222H    0000CH
-                  @EINITL  temp       FC22EH    0009EH
+                                      FC21EH    00000H
+                  @EINITL  level      FC21EH    0000CH
+                  @EINITL  temp       FC22AH    0009EH
                   @EINITL  temp_table
-                                      FC2CCH    00000H
+                                      FC2C8H    00000H
                   @EINITL  ice_tray_test
-                                      FC2CCH    00000H
-                  @EINITL  service    FC2CCH    00002H
-                  @EINITL  sound      FC2CEH    00002H
-                  @EINITL  voice      FC2D0H    00000H
-                  @EINITL  timer      FC2D0H    00004H
+                                      FC2C8H    00000H
+                  @EINITL  service    FC2C8H    00002H
+                  @EINITL  sound      FC2CAH    00002H
+                  @EINITL  voice      FC2CCH    00000H
+                  @EINITL  timer      FC2CCH    00004H
                   @EINITL  time_short
-                                      FC2D4H    00002H
+                                      FC2D0H    00002H
                   @EINITL  cold_water
-                                      FC2D6H    00004H
+                                      FC2D2H    00004H
                   @EINITL  cold_water_out
-                                      FC2DAH    00000H
+                                      FC2D6H    00000H
                   @EINITL  flush_water_out
-                                      FC2DAH    0004AH
+                                      FC2D6H    0004AH
                   @EINITL  hot_water
-                                      FC324H    00030H
+                                      FC320H    00030H
                   @EINITL  hot_water_out
-                                      FC354H    00058H
+                                      FC350H    00058H
                   @EINITL  room_water_out
-                                      FC3ACH    00000H
+                                      FC3A8H    00000H
                   @EINITL  water_out
-                                      FC3ACH    00000H
+                                      FC3A8H    00000H
                   @EINITL  water_out_common
-                                      FC3ACH    00000H
-                  @EINITL  r_cg_adc   FC3ACH    00000H
-                  @EINITL  r_cg_cgc   FC3ACH    00000H
+                                      FC3A8H    00000H
+                  @EINITL  r_cg_adc   FC3A8H    00000H
+                  @EINITL  r_cg_cgc   FC3A8H    00000H
                   @EINITL  r_cg_cgc_user
-                                      FC3ACH    00002H
+                                      FC3A8H    00002H
                   @EINITL  r_cg_intc
-                                      FC3AEH    00000H
+                                      FC3AAH    00000H
                   @EINITL  r_cg_port
-                                      FC3AEH    00000H
+                                      FC3AAH    00000H
                   @EINITL  r_cg_serial
-                                      FC3AEH    00000H
+                                      FC3AAH    00000H
                   @EINITL  r_cg_timer
-                                      FC3AEH    00000H
-                  @EINITL  r_cg_wdt   FC3AEH    00000H
+                                      FC3AAH    00000H
+                  @EINITL  r_cg_wdt   FC3AAH    00000H
                   @EINITL  r_cg_wdt_user
-                                      FC3AEH    00000H
+                                      FC3AAH    00000H
                   @EINITL  r_systeminit
-                                      FC3AEH    00000H
+                                      FC3AAH    00000H
                   @EINITL  WIFI_DataCheck
-                                      FC3AEH    00002H
+                                      FC3AAH    00002H
                   @EINITL  WIFI_Initialize
-                                      FC3B0H    00002H
+                                      FC3ACH    00002H
                   @EINITL  WIFI_ProcessApmode
-                                      FC3B2H    00000H
+                                      FC3AEH    00000H
                   @EINITL  WIFI_Status
-                                      FC3B2H    00000H
+                                      FC3AEH    00000H
                   @EINITL  WIFI_UartInterrupt
-                                      FC3B2H    00000H
+                                      FC3AEH    00000H
                   @EINITL  WIFI_Fota
-                                      FC3B2H    00000H
+                                      FC3AEH    00000H
                   @EINITL  WIFI_RxProcess
-                                      FC3B2H    00002H
+                                      FC3AEH    00002H
                   @EINITL  WIFI_RxServer
-                                      FC3B4H    00000H
+                                      FC3B0H    00000H
                   @EINITL  WIFI_SetAccumulateData
-                                      FC3B4H    00000H
+                                      FC3B0H    00000H
                   @EINITL  WIFI_SetCommon
-                                      FC3B4H    00000H
+                                      FC3B0H    00000H
                   @EINITL  WIFI_SetErrorData
-                                      FC3B4H    00000H
+                                      FC3B0H    00000H
                   @EINITL  WIFI_SetFunctionData
-                                      FC3B4H    00000H
+                                      FC3B0H    00000H
                   @EINITL  WIFI_SetInformationData
-                                      FC3B4H    00000H
+                                      FC3B0H    00000H
                   @EINITL  WIFI_SetPartData
-                                      FC3B4H    00000H
+                                      FC3B0H    00000H
                   @EINITL  WIFI_SetSensorData
-                                      FC3B4H    00000H
+                                      FC3B0H    00000H
                   @EINITL  WIFI_TxForm
-                                      FC3B4H    00000H
+                                      FC3B0H    00000H
                   @EINITL  WIFI_TxMake
-                                      FC3B4H    00000H
+                                      FC3B0H    00000H
                   @EINITL  WIFI_TxProtocol
-                                      FC3B4H    00002H
+                                      FC3B0H    00002H
                   @EINITL  WIFI_Common
-                                      FC3B6H    00000H
+                                      FC3B2H    00000H
                   @EINITL  WIFI_Control
-                                      FC3B6H    00002H
+                                      FC3B2H    00002H
                   @EINITL  WIFI_UserInterface
-                                      FC3B8H    00000H
+                                      FC3B4H    00000H
                   @EINITL  WIFI_UserInterface_IconAIS
-                                      FC3B8H    0011AH
-                  @EINITL  cody_kit   FC4D2H    00000H
+                                      FC3B4H    0011AH
+                  @EINITL  cody_kit   FC4CEH    00000H
                   @EINITL  cody_water_out
-                                      FC4D2H    00000H
+                                      FC4CEH    00000H
                   @EINITL  empty_cold_tank
-                                      FC4D2H    00002H
+                                      FC4CEH    00002H
                   @EINITL  display_clock
-                                      FC4D4H    00002H
+                                      FC4D0H    00002H
                   @EINITL  smart_check
-                                      FC4D6H    001A4H
+                                      FC4D2H    001A4H
                   @EINITL  heater_table
-                                      FC67AH    00000H
+                                      FC676H    00000H
                   @EINITL  diagnosis
-                                      FC67AH    00000H
+                                      FC676H    00000H
                   @EINITL  monitoring
-                                      FC67AH    0015AH
+                                      FC676H    0015AH
                   @EINITL  hot_water_temp_table
-                                      FC7D4H    00360H
+                                      FC7D0H    00360H
                   @EINITL  diagnosis_12v
-                                      FCB34H    00000H
+                                      FCB30H    00000H
                   @EINITL  diagnosis_24v
-                                      FCB34H    00000H
+                                      FCB30H    00000H
                   @EINITL  diagnosis_feedback
-                                      FCB34H    00000H
+                                      FCB30H    00000H
                   @EINITL  diagnosis_sensor
-                                      FCB34H    00000H
+                                      FCB30H    00000H
                   @EINITL  diagnosis_ac
-                                      FCB34H    00028H
+                                      FCB30H    00028H
                   @EINITL  hot_water_out_preheat
-                                      FCB5CH    00006H
+                                      FCB58H    00006H
                   @EINITL  WIFI_SetMonitorData
-                                      FCB62H    00000H
+                                      FCB5EH    00000H
                   @EINITL  WIFI_MonitorFixRAM
-                                      FCB62H    0001CH
-                  @EINITL  @rome      FCB7EH    00000H
-         @EDATAL                      FCB7EH    02AC2H  DSEG UNIT64KP
-                  @EDATAL  @cstarte   FCB7EH    00000H
-                  @EDATAL  main       FCB7EH    00000H
-                  @EDATAL  process_sys_event
-                                      FCB7EH    00000H
-                  @EDATAL  util       FCB7EH    00000H
-                  @EDATAL  comm       FCB7EH    00008H
-                  @EDATAL  crc16      FCB86H    00000H
-                  @EDATAL  parser     FCB86H    001FEH
+                                      FCB5EH    0001CH
+                  @EINITL  led        FCB7AH    002D6H
+                  @EINITL  main       FCE50H    00000H
+                  @EINITL  process_sys_event
+                                      FCE50H    00004H
+                  @EINITL  purifier   FCE54H    00000H
+                  @EINITL  util       FCE54H    00000H
+                  @EINITL  @rome      FCE54H    00000H
+         @EDATAL                      FCE54H    02ACAH  DSEG UNIT64KP
+                  @EDATAL  @cstarte   FCE54H    00000H
+                  @EDATAL  comm       FCE54H    00008H
+                  @EDATAL  crc16      FCE5CH    00000H
+                  @EDATAL  parser     FCE5CH    001FEH
                   @EDATAL  parser_comp
-                                      FCD84H    00000H
+                                      FD05AH    00000H
                   @EDATAL  parser_debug
-                                      FCD84H    00000H
+                                      FD05AH    00000H
                   @EDATAL  parser_eol
-                                      FCD84H    00000H
+                                      FD05AH    00000H
                   @EDATAL  parser_front
-                                      FCD84H    00000H
-                  @EDATAL  display    FCD84H    00008H
+                                      FD05AH    00000H
+                  @EDATAL  display    FD05AH    00008H
                   @EDATAL  display_eol
-                                      FCD8CH    00000H
+                                      FD062H    00000H
                   @EDATAL  display_error
-                                      FCD8CH    00000H
+                                      FD062H    00000H
                   @EDATAL  display_lib
-                                      FCD8CH    00040H
-                  @EDATAL  front      FCDCCH    00012H
+                                      FD062H    00040H
+                  @EDATAL  front      FD0A2H    00012H
                   @EDATAL  process_display
-                                      FCDDEH    00010H
-                  @EDATAL  drain      FCDEEH    0000EH
-                  @EDATAL  eeprom     FCDFCH    00028H
-                  @EDATAL  rtc        FCE24H    0002CH
-                  @EDATAL  eol        FCE50H    00034H
+                                      FD0B4H    00010H
+                  @EDATAL  drain      FD0C4H    0000EH
+                  @EDATAL  eeprom     FD0D2H    00028H
+                  @EDATAL  rtc        FD0FAH    0002CH
+                  @EDATAL  eol        FD126H    00034H
                   @EDATAL  eol_lever_handler
-                                      FCE84H    00000H
+                                      FD15AH    00000H
                   @EDATAL  key_eol_handler
-                                      FCE84H    00000H
+                                      FD15AH    00000H
                   @EDATAL  process_eol
-                                      FCE84H    00000H
-                  @EDATAL  error      FCE84H    000A6H
+                                      FD15AH    00000H
+                  @EDATAL  error      FD15AH    000A6H
                   @EDATAL  err_comp_bldc
-                                      FCF2AH    00032H
+                                      FD200H    00032H
                   @EDATAL  err_comp_bldc_comm
-                                      FCF5CH    00006H
+                                      FD232H    00006H
                   @EDATAL  err_drain_pump
-                                      FCF62H    00000H
+                                      FD238H    00000H
                   @EDATAL  err_ice_tray
-                                      FCF62H    00000H
-                  @EDATAL  err_leak   FCF62H    00000H
+                                      FD238H    00000H
+                  @EDATAL  err_leak   FD238H    00000H
                   @EDATAL  err_outage_hot_water
-                                      FCF62H    00000H
+                                      FD238H    00000H
                   @EDATAL  err_outage_water
-                                      FCF62H    00000H
-                  @EDATAL  err_temp   FCF62H    00000H
+                                      FD238H    00000H
+                  @EDATAL  err_temp   FD238H    00000H
                   @EDATAL  err_temp_ambient
-                                      FCF62H    00000H
+                                      FD238H    00000H
                   @EDATAL  err_temp_cold_water
-                                      FCF62H    00000H
+                                      FD238H    00000H
                   @EDATAL  err_temp_eva_1
-                                      FCF62H    00000H
+                                      FD238H    00000H
                   @EDATAL  err_temp_heater
-                                      FCF62H    00000H
+                                      FD238H    00000H
                   @EDATAL  err_temp_hot_overheat
-                                      FCF62H    0000CH
+                                      FD238H    0000CH
                   @EDATAL  err_temp_hot_water
-                                      FCF6EH    00000H
+                                      FD244H    00000H
                   @EDATAL  err_temp_hot_water_in
-                                      FCF6EH    00000H
+                                      FD244H    00000H
                   @EDATAL  err_temp_room_water
-                                      FCF6EH    00000H
+                                      FD244H    00000H
                   @EDATAL  process_error
-                                      FCF6EH    00000H
-                  @EDATAL  fct        FCF6EH    0000AH
+                                      FD244H    00000H
+                  @EDATAL  fct        FD244H    0000AH
                   @EDATAL  fct_lever_handler
-                                      FCF78H    00000H
+                                      FD24EH    00000H
                   @EDATAL  key_fct_handler
-                                      FCF78H    00000H
+                                      FD24EH    00000H
                   @EDATAL  process_fct
-                                      FCF78H    00000H
-                  @EDATAL  filter     FCF78H    0000CH
-                  @EDATAL  hal_adc    FCF84H    000B4H
+                                      FD24EH    00000H
+                  @EDATAL  filter     FD24EH    0000CH
+                  @EDATAL  hal_adc    FD25AH    000B4H
                   @EDATAL  hal_eeprom
-                                      FD038H    00012H
+                                      FD30EH    00012H
                   @EDATAL  hal_fan_motor
-                                      FD04AH    00000H
-                  @EDATAL  hal_i2c    FD04AH    00000H
+                                      FD320H    00000H
+                  @EDATAL  hal_i2c    FD320H    00000H
                   @EDATAL  hal_input
-                                      FD04AH    00000H
-                  @EDATAL  hal_key    FD04AH    00006H
-                  @EDATAL  hal_led    FD050H    0001CH
+                                      FD320H    00000H
+                  @EDATAL  hal_key    FD320H    00006H
+                  @EDATAL  hal_led    FD326H    0001CH
                   @EDATAL  hal_level
-                                      FD06CH    00000H
-                  @EDATAL  hal_pump   FD06CH    00000H
+                                      FD342H    00000H
+                  @EDATAL  hal_pump   FD342H    00000H
                   @EDATAL  hal_relay
-                                      FD06CH    00000H
+                                      FD342H    00000H
                   @EDATAL  hal_serial
-                                      FD06CH    00362H
+                                      FD342H    00362H
                   @EDATAL  hal_step_motor
-                                      FD3CEH    00036H
-                  @EDATAL  hal_uv     FD404H    00000H
+                                      FD6A4H    00036H
+                  @EDATAL  hal_uv     FD6DAH    00000H
                   @EDATAL  hal_valve
-                                      FD404H    00000H
+                                      FD6DAH    00000H
                   @EDATAL  drain_water
-                                      FD404H    0000AH
-                  @EDATAL  health     FD40EH    0001EH
+                                      FD6DAH    0000AH
+                  @EDATAL  health     FD6E4H    0001EH
                   @EDATAL  health_maker
-                                      FD42CH    00006H
+                                      FD702H    00006H
                   @EDATAL  process_uv
-                                      FD432H    0000CH
-                  @EDATAL  uv         FD43EH    00004H
+                                      FD708H    0000CH
+                  @EDATAL  uv         FD714H    00004H
                   @EDATAL  deicing_table
-                                      FD442H    00000H
+                                      FD718H    00000H
                   @EDATAL  dummy_deicing_table
-                                      FD442H    00000H
-                  @EDATAL  ice        FD442H    00014H
+                                      FD718H    00000H
+                  @EDATAL  ice        FD718H    00014H
                   @EDATAL  ice_maker
-                                      FD456H    00052H
+                                      FD72CH    00052H
                   @EDATAL  icing_table
-                                      FD4A8H    00000H
-                  @EDATAL  comp       FD4A8H    0000EH
+                                      FD77EH    00000H
+                  @EDATAL  comp       FD77EH    0000EH
                   @EDATAL  comp_bldc
-                                      FD4B6H    0000CH
+                                      FD78CH    0000CH
                   @EDATAL  drain_pump
-                                      FD4C2H    00010H
+                                      FD798H    00010H
                   @EDATAL  fan_motor
-                                      FD4D2H    00004H
+                                      FD7A8H    00004H
                   @EDATAL  flow_meter
-                                      FD4D6H    0003AH
+                                      FD7ACH    0003AH
                   @EDATAL  flow_valve
-                                      FD510H    00012H
+                                      FD7E6H    00012H
                   @EDATAL  gas_switch_valve
-                                      FD522H    0000EH
+                                      FD7F8H    0000EH
                   @EDATAL  heater_out
-                                      FD530H    0001EH
+                                      FD806H    0001EH
                   @EDATAL  hot_water_flow
-                                      FD54EH    0002AH
+                                      FD824H    0002AH
                   @EDATAL  hot_water_heater
-                                      FD578H    00032H
-                  @EDATAL  ice_door   FD5AAH    00014H
-                  @EDATAL  ice_full   FD5BEH    00008H
-                  @EDATAL  ice_tray   FD5C6H    0002CH
-                  @EDATAL  leak       FD5F2H    00008H
+                                      FD84EH    00032H
+                  @EDATAL  ice_door   FD880H    00014H
+                  @EDATAL  ice_full   FD894H    00008H
+                  @EDATAL  ice_tray   FD89CH    0002CH
+                  @EDATAL  leak       FD8C8H    00008H
                   @EDATAL  process_make
-                                      FD5FAH    00000H
-                  @EDATAL  relay      FD5FAH    0000EH
-                  @EDATAL  smps       FD608H    00000H
+                                      FD8D0H    00000H
+                  @EDATAL  relay      FD8D0H    0000EH
+                  @EDATAL  smps       FD8DEH    00000H
                   @EDATAL  swing_bar
-                                      FD608H    0000AH
-                  @EDATAL  valve      FD612H    00008H
-                  @EDATAL  energy     FD61AH    00032H
-                  @EDATAL  user       FD64CH    00012H
-                  @EDATAL  key        FD65EH    00012H
+                                      FD8DEH    0000AH
+                  @EDATAL  valve      FD8E8H    00008H
+                  @EDATAL  energy     FD8F0H    00032H
+                  @EDATAL  user       FD922H    00012H
+                  @EDATAL  key        FD934H    00012H
                   @EDATAL  key_event_lib
-                                      FD670H    00000H
+                                      FD946H    00000H
                   @EDATAL  key_handler
-                                      FD670H    00000H
+                                      FD946H    00000H
                   @EDATAL  key_normal_handler
-                                      FD670H    00000H
+                                      FD946H    00000H
                   @EDATAL  process_key
-                                      FD670H    00000H
-                  @EDATAL  lever      FD670H    00018H
+                                      FD946H    00000H
+                  @EDATAL  lever      FD946H    00018H
                   @EDATAL  lever_handler
-                                      FD688H    00000H
+                                      FD95EH    00000H
                   @EDATAL  process_lever
-                                      FD688H    00000H
-                  @EDATAL  metering   FD688H    00008H
+                                      FD95EH    00000H
+                  @EDATAL  metering   FD95EH    00008H
                   @EDATAL  power_saving
-                                      FD690H    00014H
-                  @EDATAL  level      FD6A4H    00000H
-                  @EDATAL  temp       FD6A4H    00000H
+                                      FD966H    00014H
+                  @EDATAL  level      FD97AH    00000H
+                  @EDATAL  temp       FD97AH    00000H
                   @EDATAL  temp_table
-                                      FD6A4H    00000H
+                                      FD97AH    00000H
                   @EDATAL  ice_tray_test
-                                      FD6A4H    00008H
-                  @EDATAL  service    FD6ACH    0000CH
-                  @EDATAL  sound      FD6B8H    00004H
-                  @EDATAL  voice      FD6BCH    00004H
-                  @EDATAL  timer      FD6C0H    000A8H
+                                      FD97AH    00008H
+                  @EDATAL  service    FD982H    0000CH
+                  @EDATAL  sound      FD98EH    00004H
+                  @EDATAL  voice      FD992H    00004H
+                  @EDATAL  timer      FD996H    000A8H
                   @EDATAL  time_short
-                                      FD768H    00006H
+                                      FDA3EH    00006H
                   @EDATAL  cold_water
-                                      FD76EH    0001EH
+                                      FDA44H    0001EH
                   @EDATAL  cold_water_out
-                                      FD78CH    00014H
+                                      FDA62H    00014H
                   @EDATAL  flush_water_out
-                                      FD7A0H    00020H
+                                      FDA76H    00020H
                   @EDATAL  hot_water
-                                      FD7C0H    00010H
+                                      FDA96H    00010H
                   @EDATAL  hot_water_out
-                                      FD7D0H    000B8H
+                                      FDAA6H    000B8H
                   @EDATAL  room_water_out
-                                      FD888H    00014H
+                                      FDB5EH    00014H
                   @EDATAL  water_out
-                                      FD89CH    00076H
+                                      FDB72H    00076H
                   @EDATAL  water_out_common
-                                      FD912H    00000H
-                  @EDATAL  r_cg_adc   FD912H    00000H
-                  @EDATAL  r_cg_cgc   FD912H    00000H
+                                      FDBE8H    00000H
+                  @EDATAL  r_cg_adc   FDBE8H    00000H
+                  @EDATAL  r_cg_cgc   FDBE8H    00000H
                   @EDATAL  r_cg_cgc_user
-                                      FD912H    00000H
+                                      FDBE8H    00000H
                   @EDATAL  r_cg_intc
-                                      FD912H    00000H
+                                      FDBE8H    00000H
                   @EDATAL  r_cg_port
-                                      FD912H    00000H
+                                      FDBE8H    00000H
                   @EDATAL  r_cg_serial
-                                      FD912H    00048H
+                                      FDBE8H    00048H
                   @EDATAL  r_cg_timer
-                                      FD95AH    00000H
-                  @EDATAL  r_cg_wdt   FD95AH    00000H
+                                      FDC30H    00000H
+                  @EDATAL  r_cg_wdt   FDC30H    00000H
                   @EDATAL  r_cg_wdt_user
-                                      FD95AH    00000H
+                                      FDC30H    00000H
                   @EDATAL  r_systeminit
-                                      FD95AH    00000H
+                                      FDC30H    00000H
                   @EDATAL  WIFI_DataCheck
-                                      FD95AH    0002CH
+                                      FDC30H    0002CH
                   @EDATAL  WIFI_Initialize
-                                      FD986H    00000H
+                                      FDC5CH    00000H
                   @EDATAL  WIFI_ProcessApmode
-                                      FD986H    00000H
+                                      FDC5CH    00000H
                   @EDATAL  WIFI_Status
-                                      FD986H    00028H
+                                      FDC5CH    00028H
                   @EDATAL  WIFI_UartInterrupt
-                                      FD9AEH    005BCH
+                                      FDC84H    005BCH
                   @EDATAL  WIFI_Fota
-                                      FDF6AH    00016H
+                                      FE240H    00016H
                   @EDATAL  WIFI_RxProcess
-                                      FDF80H    005BCH
+                                      FE256H    005BCH
                   @EDATAL  WIFI_RxServer
-                                      FE53CH    006A8H
+                                      FE812H    006A8H
                   @EDATAL  WIFI_SetAccumulateData
-                                      FEBE4H    00008H
+                                      FEEBAH    00008H
                   @EDATAL  WIFI_SetCommon
-                                      FEBECH    0000CH
+                                      FEEC2H    0000CH
                   @EDATAL  WIFI_SetErrorData
-                                      FEBF8H    00008H
+                                      FEECEH    00008H
                   @EDATAL  WIFI_SetFunctionData
-                                      FEC00H    00008H
+                                      FEED6H    00008H
                   @EDATAL  WIFI_SetInformationData
-                                      FEC08H    00008H
+                                      FEEDEH    00008H
                   @EDATAL  WIFI_SetPartData
-                                      FEC10H    00008H
+                                      FEEE6H    00008H
                   @EDATAL  WIFI_SetSensorData
-                                      FEC18H    00008H
+                                      FEEEEH    00008H
                   @EDATAL  WIFI_TxForm
-                                      FEC20H    00016H
+                                      FEEF6H    00016H
                   @EDATAL  WIFI_TxMake
-                                      FEC36H    0031EH
+                                      FEF0CH    0031EH
                   @EDATAL  WIFI_TxProtocol
-                                      FEF54H    00606H
+                                      FF22AH    00606H
                   @EDATAL  WIFI_Common
-                                      FF55AH    00000H
+                                      FF830H    00000H
                   @EDATAL  WIFI_Control
-                                      FF55AH    00000H
+                                      FF830H    00000H
                   @EDATAL  WIFI_UserInterface
-                                      FF55AH    0003CH
+                                      FF830H    0003CH
                   @EDATAL  WIFI_UserInterface_IconAIS
-                                      FF596H    00004H
-                  @EDATAL  cody_kit   FF59AH    00002H
+                                      FF86CH    00004H
+                  @EDATAL  cody_kit   FF870H    00002H
                   @EDATAL  cody_water_out
-                                      FF59CH    00014H
+                                      FF872H    00014H
                   @EDATAL  empty_cold_tank
-                                      FF5B0H    00006H
+                                      FF886H    00006H
                   @EDATAL  display_clock
-                                      FF5B6H    00006H
+                                      FF88CH    00006H
                   @EDATAL  smart_check
-                                      FF5BCH    00004H
+                                      FF892H    00004H
                   @EDATAL  heater_table
-                                      FF5C0H    00000H
+                                      FF896H    00000H
                   @EDATAL  diagnosis
-                                      FF5C0H    00008H
+                                      FF896H    00008H
                   @EDATAL  monitoring
-                                      FF5C8H    00000H
+                                      FF89EH    00000H
                   @EDATAL  hot_water_temp_table
-                                      FF5C8H    00000H
+                                      FF89EH    00000H
                   @EDATAL  diagnosis_12v
-                                      FF5C8H    00008H
+                                      FF89EH    00008H
                   @EDATAL  diagnosis_24v
-                                      FF5D0H    0000CH
+                                      FF8A6H    0000CH
                   @EDATAL  diagnosis_feedback
-                                      FF5DCH    0000AH
+                                      FF8B2H    0000AH
                   @EDATAL  diagnosis_sensor
-                                      FF5E6H    0000CH
+                                      FF8BCH    0000CH
                   @EDATAL  diagnosis_ac
-                                      FF5F2H    0000CH
+                                      FF8C8H    0000CH
                   @EDATAL  hot_water_out_preheat
-                                      FF5FEH    00036H
+                                      FF8D4H    00036H
                   @EDATAL  WIFI_SetMonitorData
-                                      FF634H    0000CH
+                                      FF90AH    0000CH
                   @EDATAL  WIFI_MonitorFixRAM
-                                      FF640H    00000H
-                  @EDATAL  @rome      FF640H    00000H
-* gap *                               FF640H    007E0H
+                                      FF916H    00000H
+                  @EDATAL  led        FF916H    00000H
+                  @EDATAL  main       FF916H    00000H
+                  @EDATAL  process_sys_event
+                                      FF916H    00000H
+                  @EDATAL  purifier   FF916H    00008H
+                  @EDATAL  util       FF91EH    00000H
+                  @EDATAL  @rome      FF91EH    00000H
+* gap *                               FF91EH    00502H
 
   MEMORY=RAM_SADDR
   BASE ADDRESS=FFE20H   SIZE=001E0H
@@ -5027,292 +5065,294 @@ Directive: ;MEMORY - PH
          SEGMENT  SEGMENT  MODULE     ADDRESS
          @EBITS                       FFE20H    00001H  BSEG
                   @EBITS   @cstarte   FFE20H.0  00000H.0
+                  @EBITS   comm       FFE20H.0  00000H.0
+                  @EBITS   crc16      FFE20H.0  00000H.0
+                  @EBITS   parser     FFE20H.0  00000H.0
+                  @EBITS   parser_comp
+                                      FFE20H.0  00000H.0
+                  @EBITS   parser_debug
+                                      FFE20H.0  00000H.0
+                  @EBITS   parser_eol
+                                      FFE20H.0  00000H.0
+                  @EBITS   parser_front
+                                      FFE20H.0  00000H.0
+                  @EBITS   display    FFE20H.0  00000H.0
+                  @EBITS   display_eol
+                                      FFE20H.0  00000H.0
+                  @EBITS   display_error
+                                      FFE20H.0  00000H.0
+                  @EBITS   display_lib
+                                      FFE20H.0  00000H.0
+                  @EBITS   front      FFE20H.0  00000H.0
+                  @EBITS   process_display
+                                      FFE20H.0  00000H.0
+                  @EBITS   drain      FFE20H.0  00000H.0
+                  @EBITS   eeprom     FFE20H.0  00000H.0
+                  @EBITS   rtc        FFE20H.0  00000H.0
+                  @EBITS   eol        FFE20H.0  00000H.0
+                  @EBITS   eol_lever_handler
+                                      FFE20H.0  00000H.0
+                  @EBITS   key_eol_handler
+                                      FFE20H.0  00000H.0
+                  @EBITS   process_eol
+                                      FFE20H.0  00000H.0
+                  @EBITS   error      FFE20H.0  00000H.0
+                  @EBITS   err_comp_bldc
+                                      FFE20H.0  00000H.0
+                  @EBITS   err_comp_bldc_comm
+                                      FFE20H.0  00000H.0
+                  @EBITS   err_drain_pump
+                                      FFE20H.0  00000H.0
+                  @EBITS   err_ice_tray
+                                      FFE20H.0  00000H.0
+                  @EBITS   err_leak   FFE20H.0  00000H.0
+                  @EBITS   err_outage_hot_water
+                                      FFE20H.0  00000H.0
+                  @EBITS   err_outage_water
+                                      FFE20H.0  00000H.0
+                  @EBITS   err_temp   FFE20H.0  00000H.0
+                  @EBITS   err_temp_ambient
+                                      FFE20H.0  00000H.0
+                  @EBITS   err_temp_cold_water
+                                      FFE20H.0  00000H.0
+                  @EBITS   err_temp_eva_1
+                                      FFE20H.0  00000H.0
+                  @EBITS   err_temp_heater
+                                      FFE20H.0  00000H.0
+                  @EBITS   err_temp_hot_overheat
+                                      FFE20H.0  00000H.0
+                  @EBITS   err_temp_hot_water
+                                      FFE20H.0  00000H.0
+                  @EBITS   err_temp_hot_water_in
+                                      FFE20H.0  00000H.0
+                  @EBITS   err_temp_room_water
+                                      FFE20H.0  00000H.0
+                  @EBITS   process_error
+                                      FFE20H.0  00000H.0
+                  @EBITS   fct        FFE20H.0  00000H.0
+                  @EBITS   fct_lever_handler
+                                      FFE20H.0  00000H.0
+                  @EBITS   key_fct_handler
+                                      FFE20H.0  00000H.0
+                  @EBITS   process_fct
+                                      FFE20H.0  00000H.0
+                  @EBITS   filter     FFE20H.0  00000H.0
+                  @EBITS   hal_adc    FFE20H.0  00000H.0
+                  @EBITS   hal_eeprom
+                                      FFE20H.0  00000H.0
+                  @EBITS   hal_fan_motor
+                                      FFE20H.0  00000H.0
+                  @EBITS   hal_i2c    FFE20H.0  00000H.0
+                  @EBITS   hal_input
+                                      FFE20H.0  00000H.0
+                  @EBITS   hal_key    FFE20H.0  00000H.0
+                  @EBITS   hal_led    FFE20H.0  00000H.0
+                  @EBITS   hal_level
+                                      FFE20H.0  00000H.0
+                  @EBITS   hal_pump   FFE20H.0  00000H.0
+                  @EBITS   hal_relay
+                                      FFE20H.0  00000H.0
+                  @EBITS   hal_serial
+                                      FFE20H.0  00000H.0
+                  @EBITS   hal_step_motor
+                                      FFE20H.0  00000H.0
+                  @EBITS   hal_uv     FFE20H.0  00000H.0
+                  @EBITS   hal_valve
+                                      FFE20H.0  00000H.0
+                  @EBITS   drain_water
+                                      FFE20H.0  00000H.0
+                  @EBITS   health     FFE20H.0  00000H.0
+                  @EBITS   health_maker
+                                      FFE20H.0  00000H.0
+                  @EBITS   process_uv
+                                      FFE20H.0  00000H.0
+                  @EBITS   uv         FFE20H.0  00000H.0
+                  @EBITS   deicing_table
+                                      FFE20H.0  00000H.0
+                  @EBITS   dummy_deicing_table
+                                      FFE20H.0  00000H.0
+                  @EBITS   ice        FFE20H.0  00000H.0
+                  @EBITS   ice_maker
+                                      FFE20H.0  00000H.0
+                  @EBITS   icing_table
+                                      FFE20H.0  00000H.0
+                  @EBITS   comp       FFE20H.0  00000H.0
+                  @EBITS   comp_bldc
+                                      FFE20H.0  00000H.0
+                  @EBITS   drain_pump
+                                      FFE20H.0  00000H.0
+                  @EBITS   fan_motor
+                                      FFE20H.0  00000H.0
+                  @EBITS   flow_meter
+                                      FFE20H.0  00000H.0
+                  @EBITS   flow_valve
+                                      FFE20H.0  00000H.0
+                  @EBITS   gas_switch_valve
+                                      FFE20H.0  00000H.0
+                  @EBITS   heater_out
+                                      FFE20H.0  00000H.0
+                  @EBITS   hot_water_flow
+                                      FFE20H.0  00000H.0
+                  @EBITS   hot_water_heater
+                                      FFE20H.0  00000H.0
+                  @EBITS   ice_door   FFE20H.0  00000H.0
+                  @EBITS   ice_full   FFE20H.0  00000H.0
+                  @EBITS   ice_tray   FFE20H.0  00000H.0
+                  @EBITS   leak       FFE20H.0  00000H.0
+                  @EBITS   process_make
+                                      FFE20H.0  00000H.0
+                  @EBITS   relay      FFE20H.0  00000H.0
+                  @EBITS   smps       FFE20H.0  00000H.0
+                  @EBITS   swing_bar
+                                      FFE20H.0  00000H.0
+                  @EBITS   valve      FFE20H.0  00000H.0
+                  @EBITS   energy     FFE20H.0  00000H.0
+                  @EBITS   user       FFE20H.0  00000H.0
+                  @EBITS   key        FFE20H.0  00000H.0
+                  @EBITS   key_event_lib
+                                      FFE20H.0  00000H.0
+                  @EBITS   key_handler
+                                      FFE20H.0  00000H.0
+                  @EBITS   key_normal_handler
+                                      FFE20H.0  00000H.0
+                  @EBITS   process_key
+                                      FFE20H.0  00000H.0
+                  @EBITS   lever      FFE20H.0  00000H.0
+                  @EBITS   lever_handler
+                                      FFE20H.0  00000H.0
+                  @EBITS   process_lever
+                                      FFE20H.0  00000H.0
+                  @EBITS   metering   FFE20H.0  00000H.0
+                  @EBITS   power_saving
+                                      FFE20H.0  00000H.0
+                  @EBITS   level      FFE20H.0  00000H.0
+                  @EBITS   temp       FFE20H.0  00000H.0
+                  @EBITS   temp_table
+                                      FFE20H.0  00000H.0
+                  @EBITS   ice_tray_test
+                                      FFE20H.0  00000H.0
+                  @EBITS   service    FFE20H.0  00000H.0
+                  @EBITS   sound      FFE20H.0  00000H.0
+                  @EBITS   voice      FFE20H.0  00000H.0
+                  @EBITS   timer      FFE20H.0  00000H.0
+                  @EBITS   time_short
+                                      FFE20H.0  00000H.0
+                  @EBITS   cold_water
+                                      FFE20H.0  00000H.0
+                  @EBITS   cold_water_out
+                                      FFE20H.0  00000H.0
+                  @EBITS   flush_water_out
+                                      FFE20H.0  00000H.0
+                  @EBITS   hot_water
+                                      FFE20H.0  00000H.0
+                  @EBITS   hot_water_out
+                                      FFE20H.0  00000H.0
+                  @EBITS   room_water_out
+                                      FFE20H.0  00000H.0
+                  @EBITS   water_out
+                                      FFE20H.0  00000H.0
+                  @EBITS   water_out_common
+                                      FFE20H.0  00000H.0
+                  @EBITS   r_cg_adc   FFE20H.0  00000H.0
+                  @EBITS   r_cg_cgc   FFE20H.0  00000H.0
+                  @EBITS   r_cg_cgc_user
+                                      FFE20H.0  00000H.0
+                  @EBITS   r_cg_intc
+                                      FFE20H.0  00000H.0
+                  @EBITS   r_cg_port
+                                      FFE20H.0  00000H.0
+                  @EBITS   r_cg_serial
+                                      FFE20H.0  00000H.0
+                  @EBITS   r_cg_timer
+                                      FFE20H.0  00000H.0
+                  @EBITS   r_cg_wdt   FFE20H.0  00000H.0
+                  @EBITS   r_cg_wdt_user
+                                      FFE20H.0  00000H.0
+                  @EBITS   r_systeminit
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_DataCheck
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_Initialize
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_ProcessApmode
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_Status
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_UartInterrupt
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_Fota
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_RxProcess
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_RxServer
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_SetAccumulateData
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_SetCommon
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_SetErrorData
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_SetFunctionData
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_SetInformationData
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_SetPartData
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_SetSensorData
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_TxForm
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_TxMake
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_TxProtocol
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_Common
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_Control
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_UserInterface
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_UserInterface_IconAIS
+                                      FFE20H.0  00000H.0
+                  @EBITS   cody_kit   FFE20H.0  00000H.0
+                  @EBITS   cody_water_out
+                                      FFE20H.0  00000H.0
+                  @EBITS   empty_cold_tank
+                                      FFE20H.0  00000H.0
+                  @EBITS   display_clock
+                                      FFE20H.0  00000H.0
+                  @EBITS   smart_check
+                                      FFE20H.0  00000H.0
+                  @EBITS   heater_table
+                                      FFE20H.0  00000H.0
+                  @EBITS   diagnosis
+                                      FFE20H.0  00000H.0
+                  @EBITS   monitoring
+                                      FFE20H.0  00000H.0
+                  @EBITS   hot_water_temp_table
+                                      FFE20H.0  00000H.0
+                  @EBITS   diagnosis_12v
+                                      FFE20H.0  00000H.0
+                  @EBITS   diagnosis_24v
+                                      FFE20H.0  00000H.0
+                  @EBITS   diagnosis_feedback
+                                      FFE20H.0  00000H.0
+                  @EBITS   diagnosis_sensor
+                                      FFE20H.0  00000H.0
+                  @EBITS   diagnosis_ac
+                                      FFE20H.0  00000H.0
+                  @EBITS   hot_water_out_preheat
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_SetMonitorData
+                                      FFE20H.0  00000H.0
+                  @EBITS   WIFI_MonitorFixRAM
+                                      FFE20H.0  00000H.0
+                  @EBITS   led        FFE20H.0  00000H.0
                   @EBITS   main       FFE20H.0  00000H.1
                   @EBITS   process_sys_event
                                       FFE20H.1  00000H.0
+                  @EBITS   purifier   FFE20H.1  00000H.0
                   @EBITS   util       FFE20H.1  00000H.0
-                  @EBITS   comm       FFE20H.1  00000H.0
-                  @EBITS   crc16      FFE20H.1  00000H.0
-                  @EBITS   parser     FFE20H.1  00000H.0
-                  @EBITS   parser_comp
-                                      FFE20H.1  00000H.0
-                  @EBITS   parser_debug
-                                      FFE20H.1  00000H.0
-                  @EBITS   parser_eol
-                                      FFE20H.1  00000H.0
-                  @EBITS   parser_front
-                                      FFE20H.1  00000H.0
-                  @EBITS   display    FFE20H.1  00000H.0
-                  @EBITS   display_eol
-                                      FFE20H.1  00000H.0
-                  @EBITS   display_error
-                                      FFE20H.1  00000H.0
-                  @EBITS   display_lib
-                                      FFE20H.1  00000H.0
-                  @EBITS   front      FFE20H.1  00000H.0
-                  @EBITS   process_display
-                                      FFE20H.1  00000H.0
-                  @EBITS   drain      FFE20H.1  00000H.0
-                  @EBITS   eeprom     FFE20H.1  00000H.0
-                  @EBITS   rtc        FFE20H.1  00000H.0
-                  @EBITS   eol        FFE20H.1  00000H.0
-                  @EBITS   eol_lever_handler
-                                      FFE20H.1  00000H.0
-                  @EBITS   key_eol_handler
-                                      FFE20H.1  00000H.0
-                  @EBITS   process_eol
-                                      FFE20H.1  00000H.0
-                  @EBITS   error      FFE20H.1  00000H.0
-                  @EBITS   err_comp_bldc
-                                      FFE20H.1  00000H.0
-                  @EBITS   err_comp_bldc_comm
-                                      FFE20H.1  00000H.0
-                  @EBITS   err_drain_pump
-                                      FFE20H.1  00000H.0
-                  @EBITS   err_ice_tray
-                                      FFE20H.1  00000H.0
-                  @EBITS   err_leak   FFE20H.1  00000H.0
-                  @EBITS   err_outage_hot_water
-                                      FFE20H.1  00000H.0
-                  @EBITS   err_outage_water
-                                      FFE20H.1  00000H.0
-                  @EBITS   err_temp   FFE20H.1  00000H.0
-                  @EBITS   err_temp_ambient
-                                      FFE20H.1  00000H.0
-                  @EBITS   err_temp_cold_water
-                                      FFE20H.1  00000H.0
-                  @EBITS   err_temp_eva_1
-                                      FFE20H.1  00000H.0
-                  @EBITS   err_temp_heater
-                                      FFE20H.1  00000H.0
-                  @EBITS   err_temp_hot_overheat
-                                      FFE20H.1  00000H.0
-                  @EBITS   err_temp_hot_water
-                                      FFE20H.1  00000H.0
-                  @EBITS   err_temp_hot_water_in
-                                      FFE20H.1  00000H.0
-                  @EBITS   err_temp_room_water
-                                      FFE20H.1  00000H.0
-                  @EBITS   process_error
-                                      FFE20H.1  00000H.0
-                  @EBITS   fct        FFE20H.1  00000H.0
-                  @EBITS   fct_lever_handler
-                                      FFE20H.1  00000H.0
-                  @EBITS   key_fct_handler
-                                      FFE20H.1  00000H.0
-                  @EBITS   process_fct
-                                      FFE20H.1  00000H.0
-                  @EBITS   filter     FFE20H.1  00000H.0
-                  @EBITS   hal_adc    FFE20H.1  00000H.0
-                  @EBITS   hal_eeprom
-                                      FFE20H.1  00000H.0
-                  @EBITS   hal_fan_motor
-                                      FFE20H.1  00000H.0
-                  @EBITS   hal_i2c    FFE20H.1  00000H.0
-                  @EBITS   hal_input
-                                      FFE20H.1  00000H.0
-                  @EBITS   hal_key    FFE20H.1  00000H.0
-                  @EBITS   hal_led    FFE20H.1  00000H.0
-                  @EBITS   hal_level
-                                      FFE20H.1  00000H.0
-                  @EBITS   hal_pump   FFE20H.1  00000H.0
-                  @EBITS   hal_relay
-                                      FFE20H.1  00000H.0
-                  @EBITS   hal_serial
-                                      FFE20H.1  00000H.0
-                  @EBITS   hal_step_motor
-                                      FFE20H.1  00000H.0
-                  @EBITS   hal_uv     FFE20H.1  00000H.0
-                  @EBITS   hal_valve
-                                      FFE20H.1  00000H.0
-                  @EBITS   drain_water
-                                      FFE20H.1  00000H.0
-                  @EBITS   health     FFE20H.1  00000H.0
-                  @EBITS   health_maker
-                                      FFE20H.1  00000H.0
-                  @EBITS   process_uv
-                                      FFE20H.1  00000H.0
-                  @EBITS   uv         FFE20H.1  00000H.0
-                  @EBITS   deicing_table
-                                      FFE20H.1  00000H.0
-                  @EBITS   dummy_deicing_table
-                                      FFE20H.1  00000H.0
-                  @EBITS   ice        FFE20H.1  00000H.0
-                  @EBITS   ice_maker
-                                      FFE20H.1  00000H.0
-                  @EBITS   icing_table
-                                      FFE20H.1  00000H.0
-                  @EBITS   comp       FFE20H.1  00000H.0
-                  @EBITS   comp_bldc
-                                      FFE20H.1  00000H.0
-                  @EBITS   drain_pump
-                                      FFE20H.1  00000H.0
-                  @EBITS   fan_motor
-                                      FFE20H.1  00000H.0
-                  @EBITS   flow_meter
-                                      FFE20H.1  00000H.0
-                  @EBITS   flow_valve
-                                      FFE20H.1  00000H.0
-                  @EBITS   gas_switch_valve
-                                      FFE20H.1  00000H.0
-                  @EBITS   heater_out
-                                      FFE20H.1  00000H.0
-                  @EBITS   hot_water_flow
-                                      FFE20H.1  00000H.0
-                  @EBITS   hot_water_heater
-                                      FFE20H.1  00000H.0
-                  @EBITS   ice_door   FFE20H.1  00000H.0
-                  @EBITS   ice_full   FFE20H.1  00000H.0
-                  @EBITS   ice_tray   FFE20H.1  00000H.0
-                  @EBITS   leak       FFE20H.1  00000H.0
-                  @EBITS   process_make
-                                      FFE20H.1  00000H.0
-                  @EBITS   relay      FFE20H.1  00000H.0
-                  @EBITS   smps       FFE20H.1  00000H.0
-                  @EBITS   swing_bar
-                                      FFE20H.1  00000H.0
-                  @EBITS   valve      FFE20H.1  00000H.0
-                  @EBITS   energy     FFE20H.1  00000H.0
-                  @EBITS   user       FFE20H.1  00000H.0
-                  @EBITS   key        FFE20H.1  00000H.0
-                  @EBITS   key_event_lib
-                                      FFE20H.1  00000H.0
-                  @EBITS   key_handler
-                                      FFE20H.1  00000H.0
-                  @EBITS   key_normal_handler
-                                      FFE20H.1  00000H.0
-                  @EBITS   process_key
-                                      FFE20H.1  00000H.0
-                  @EBITS   lever      FFE20H.1  00000H.0
-                  @EBITS   lever_handler
-                                      FFE20H.1  00000H.0
-                  @EBITS   process_lever
-                                      FFE20H.1  00000H.0
-                  @EBITS   metering   FFE20H.1  00000H.0
-                  @EBITS   power_saving
-                                      FFE20H.1  00000H.0
-                  @EBITS   level      FFE20H.1  00000H.0
-                  @EBITS   temp       FFE20H.1  00000H.0
-                  @EBITS   temp_table
-                                      FFE20H.1  00000H.0
-                  @EBITS   ice_tray_test
-                                      FFE20H.1  00000H.0
-                  @EBITS   service    FFE20H.1  00000H.0
-                  @EBITS   sound      FFE20H.1  00000H.0
-                  @EBITS   voice      FFE20H.1  00000H.0
-                  @EBITS   timer      FFE20H.1  00000H.0
-                  @EBITS   time_short
-                                      FFE20H.1  00000H.0
-                  @EBITS   cold_water
-                                      FFE20H.1  00000H.0
-                  @EBITS   cold_water_out
-                                      FFE20H.1  00000H.0
-                  @EBITS   flush_water_out
-                                      FFE20H.1  00000H.0
-                  @EBITS   hot_water
-                                      FFE20H.1  00000H.0
-                  @EBITS   hot_water_out
-                                      FFE20H.1  00000H.0
-                  @EBITS   room_water_out
-                                      FFE20H.1  00000H.0
-                  @EBITS   water_out
-                                      FFE20H.1  00000H.0
-                  @EBITS   water_out_common
-                                      FFE20H.1  00000H.0
-                  @EBITS   r_cg_adc   FFE20H.1  00000H.0
-                  @EBITS   r_cg_cgc   FFE20H.1  00000H.0
-                  @EBITS   r_cg_cgc_user
-                                      FFE20H.1  00000H.0
-                  @EBITS   r_cg_intc
-                                      FFE20H.1  00000H.0
-                  @EBITS   r_cg_port
-                                      FFE20H.1  00000H.0
-                  @EBITS   r_cg_serial
-                                      FFE20H.1  00000H.0
-                  @EBITS   r_cg_timer
-                                      FFE20H.1  00000H.0
-                  @EBITS   r_cg_wdt   FFE20H.1  00000H.0
-                  @EBITS   r_cg_wdt_user
-                                      FFE20H.1  00000H.0
-                  @EBITS   r_systeminit
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_DataCheck
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_Initialize
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_ProcessApmode
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_Status
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_UartInterrupt
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_Fota
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_RxProcess
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_RxServer
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_SetAccumulateData
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_SetCommon
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_SetErrorData
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_SetFunctionData
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_SetInformationData
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_SetPartData
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_SetSensorData
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_TxForm
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_TxMake
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_TxProtocol
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_Common
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_Control
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_UserInterface
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_UserInterface_IconAIS
-                                      FFE20H.1  00000H.0
-                  @EBITS   cody_kit   FFE20H.1  00000H.0
-                  @EBITS   cody_water_out
-                                      FFE20H.1  00000H.0
-                  @EBITS   empty_cold_tank
-                                      FFE20H.1  00000H.0
-                  @EBITS   display_clock
-                                      FFE20H.1  00000H.0
-                  @EBITS   smart_check
-                                      FFE20H.1  00000H.0
-                  @EBITS   heater_table
-                                      FFE20H.1  00000H.0
-                  @EBITS   diagnosis
-                                      FFE20H.1  00000H.0
-                  @EBITS   monitoring
-                                      FFE20H.1  00000H.0
-                  @EBITS   hot_water_temp_table
-                                      FFE20H.1  00000H.0
-                  @EBITS   diagnosis_12v
-                                      FFE20H.1  00000H.0
-                  @EBITS   diagnosis_24v
-                                      FFE20H.1  00000H.0
-                  @EBITS   diagnosis_feedback
-                                      FFE20H.1  00000H.0
-                  @EBITS   diagnosis_sensor
-                                      FFE20H.1  00000H.0
-                  @EBITS   diagnosis_ac
-                                      FFE20H.1  00000H.0
-                  @EBITS   hot_water_out_preheat
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_SetMonitorData
-                                      FFE20H.1  00000H.0
-                  @EBITS   WIFI_MonitorFixRAM
-                                      FFE20H.1  00000H.0
 * gap *                               FFE21H    00093H
          @@KREG00                     FFEB4H    00002H  DSEG AT
                   @@KREG00 @KREG00    FFEB4H    00002H

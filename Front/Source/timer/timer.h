@@ -1,26 +1,38 @@
+/**
+ * File : timer.h
+ * 
+ * Process Sys Timer Api
+**/
 #ifndef __TIMER_H__
-#define __TIMER_H__ 
+#define __TIMER_H__
 
 #include "timer_id.h"
 
 #define DELAY_MS(x) 
-#define SEC( x )        ( ( x ) * 1000UL )
+#define SEC(x)        ( (x) * 1000UL )
 
-void InitTimer( void );
+typedef void (*FPUserISR)(void);
 
-void StartTimer( U8 id, U32 time_out );
+typedef enum _timer_type_
+{
+    TIMER_PROCESS,        /// 0 :
+    TIMER_USER,           /// 1 :
+} ETimerType_T;
 
-void DisableTimer( U8 id );
+typedef enum _timer_status_
+{
+    TIMER_EXPIRE,         /// 0 :
+    TIMER_NOT_EXPIRE,     /// 1 :
+    TIMER_DISABLE,        /// 2 :
+} ETimerStatus_T;
 
-void StopTimer( U8 id );
+void InitTimer(void);
+void StartTimer(ETimerType_T type, U8 id, U32 timeOut);
+void DisableTimer(ETimerType_T type, U8 id);
+void StopTimer(ETimerType_T type, U8 id);
+U8 IsExpiredTimer(ETimerType_T type, U8 id);
+void UpdateTimer(void);
+void RegisterTimerISR(void (*PFUserISR)(void));
+FPUserISR GetTimerISR(void);
 
-#define TIMER_EXPIRE        0
-#define TIMER_NOT_EXPIRE    1
-#define TIMER_DISABLE       2
-U8 IsExpiredTimer( U8 id );
-
-
-/* 타이머 입터럽트 사용자 ISR 함수 등록 */
-void RegisterTimerISR( void (*pUserISR)(void) );
-
-#endif /* __TIMER_H__ */
+#endif  /* __TIMER_H__ */

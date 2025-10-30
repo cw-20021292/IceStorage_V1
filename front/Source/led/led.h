@@ -1,0 +1,140 @@
+/**
+ * File : led.h
+ * 
+ * Led
+**/
+#ifndef __LED_H__
+#define __LED_H__
+
+#include "prj_type.h"
+
+#define LED_TYPE_DUTY_DIM   (0x00)
+#define LED_TYPE_DUTY       (0x10)
+
+#define PROTOCOL_LED_DUTY_0   (0x00)
+#define PROTOCOL_LED_DUTY_10  (0x01)
+#define PROTOCOL_LED_DUTY_20  (0x02)
+#define PROTOCOL_LED_DUTY_30  (0x03)
+#define PROTOCOL_LED_DUTY_40  (0x04)
+#define PROTOCOL_LED_DUTY_50  (0x05)
+#define PROTOCOL_LED_DUTY_60  (0x06)
+#define PROTOCOL_LED_DUTY_70  (0x07)
+#define PROTOCOL_LED_DUTY_80  (0x08)
+#define PROTOCOL_LED_DUTY_90  (0x09)
+#define PROTOCOL_LED_DUTY_100 (0x0A)
+
+typedef enum _led_id_
+{   
+    /* 살균부 */
+    LED_ID_UV_HOT_STER_TXT,
+    LED_ID_UV_STER_TXT,
+    LED_ID_UV_WATER_FAUCET,
+    LED_ID_UV_ICE_FAUCET,
+    LED_ID_UV_ICE_TRAY,
+    LED_ID_UV_ICE_STORAGE_BOX,
+
+    /* 좌측 온도설정 단계 */
+    LED_ID_TEMP_STEP_1,
+    LED_ID_TEMP_STEP_2,
+    LED_ID_TEMP_STEP_3,
+    LED_ID_TEMP_STEP_4,
+    LED_ID_TEMP_STEP_5, 
+
+    /* 얼음가득/부족 */
+    LED_ID_ICE_FULL_TXT,
+    LED_ID_ICE_LACK_TXT,
+
+    /* 빠른제빙/취침모드/:/'C */
+    LED_ID_FAST_ICE_ICON,
+    LED_ID_SLEEP_ICON,
+    LED_ID_COLON,
+    LED_ID_CELCIUS,
+
+    LED_ID_RAMEN,
+    LED_ID_DRIP_COFFEE,
+    LED_ID_TEA,
+    LED_ID_MY1_ICON,
+    LED_ID_MY2_ICON,
+    LED_ID_MY3_ICON,
+    
+    LED_ID_SEG_DOT,
+    LED_ID_FILTER_CLEAN_TXT,
+    
+    LED_ID_WIFI_ICON,
+    LED_ID_SUNNY_ICON,
+    LED_ID_CLOUD_ICON,
+    LED_ID_UMBRELLA_ICON,
+    
+    LED_ID_AMOUNT_INFINITE,
+    LED_ID_AMOUNT_STEP_4,
+    LED_ID_AMOUNT_STEP_3,
+    LED_ID_AMOUNT_STEP_2,
+    LED_ID_AMOUNT_STEP_1,
+
+    LED_ID_PERCENT,
+    LED_ID_LITER,
+    LED_ID_ML,
+
+    LED_ID_ICE_WATER_SEL,
+    LED_ID_ICE_SEL,
+    LED_ID_HOT_WATER_SEL,
+    LED_ID_ROOM_WATER_SEL,
+    LED_ID_COLD_WATER_SEL,
+    LED_ID_AMOUNT_SEL,
+    LED_ID_MY_SEL,
+    
+    LED_ID_ICE_TYPE_NORMAL,
+    LED_ID_ICE_TYPE_PIECE,
+    LED_ID_ICE_LOCKER,
+    LED_ID_HOT_WATER_LOCKER,
+
+    LED_ID_COLD_COMP_WHITE,
+    LED_ID_COLD_COMP_BLUE,
+    
+    LED_ID_ICE_OFF_SEL,
+    LED_ID_ICE_SIZE_SEL,
+    LED_ID_ICE_BIG,
+    LED_ID_ICE_LINE,
+    LED_ID_ICE_SMALL,
+    LED_ID_HOT_WATER_LOCK_SEL,
+    LED_ID_FAST_ICE_SEL,
+    LED_ID_COLD_TEMP,
+    LED_ID_COLD_TEMP_WEAK,
+    LED_ID_COLD_TEMP_LINE,
+    LED_ID_COLD_TEMP_STRONG,
+    LED_ID_COLD_OFF_SEL,
+    LED_ID_SLEEP_SEL,
+    
+    LED_ID_ICE_LOCK_SEL,
+    LED_ID_ALL_LOCK_SEL,
+
+    LED_ID_ICE_EX_IN_WHITE_SEL,
+    LED_ID_ICE_EX_IN_RED_SEL,
+    LED_ID_ICE_EX_IN_BLUE_SEL,
+    LED_ID_ICE_EX_IN_GREEN_SEL,
+
+    LED_ID_ICE_EX_OUTER_WHITE_SEL,
+    LED_ID_ICE_EX_OUTER_RED_SEL,
+    LED_ID_ICE_EX_OUTER_BLUE_SEL,
+    LED_ID_ICE_EX_OUTER_GREEN_SEL,
+
+    LED_ID_WATER_EX_WHITE_SEL,
+    LED_ID_WATER_EX_RED_SEL,
+    LED_ID_WATER_EX_BLUE_SEL,
+    LED_ID_WATER_EX_GREEN_SEL,
+
+    LED_ID_WELCOME_LED_LEFT,
+    LED_ID_WELCOME_LED_RIGHT,
+
+    LED_ID_MAX,
+} ELedId_T;
+
+void InitLed(void);
+void OnOffLed(ELedId_T ledId, U8 duty);
+void AllOffLed(void);
+
+U8 ConvertProtocol2Duty(U8 data);
+
+void ControlLed(void);
+
+#endif  /* __LED_H__ */

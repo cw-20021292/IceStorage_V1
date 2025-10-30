@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "hal_serial.h": "c",
+        "parser_subfront.h": "c",
+        "config.h": "c",
+        "voice_nxd1005.h": "c"
+    }
+}

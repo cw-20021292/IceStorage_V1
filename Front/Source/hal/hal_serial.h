@@ -1,39 +1,50 @@
+/**
+ * File : hal_serial.h
+ * 
+ * Hardware Abstraction Layer
+ * Depend on Renesas MCU Chip
+**/
 #ifndef __HAL_SERIAL_H__
 #define __HAL_SERIAL_H__
 
 #include "prj_type.h"
 
+/* UART CONFIG */
+#define CONFIG_USE_UART_0       (0)   // NONE
+#define CONFIG_USE_UART_1       (1)   // MAIN
+#define CONFIG_USE_UART_2       (1)   // SUB FRONT
+#define CONFIG_USE_UART_3       (0)   // NONE
+
 /* UART ID */
-#define COMM_ID_MAIN         0
-#define MAX_COMM_ID           1
-#if 0
-#define COMM_ID_WIFI          1
-#define COMM_ID_EOL           2
-#define COMM_ID_LCD           3
-#define MAX_COMM_ID           4
-#endif
+typedef enum _comm_id_
+{
+    COMM_ID_MAIN,         /// 0
+    COMM_ID_SUB_FRONT,    /// 1
+    COMM_ID_MAX,          /// 2
+} ECommId;
 
-#define MAX_COMM_RX_BUF_SZ      256
-#define MAX_COMM_TX_BUF_SZ      256
+void HalUart0Start(void);
+void HalUart0Stop(void);
+void HalUart0ReceiveByte(U8 *rxData);
+void HalUart0SendByte(U8 txData);
+void HalUart0EnableInterrupt(U8 enable);
 
-void    HAL_InitCommId( U8 uart_id );
-void    HAL_InitComm( void );
+void HalUart1Start(void);
+void HalUart1Stop(void);
+void HalUart1ReceiveByte(U8 *rxData);
+void HalUart1SendByte(U8 txData);
+void HalUart1EnableInterrupt(U8 enable);
 
-U8  HAL_IsFullRecvBuffer( U8 uart_id );
-U8  HAL_IsEmptyRecvBuffer( U8 uart_id );
-U8  HAL_IsFullSendBuffer( U8 uart_id );
+void HalUart2Start(void);
+void HalUart2Stop(void);
+void HalUart2ReceiveByte(U8 *rxData);
+void HalUart2SendByte(U8 txData);
+void HalUart2EnableInterrupt(U8 enable);
 
-void HAL_InitRecvLength(U8 uart_id );
-I16  HAL_GetRecvLength( U8 uart_id );
-I16  HAL_GetSendLength( U8 uart_id );
+void HalUart3Start(void);
+void HalUart3Stop(void);
+void HalUart3ReceiveByte(U8 *rxData);
+void HalUart3SendByte(U8 txData);
+void HalUart3EnableInterrupt(U8 enable);
 
-void    HAL_SetRecvBuffer(U8 uart_id, U8 _byte );
-U8    HAL_GetRecvBuffer( U8 uart_id, U16 index );
-
-void    HAL_SetSendBuffer( U8 uart_id, U8 _byte );
-U8     HAL_GetSendBuffer( U8 uart_id, U16 index );
-
-void    HAL_SendByte( U8 uart_id );
-
-#endif /* __HAL_SERIAL_H__ */
-
+#endif  /* __HAL_SERIAL_H__ */

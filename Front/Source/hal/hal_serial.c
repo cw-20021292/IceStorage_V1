@@ -1,368 +1,516 @@
+/**
+ * File : hal_serial.c
+ *
+ * Hardware Abstraction Layer
+ * Depend on Renesas MCU Chip
+*/
+/* UART0 : NONE */
+//#pragma interrupt INTST0    r_uart0_interrupt_send
+//#pragma interrupt INTSR0    r_uart0_interrupt_receive
+//#pragma interrupt INTSRE0   r_uart0_interrupt_error
 
-/* UART0 : FRONT */
-#pragma interrupt INTST2    r_uart2_interrupt_send
-#pragma interrupt INTSR2    r_uart2_interrupt_receive
-
-#if 0
-/* UART0 : FRONT */
+/* UART1 : MAIN */
 #pragma interrupt INTST1    r_uart1_interrupt_send
 #pragma interrupt INTSR1    r_uart1_interrupt_receive
 
-/* UART1 : WIFI */
-#pragma interrupt INTST0    r_uart0_interrupt_send
-#pragma interrupt INTSR0    r_uart0_interrupt_receive
+/* UART2 : SUB FRONT */
+#pragma interrupt INTST2    r_uart2_interrupt_send
+#pragma interrupt INTSR2    r_uart2_interrupt_receive
+//#pragma interrupt INTSRE2   r_uart2_interrupt_error
 
-/* UART2 : LINE TEST / DEBUG */
-
-/* UART3 : LCD */
-#pragma interrupt INTST3    r_uart3_interrupt_send
-#pragma interrupt INTSR3    r_uart3_interrupt_receive
-#endif
-
+/* UART3 : NONE */
+//#pragma interrupt INTST3    r_uart3_interrupt_send
+//#pragma interrupt INTSR3    r_uart3_interrupt_receive
+//#pragma interrupt INTSRE3   r_uart3_interrupt_error
 
 #include "hw.h"
 #include "hal_serial.h"
-#include <string.h>
+#include "prj_type.h"
+
 #include "timer.h"
+#include "comm.h"
 
+// TimeStamp ( @ms )
+#define UART0_RX_TIME_STAMP   (10)
+#define UART1_RX_TIME_STAMP   (10)
+#define UART2_RX_TIME_STAMP   (10)
+#define UART3_RX_TIME_STAMP   (10)
 
-#define  MAIN_TXD TXD2
-#define  MAIN_RXD RXD2
+#if (CONFIG_USE_UART_0 == 1 )
 
-#if 0
-#define  WIFI_TXD TXD1
-#define  WIFI_RXD RXD1
+#define UART0_TXD             TXD0
+#define UART0_RXD             RXD0
+#define UART0_STATUS          SSR01
+#define UART0_FLAG_CLEAR      SIR01
+#define UART0_TX_INTERRUPT    STMK0
 
-#define  EOL_TXD TXD2
-#define  EOL_RXD RXD2
-
-#define  LCD_TXD TXD3
-#define  LCD_RXD RXD3
-#endif
-
-
-typedef struct _comm_
+/**
+ * @ brief     Function For Start UART0
+ * @ detail    none
+ * @ param   none
+ * @ return   none
+*/
+void HalUart0Start(void)
 {
-    U8 recv_buf[ MAX_COMM_RX_BUF_SZ ];
-    I16 recv_len;
-    U8 send_buf[ MAX_COMM_TX_BUF_SZ ];
-    I16 send_len;
-    I16 tx_len;
-} comm_t;
-
-comm_t  comm[ MAX_COMM_ID ];
-
-
-
-void    HAL_InitCommId( U8 uart_id )
-{
-    memset( &comm[ uart_id ], 0, sizeof( comm_t ) );
+    R_UART0_Start();
 }
 
-void    HAL_InitComm( void )
+/**
+ * @ brief     Function For Stop UART0
+ * @ detail    none
+ * @ param   none
+ * @ return   none
+*/
+void HalUart0Stop(void)
 {
-    HAL_InitCommId( COMM_ID_MAIN );
-    R_UART2_Start();
-#if 0
-    HAL_InitCommId( COMM_ID_WIFI );
+    R_UART0_Stop();
+}
+
+/**
+ * @ brief          Function For Receive Data of UART0
+ * @ detail         none
+ * @ param   xPtrRxData   Received Data
+ * @ return         none
+*/
+void HalUart0ReceiveByte(U8 *rxData)
+{
+    *rxData = UART0_RXD;
+}
+
+/**
+ * @ brief              Function For Send Data of UART0
+ * @ detail             none
+ * @ param   xTxData    none
+ * @ return             none
+**/
+void HalUart0SendByte(U8 txData)
+{
+    UART0_TXD = txData;
+}
+
+/**
+ * @ brief               Function For Enable Interrupt of UART1
+ * @ detail              none
+ * @ param    xUenable   Interrupt Enable(1), Disable(0)
+ * @ return              none
+**/
+void HalUart0EnableInterrupt(U8 enable)
+{
+    if( enable == TRUE )
+    {
+        /* Enable INTST2 Interrupt */
+        UART0_TX_INTERRUPT = 0;
+    }
+    else
+    {
+        /* Disable INTST2 Interrupt */
+        UART0_TX_INTERRUPT = 1;
+    }
+}
+
+#endif
+
+#if( CONFIG_USE_UART_1 == 1 )
+
+#define UART1_TXD             TXD1
+#define UART1_RXD             RXD1
+#define UART1_STATUS          SSR03
+#define UART1_FLAG_CLEAR      SIR03
+#define UART1_TX_INTERRUPT    STMK1
+
+/**
+ * @ brief     Function For Start UART1
+ * @ detail    none
+ * @ param   none
+ * @ return   none
+**/
+void HalUart1Start(void)
+{
     R_UART1_Start();
+}
 
-    HAL_InitCommId( COMM_ID_EOL );
+/**
+ * @ brief     Function For Stop UART1
+ * @ detail    none
+ * @ param   none
+ * @ return   none
+**/
+void HalUart1Stop(void)
+{
+    R_UART1_Stop();
+}
+
+/**
+ * @ brief       Function For Receive Data of UART1
+ * @ detail      none
+ * @ param   rxData   Received Data
+ * @ return      none
+**/
+void HalUart1ReceiveByte(U8 *rxData)
+{
+    *rxData = UART1_RXD;
+}
+
+/**
+ * @ brief             Function For Send Data of UART1
+ * @ detail            none
+ * @ param   txData    none
+ * @ return            none
+**/
+void HalUart1SendByte(U8 txData)
+{
+    UART1_TXD = txData;
+}
+
+/**
+ * @ brief             Function For Enable Interrupt of UART1
+ * @ detail            none
+ * @ param    enable   Interrupt Enable(1), Disable(0)
+ * @ return            none
+**/
+void HalUart1EnableInterrupt(U8 enable)
+{
+    if( enable == TRUE )
+    {
+        /* Enable INTST2 Interrupt */
+        UART1_TX_INTERRUPT = 0;
+    }
+    else
+    {
+        /* Disable INTST2 Interrupt */
+        UART1_TX_INTERRUPT = 1;
+    }
+}
+
+#endif
+
+#if( CONFIG_USE_UART_2 == 1 )
+
+#define UART2_TXD             TXD2
+#define UART2_RXD             RXD2
+#define UART2_STATUS          SSR11
+#define UART2_FLAG_CLEAR      SIR11
+#define UART2_TX_INTERRUPT    STMK2
+
+/**
+ * @ brief     Function For Start UART2
+ * @ detail    none
+ * @ param   none
+ * @ return   none
+**/
+void HalUart2Start(void)
+{
     R_UART2_Start();
+}
 
-    HAL_InitCommId( COMM_ID_LCD );
+/**
+ * @ brief     Function For Stop UART2
+ * @ detail    none
+ * @ param   none
+ * @ return   none
+**/
+void HalUart2Stop(void)
+{
+    R_UART2_Stop();
+}
+
+/**
+ * @ brief       Function For Receive Data of UART2
+ * @ detail      none
+ * @ param   rxData   Received Data
+ * @ return      none
+**/
+void HalUart2ReceiveByte(U8 *rxData)
+{
+    *rxData = UART2_RXD;
+}
+
+
+/**
+ * @ brief             Function For Send Data of UART2
+ * @ detail            none
+ * @ param   txData    none
+ * @ return            none
+**/
+void HalUart2SendByte(U8 txData)
+{
+    UART2_TXD = txData;
+}
+
+/**
+ * @ brief             Function For Enable Interrupt of UART2
+ * @ detail            none
+ * @ param    enable   Interrupt Enable(1), Disable(0)
+ * @ return            none
+**/
+void HalUart2EnableInterrupt(U8 enable)
+{
+    if( enable == TRUE )
+    {
+        /* Enable INTST2 Interrupt */
+        UART2_TX_INTERRUPT = 0;
+    }
+    else
+    {
+        /* Disable INTST2 Interrupt */
+        UART2_TX_INTERRUPT = 1;
+    }
+}
+
+#endif
+
+#if ( CONFIG_USE_UART_3 == 1 )
+
+#define UART3_TXD                TXD3
+#define UART3_RXD                RXD3
+#define UART3_STATUS             SSR13
+#define UART3_FLAG_CLEAR         SIR13
+#define UART3_TX_INTERRUPT       STMK3
+
+/**
+ * @ brief     Function For Start UART3
+ * @ detail    none
+ * @ param   none
+ * @ return   none
+**/
+void HalUart3Start(void)
+{
     R_UART3_Start();
-#endif
 }
 
-
-U8  HAL_IsFullRecvBuffer( U8 uart_id )
+/**
+ * @ brief     Function For Stop UART3
+ * @ detail    none
+ * @ param   none
+ * @ return   none
+**/
+void HalUart3Stop(void)
 {
-    if( comm[ uart_id ].recv_len >= MAX_COMM_RX_BUF_SZ )
+    R_UART2_Stop();
+}
+
+/**
+ * @ brief       Function For Receive Data of UART3
+ * @ detail      none
+ * @ param   rxData   Received Data
+ * @ return      none
+**/
+void HalUart3ReceiveByte(U8 *rxData)
+{
+    *rxData = UART3_RXD;
+}
+
+/**
+ * @ brief             Function For Send Data of UART3
+ * @ detail            none
+ * @ param   txData    none
+ * @ return            none
+**/
+void HalUart3SendByte(U8 txData)
+{
+    UART3_TXD = txData;
+}
+
+/**
+ * @ brief             Function For Enable Interrupt of UART3
+ * @ detail            none
+ * @ param    enable   Interrupt Enable(1), Disable(0)
+ * @ return            none
+**/
+void HalUart3EnableInterrupt(U8 enable)
+{
+    if( enable == TRUE )
     {
-        return TRUE;
+        /* Enable INTST3 Interrupt */
+        UART3_TX_INTERRUPT = 0;
     }
-
-    return FALSE;
-}
-
-U8  HAL_IsEmptyRecvBuffer( U8 uart_id )
-{
-    if( comm[ uart_id ].recv_len > 0 )
+    else
     {
-        return FALSE;
-    }
-
-    return TRUE;
-
-}
-
-U8  HAL_IsFullSendBuffer( U8 uart_id )
-{
-    if( comm[ uart_id ].send_len >= MAX_COMM_TX_BUF_SZ )
-    {
-        return TRUE;
-    }
-
-    return FALSE;
-}
-
-void HAL_InitRecvLength(U8 uart_id )
-{
-    comm[ uart_id ].recv_len = 0;
-}
-
-I16  HAL_GetRecvLength( U8 uart_id )
-{
-    return comm[ uart_id ].recv_len;
-}
-
-I16  HAL_GetSendLength( U8 uart_id )
-{
-    return comm[ uart_id].send_len;
-}
-
-
-void    HAL_SetRecvBuffer(U8 uart_id, U8 _byte )
-{
-    comm_t *p_comm;
-
-    p_comm = &comm[ uart_id ];
-    p_comm->recv_buf[ p_comm->recv_len ] = _byte;
-    p_comm->recv_len++;
-
-}
-
-U8 HAL_GetRecvBuffer( U8 uart_id, U16 index )
-{
-    return comm[ uart_id ].recv_buf[ index ];
-}
-
-
-void    HAL_SetSendBuffer( U8 uart_id, U8 _byte )
-{
-    comm_t *p_comm;
-    
-    if( HAL_IsFullSendBuffer( uart_id ) == FALSE )
-    {
-        p_comm = &comm[ uart_id ];
-        p_comm->send_buf[ p_comm->send_len ] = _byte;
-        p_comm->send_len++;
+        /* Disable INTST3 Interrupt */
+        UART3_TX_INTERRUPT = 1;
     }
 }
-
-U8  HAL_GetSendBuffer( U8 uart_id, U16 index )
-{
-    return comm[ uart_id ].send_buf[ index ];
-}
-
-
-void    HAL_SendByte( U8 uart_id )
-{
-    U8 ch;
-    comm_t *p_comm;
-
-
-    p_comm  = &comm[ uart_id ];
-    ch      = p_comm->send_buf[ p_comm->tx_len ];
-    p_comm->tx_len++;
-
-#if 0
-    if( uart_id == COMM_ID_EOL )
-    {
-       EOL_TXD = ch;
-    }
-    else if( uart_id == COMM_ID_WIFI )
-    {
-       WIFI_TXD = ch;
-    }
-    else if( uart_id == COMM_ID_LCD )
-    {
-       LCD_TXD = ch;
-    }
 
 #endif
-    if( uart_id == COMM_ID_MAIN )
-    {
-       MAIN_TXD = ch;
-    }
-}
-
-static U8   IsCompleteTx( U8 uart_id )
-{
-    if( comm[uart_id].tx_len < comm[ uart_id ].send_len )
-    {
-        return FALSE;
-    }
-
-    return TRUE;
-
-}
 
 /* INTERRUPT */
-
-#if 0
-/* UART 1 */
-__interrupt static void r_uart1_interrupt_receive(void)
-{
-    volatile U8 rx_data;
-    volatile U8 err_type;
-
-    err_type = (U8)(SSR03 & 0x0007U);
-    SIR03 = (U16)err_type;
-
-    rx_data = MAIN_RXD;
-    
-    if( err_type == 0 )
-    {
-        if( HAL_IsFullRecvBuffer( COMM_ID_MAIN ) == FALSE )
-        {
-            HAL_SetRecvBuffer( COMM_ID_MAIN, rx_data );
-        }
-        else
-        {
-            HAL_InitCommId( COMM_ID_MAIN );
-        }
-    }
-
-    StartTimer( TIMER_ID_COMM_MAIN_RX, 5 );
-}
-
-__interrupt static void r_uart1_interrupt_send(void)
-{
-    if( IsCompleteTx( COMM_ID_MAIN ) == FALSE )
-    {
-        HAL_SendByte( COMM_ID_MAIN );
-    }
-    else
-    {
-        HAL_InitCommId( COMM_ID_MAIN );
-    }
-}
-#endif
-
 /* UART 0 */
-#if 0
+#if ( CONFIG_USE_UART_0 == 1 )
+U16 the_rx0_err_count = 0;
+/**
+ * @ brief       Function For Process Interrupt about Reception End
+ * @ detail      Uart0 Reception Interrput Service Routine
+ * @ param       none
+ * @ return      none
+**/
 __interrupt static void r_uart0_interrupt_receive(void)
 {
-    volatile U8 err_type;
-    volatile U8 rx_data;
-
-    err_type = (uint8_t)(SSR01 & 0x0007U);
-    SIR01 = (uint16_t)err_type;
-
-    rx_data = MAIN_RXD;
-
-    if( err_type == 0 )
-    {
-        StartTimer( TIMER_ID_COMM_MAIN_RX, 2 );
-        if( HAL_IsFullRecvBuffer( COMM_ID_MAIN ) == FALSE )
-        {
-            HAL_SetRecvBuffer( COMM_ID_MAIN, rx_data );
-        }
-        else
-        {
-            HAL_InitCommId( COMM_ID_MAIN );
-        }
-
-
-    }
+    
 }
 
+/**
+ * @ brief       Function For Process Interrupt about Transmission End
+ * @ detail      Uart0 Transmission Interrupt Service Routine
+ * @ param       none
+ * @ return      none
+**/
 __interrupt static void r_uart0_interrupt_send(void)
 {
-    if( IsCompleteTx( COMM_ID_MAIN ) == FALSE )
+    
+}
+#endif
+
+/* UART 1 */
+#if ( CONFIG_USE_UART_1 == 1 )
+U16 the_rx1_err_count = 0;
+/**
+ * @ brief       Function For Process Interrupt about Reception End
+ * @ detail      Uart1 Reception Interrput Service Routine
+ * @ param       none
+ * @ return      none
+**/
+__interrupt static void r_uart1_interrupt_receive(void)
+{
+    volatile U8 rxData = 0;
+    volatile U8 errType = 0;
+
+    errType = (uint8_t)(UART1_STATUS & 0x0007U);
+    UART1_FLAG_CLEAR = (uint16_t)errType;
+
+    rxData = UART1_RXD;
+
+    if( errType == 0U )
     {
-        HAL_SendByte( COMM_ID_MAIN );
+        if( IsFullRecvBuffer(COMM_ID_MAIN) == FALSE )
+        {
+            SetRecvBuffer(COMM_ID_MAIN, rxData);
+        }
+        else
+        {
+            InitCommId(COMM_ID_MAIN);
+        }
+
+        StartTimer(TIMER_USER, TIMER_USER_ID_COMM_MAIN_RX, UART1_RX_TIME_STAMP );
+
+        SetMainRxErr(FALSE);
+        StartTimer(TIMER_PROCESS, TIMER_ID_MAIN_TX_ERR, SEC(3));
+    } 
+    else
+    {
+        the_rx1_err_count++;
+        if( the_rx1_err_count >= 0xFFFF )
+        {
+            the_rx1_err_count = 0;
+        }
+    }
+}
+
+/**
+ * @ brief       Function For Process Interrupt about Transmission End
+ * @ detail      Uart1 Transmission Interrupt Service Routine
+ * @ param       none
+ * @ return      none
+**/
+__interrupt static void r_uart1_interrupt_send(void)
+{
+    if( IsCompleteTx(COMM_ID_MAIN) == FALSE )
+    {
+        SendByte(COMM_ID_MAIN);
     }
     else
     {
-        HAL_InitCommId( COMM_ID_MAIN );
+        InitCommId(COMM_ID_MAIN);
     }
 }
 #endif
 
-
-#if 1
-
-/* UART 3 */
-
+/* UART 2 */
+#if ( CONFIG_USE_UART_2 == 1 )
+U16 the_rx2_err_count = 0;
+/**
+ * @ brief       Function For Process Interrupt about Reception End
+ * @ detail      Uart2 Reception Interrput Service Routine
+ * @ param       none
+ * @ return      none
+**/
 __interrupt static void r_uart2_interrupt_receive(void)
 {
-    volatile U8 err_type;
-    volatile U8 rx_data;
+    volatile U8 rxData = 0;
+    volatile U8 errType = 0;
 
-    err_type = (uint8_t)(SSR11 & 0x0007U);
-    SIR11 = (uint16_t)err_type;
+    errType = (uint8_t)(UART2_STATUS & 0x0007U);
+    UART2_FLAG_CLEAR = (uint16_t)errType;
 
-    rx_data = MAIN_RXD;
+    rxData = UART2_RXD;
 
-    if( err_type == 0 )
+    if( errType == 0U )
     {
-        if( HAL_IsFullRecvBuffer( COMM_ID_MAIN ) == FALSE )
+        if( IsFullRecvBuffer(COMM_ID_SUB_FRONT) == FALSE )
         {
-            HAL_SetRecvBuffer( COMM_ID_MAIN, rx_data );
+            SetRecvBuffer(COMM_ID_SUB_FRONT, rxData);
         }
         else
         {
-            HAL_InitCommId( COMM_ID_MAIN );
+            InitCommId(COMM_ID_SUB_FRONT);
         }
 
-        StartTimer( TIMER_ID_COMM_MAIN_RX, 3 );
-    }
+        StartTimer(TIMER_USER, TIMER_USER_ID_COMM_MAIN_RX, UART1_RX_TIME_STAMP );
 
-}
-
-__interrupt static void r_uart2_interrupt_send(void)
-{
-    if( IsCompleteTx( COMM_ID_MAIN ) == FALSE )
-    {
-        HAL_SendByte( COMM_ID_MAIN );
+        SetSubFrontRxErr(FALSE);
+        StartTimer(TIMER_PROCESS, TIMER_ID_MAIN_TX_ERR, SEC(3));
     }
     else
     {
-        HAL_InitCommId( COMM_ID_MAIN );
+        the_rx2_err_count++;
+        if( the_rx2_err_count >= 0xFFFF )
+        {
+            the_rx2_err_count = 0;
+        }
+    }
+}
+
+/**
+ * @ brief       Function For Process Interrupt about Transmission End
+ * @ detail      Uart2 Transmission Interrupt Service Routine
+ * @ param       none
+ * @ return      none
+**/
+__interrupt static void r_uart2_interrupt_send(void)
+{
+    if( IsCompleteTx(COMM_ID_SUB_FRONT) == FALSE )
+    {
+        SendByte(COMM_ID_SUB_FRONT);
+    }
+    else
+    {
+        InitCommId(COMM_ID_SUB_FRONT);
     }
 }
 #endif
 
 
-#if 0
-/* UART 4 */
+/* UART 3 */
+#if ( CONFIG_USE_UART_3 == 1 )
+U16 the_rx3_err_count = 0;
+/**
+ * @ brief       Function For Process Interrupt about Reception End
+ * @ detail      Uart3 Reception Interrput Service Routine
+ * @ param       none
+ * @ return      none
+**/
 __interrupt static void r_uart3_interrupt_receive(void)
 {
-    volatile U8 err_type;
-    volatile U8 rx_data;
 
-    err_type = (uint8_t)(SSR13 & 0x0007U);
-    SIR13 = (uint16_t)err_type;
-
-    rx_data = EOL_RXD;
-
-    if( err_type == 0 )
-    {
-        if( HAL_IsFullRecvBuffer( COMM_ID_LCD ) == FALSE )
-        {
-            HAL_SetRecvBuffer( COMM_ID_LCD, rx_data );
-        }
-        else
-        {
-            HAL_InitCommId( COMM_ID_LCD );
-        }
-
-        StartTimer( TIMER_ID_COMM_LCD_RX, 20 );
-    }
 }
 
+/**
+ * @ brief       Function For Process Interrupt about Transmission End
+ * @ detail      Uart3 Transmission Interrupt Service Routine
+ * @ param       none
+ * @ return      none
+**/
 __interrupt static void r_uart3_interrupt_send(void)
 {
-    if( IsCompleteTx( COMM_ID_LCD ) == FALSE )
-    {
-        HAL_SendByte( COMM_ID_LCD );
-    }
-    else
-    {
-        HAL_InitCommId( COMM_ID_LCD );
-    }
+
 }
 #endif

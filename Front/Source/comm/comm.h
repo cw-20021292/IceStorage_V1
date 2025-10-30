@@ -1,15 +1,43 @@
+/**
+ * File : comm.h
+ * 
+ * Uart Commnuication
+*/
+
 #ifndef __COMM_H__
 #define __COMM_H__
 
 #include "prj_type.h"
+
 #include "hal_serial.h"
 
 typedef U8 CommHeader_T;
 
-CommHeader_T GetCommHeader( U8 id );
-void    SetCommHeader( U8 id, CommHeader_T val );
+void InitComm(void);
+void InitCommId(ECommId id);
 
-I16     CommSendPacket( U8 id,  U8 *send_pkt, I16  len );
-I8  CommRecvPacket( U8 id , U8 *recv_pkt );
+U8 IsFullRecvBuffer(ECommId id);
+
+void InitRecvLength(ECommId id);
+
+void SetRecvBuffer(ECommId id, U8 data);
+
+void SendByte(ECommId id);
+U8 IsCompleteTx(ECommId id);
+
+void SetCommHeader(ECommId id, CommHeader_T cmd);
+CommHeader_T GetCommHeader(ECommId id);
+
+I16 SendCommPacket(ECommId id, U8 *sendBuf, I16 len);
+I8 RecvCommPacket(ECommId id, U8 *recvBuf);
+
+void SetMainRxErr(U8 err);
+U8 GetMainRxErr(void);
+void UpdateMainRxErrTimer(void);
+void DispMainRxErr(void);
+
+void SetSubFrontRxErr(U8 err);
+U8 GetSubFrontRxErr(void);
+void UpdateSubFrontRxErrTimer(void);
 
 #endif /* __COMM_H__ */

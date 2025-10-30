@@ -15,8 +15,9 @@
 #include "voice.h"
 #include "front.h"
 #include "filter.h"
+#include "led.h"
+#include "purifier.h"
 #include "process_display.h"
-
 /***********************************************************************************************
  * DEFINITION 
  */
@@ -98,7 +99,7 @@ typedef I16 (*action_t)( U8 *buf );
 typedef struct _parser_list_t
 {
     U8 Type;
-    action_t Parser;
+    action_t pParserPkt;
 } parser_list_t;
 const static parser_list_t parser_list[] = 
 {
@@ -120,14 +121,13 @@ I16 ParserPkt_Front( U8 *buf, I16 len)
     for( i = 0; i < SZ_PS_TABLE; i++ )
     {
         mu8Type = parser_list[ i ].Type;
-        pParser = parser_list[ i ].Parser;
+        pParser = parser_list[ i ].pParserPkt;
 
         if( mu8Type == buf[1] )
         {
             if( pParser != NULL )
             {
                 len = pParser( &buf[2] );
-                StartTimer( TIMER_ID_COMM_FRONT_RX_ERR, SEC(3));
             }
             break;
         }
@@ -189,7 +189,7 @@ static U32 MappingChp2Cp(U32 mu32Key)
         mu32NewKey |= HAL_KEY_6;
     }
 
-    // CHPì—ì„œëŠ” ì–¼ìŒ OFF, CPì—ì„œëŠ” ë¯¸ì‚¬ìš©
+    // CHP?—?„œ?Š” ?–¼?Œ OFF, CP?—?„œ?Š” ë¯¸ì‚¬?š©
     //if( IS_SET_BIT_32( mu32Key, HAL_KEY_7 ) != 0 )
     //{
     //    mu32NewKey |= HAL_KEY_7;
@@ -236,7 +236,7 @@ static U32 MappingChp2Cp(U32 mu32Key)
 }
 
 
-// SYSTEM êµ¬ì„±ì— ë”°ë¼ KEY MASK ê°’ì„ ë‹¤ë¥´ê²Œ ê°€ì ¸ê°„ë‹¤.
+// SYSTEM êµ¬ì„±?— ?”°?¼ KEY MASK ê°’ì„ ?‹¤ë¥´ê²Œ ê°?? ¸ê°„ë‹¤.
 static U32 GetKeyValMask(U32 mu32Key)
 {
     if( GetSystem() == SYSTEM_CP )
@@ -257,39 +257,44 @@ static U32 GetKeyValMask(U32 mu32Key)
 #define MK_FILTER_COVER     0x02
 U32 dbg_the_key_1 = 0UL;
 U32 dbg_the_key_2 = 0UL;
+/**
+ * @brief Front·ÎºÎÅÍ ¹ÞÀº ÆÐÅ¶ Ã³¸® (Front ¡æ Main)
+ * 
+ * @param buf 
+ * @return I16 
+ */
 static I16 ParserAckLed(U8 *buf)
 {
     U32 mu32Key;
     U32 mu32Val;
     U16 mu16Val;
 
-
-    // MODEL ì •ë³´ë¥¼ ë¨¼ì € ì–»ê¸° ìœ„í•´ì„œ buf[4] ë¶€í„° ì²˜ë¦¬í•œë‹¤.
-    // Input 
-    // 0x01 MODEL ( CP or CHP )
-    // 0x02 FILTER INPUT ( OPEN / CLOSE )
+    /// Front Version
+    SetFrontVerMajor(buf[0]);
+    SetFrontVerEvent(buf[1]);
+    SetFrontVerPatch(buf[2]);
+    SetFrontVerMiner(buf[3]);
     
-    if( (buf[4] & MK_MODEL ) != 0 )
-    {
-        SetFrontSystem( SYSTEM_CHP );
-    }
-    else
-    {
-        SetFrontSystem( SYSTEM_CP );
-    }
+    // if( (buf[4] & MK_MODEL ) != 0 )
+    // {
+    //     SetFrontSystem( SYSTEM_CHP );
+    // }
+    // else
+    // {
+    //     SetFrontSystem( SYSTEM_CP );
+    // }
 
-    if( (buf[4] & MK_FILTER_COVER ) == 0 )
-    {
-        SetFilterStatus( ID_FILTER_COVER, FILTER_CLOSE );
-    }
-    else
-    {
-        SetFilterStatus( ID_FILTER_COVER, FILTER_OPEN );
-    }
-
+    // if( (buf[5] & MK_FILTER_COVER ) == 0 )
+    // {
+    //     SetFilterStatus( ID_FILTER_COVER, FILTER_CLOSE );
+    // }
+    // else
+    // {
+    //     SetFilterStatus( ID_FILTER_COVER, FILTER_OPEN );
+    // }
 
     // KEY 
-    mu32Val = GET_UINT_WORD_32( buf[0], buf[1], buf[2], buf[3] );
+    mu32Val = GET_UINT_WORD_32( buf[4], buf[5], buf[6], buf[7] );
     dbg_the_key_1 = mu32Val;
 
     mu32Key = GetKeyValMask( mu32Val );
@@ -319,19 +324,20 @@ static I16 ParserAckLed(U8 *buf)
     }
 
 
-    // ADC - UV WATER
-    mu16Val = GET_UINT_WORD( buf[6], buf[5] );
-    HAL_SetAdcValue( ANI_UV_WATER_OUT, mu16Val ); 
+    /* ADC°ªÀ» Front¿¡¼­ MainÀ¸·Î º¸³»Áà¾ß ÇÒ ¶§ ¿©±â Ãß°¡ */
+    // // ADC - UV WATER
+    // mu16Val = GET_UINT_WORD( buf[11], buf[10] );
+    // // HAL_SetAdcValue( ANI_UV_WATER_OUT, mu16Val ); 
 
-    // ADC - UV ICE
-    mu16Val = GET_UINT_WORD( buf[8], buf[7] );
-    HAL_SetAdcValue( ANI_UV_ICE_DOOR, mu16Val ); 
+    // // ADC - UV ICE
+    // mu16Val = GET_UINT_WORD( buf[13], buf[12] );
+    // // HAL_SetAdcValue( ANI_UV_ICE_DOOR, mu16Val ); 
 
-    // ADC - UNUSED...
-    mu16Val = GET_UINT_WORD( buf[10], buf[9] );
+    // // ADC - UNUSED...
+    // mu16Val = GET_UINT_WORD( buf[15], buf[14] );
 
-    // ADC - UNUSED...
-    mu16Val = GET_UINT_WORD( buf[12], buf[11] );
+    // // ADC - UNUSED...
+    // mu16Val = GET_UINT_WORD( buf[17], buf[16] );
 
     return TRUE;
 }
@@ -386,6 +392,12 @@ I16 MakePkt_Front( CommHeader_T *p_comm, U8 *buf )
 
 
 U8 the_mode = 0;
+/**
+ * @brief Main ¡æ Front ¹æÇâ ÆÐÅ¶
+ * 
+ * @param buf 
+ * @return I16 
+ */
 static I16 MakePktReqLed3( U8 *buf )
 {
     I16 mi16Len = 0;
@@ -394,38 +406,17 @@ static I16 MakePktReqLed3( U8 *buf )
     U8 mVoiceVol;      
     VoiceId_T   mVoiceId;
 
-
     // STX 
     buf[ mi16Len++ ] = STX;
 
     // MESSAGE TYPE
     buf[ mi16Len++ ] = PKT_FRONT_REQ_LED_3;
     
-    // LED 
-    HAL_GetLedOnOffStatus( &mu8Buf[0] );
-    for( i = 0; i < MAX_LED_BUF ; i++ )
+    /// LEDs
+    for( i=0; i < LED_ID_MAX; i++ )
     {
-        buf[ mi16Len++ ] = mu8Buf[i];
+        buf[mi16Len++] = ConvertDuty2Protocol(i);
     }
-
-    // LED DIMMING
-    HAL_GetLedDimmingStatus( &mu8Buf[0]);
-    for( i = 0; i < MAX_LED_BUF ; i++ )
-    {
-        buf[ mi16Len++ ] = mu8Buf[i];
-    }
-
-    // LED DIMMING DUTY
-    buf[ mi16Len++ ] = HAL_GetLedDimmingDuty();
-
-    // LED DUTY
-    buf[ mi16Len++ ] = HAL_GetLedDuty();
-
-    // UV-WATER
-    buf[ mi16Len++ ] = HAL_GetUvOnOffStatus( HAL_UV_WATER_OUT );
-    
-    // UV-ICE
-    buf[ mi16Len++ ] = HAL_GetUvOnOffStatus( HAL_UV_ICE_DOOR );
 
     // VOICE
     mVoiceId = GetVoicePlayId();
@@ -445,10 +436,6 @@ static I16 MakePktReqLed3( U8 *buf )
     }
     // VOICE VOLUME
     buf[ mi16Len++ ] = mVoiceVol;
-
-    // MODE
-    buf[ mi16Len++ ] = GetFotaDisp();
-
 
     // CRC-16
     buf[ mi16Len++ ] = 0;

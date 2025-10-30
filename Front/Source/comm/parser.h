@@ -3,7 +3,7 @@
 
 #include "prj_type.h"
 
-void    RecvPacketHandler( void );
-void    SendPacketHandler( void );
+void RecvPacketHandler(void);
+void SendPacketHandler(void);
 
 #endif /* __PARSER_H__ */

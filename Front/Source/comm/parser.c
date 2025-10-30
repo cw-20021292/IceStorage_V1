@@ -9,83 +9,76 @@
 
 #include "parser_main.h"
 
-#define DEBUG_COMM 0
+#include "parser_subfront.h"
+#define PARSER_RX_BUF_SZ    (255)
+#define PARSER_TX_BUF_SZ    (255)
 
-#if DEBUG_COMM
+#if( CONFIG_DEBUG_COMM == 1)
 typedef struct _debug_comm_
 {
-    U32 rx_cnt;
-    U32 rx_err;
+    U32 rxCnt;
+    U32 rxErr;
 
-    U32 tx_cnt;
-} debug_comm_t; 
-debug_comm_t    d_comm[ MAX_COMM_ID ];
+    U32 txCnt;
+} SDebugComm_T; 
+SDebugComm_T    dbgComm[COMM_ID_MAX];
 #endif
 
 /* Receivce buffer, length */
-volatile U8 pkt_recv[ MAX_COMM_RX_BUF_SZ ];
-I16 pkt_recv_len = 0;
+volatile U8 pktRecv[PARSER_RX_BUF_SZ];
+I16 pktRecvLen = 0;
 
 /* Send buffer, length */
-volatile U8 pkt_send[ MAX_COMM_TX_BUF_SZ ];
-I16 pkt_send_len = 0;
+volatile U8 pktSend[PARSER_TX_BUF_SZ];
+I16 pktSendLen = 0;
 
 /***********************************************************************************************
  * RECEIVE PACKET 
  */
-typedef I16 (*fn_parser_rx_t)( U8 *buf, I16 len );
-typedef struct _parser_list_
+typedef I16 (*FPParserRx_T)(U8 *buf, I16 len);
+typedef struct _parser_rx_list_
 {
-    U8 TimerId;
-    U8 CommId;
-    fn_parser_rx_t  IsValidPkt;
-    fn_parser_rx_t  ParserPkt;
-} parser_rx_list_t;
+    U8 timerId;
+    U8 commId;
+    FPParserRx_T  isValidPkt;
+    FPParserRx_T  parserPkt;
+} SParserRxList_T;
 
-static const parser_rx_list_t parser_rx_list[] = 
+static const SParserRxList_T parserRxList[] = 
 {
-    { TIMER_ID_COMM_MAIN_RX,   COMM_ID_MAIN   ,  IsValidPkt_Main,   ParserPkt_Main  }
+    { TIMER_USER_ID_COMM_MAIN_RX,       COMM_ID_MAIN,       IsValidPktMain,       ParserPktMain },
+    { TIMER_USER_ID_COMM_FRONT_SUB_RX,  COMM_ID_SUB_FRONT,  IsValidPktSubFront,   ParserPktSubFront }
 };
-#define MAX_PARSER_RX_NUM   ( sizeof( parser_rx_list) / sizeof( parser_rx_list_t ) )
+#define SZ_PARSER_RX   ( sizeof(parserRxList) / sizeof(SParserRxList_T) )
 
-void RecvPacketHandler( void )
+void RecvPacketHandler(void)
 {
-    parser_rx_list_t    *p_list;
-    U8  i;
+    SParserRxList_T *list = NULL;
+    U8 i = 0U;
 
-    for( i = 0 ; i < MAX_PARSER_RX_NUM ; i++ )
+    for( i=0; i<SZ_PARSER_RX; i++ )
     {
-        p_list = &parser_rx_list[ i ];
-        if( IsExpiredTimer( p_list->TimerId ) == TIMER_EXPIRE )
+        list = &parserRxList[i];
+        if( IsExpiredTimer(TIMER_USER, list->timerId) == TIMER_EXPIRE )
         {
-            DisableTimer( p_list->TimerId );
+            DisableTimer(TIMER_USER, list->timerId);
 
-            if( ( pkt_recv_len = CommRecvPacket( p_list->CommId, &pkt_recv[0] ) ) > 0 )
+            if( (pktRecvLen = RecvCommPacket(list->commId, &pktRecv[0]) ) > 0 )
             {
-                HAL_InitRecvLength( p_list->CommId );
+                InitRecvLength(list->commId);
 
-                if( p_list->IsValidPkt( &pkt_recv[0], pkt_recv_len ) == TRUE )
+                if( list->isValidPkt(&pktRecv[0], pktRecvLen) == TRUE )
                 {
-                    p_list->ParserPkt( &pkt_recv[0], pkt_recv_len );
+                    list->parserPkt(&pktRecv[0], pktRecvLen);
 
-                    switch( p_list->CommId )
-                    {
-                        case COMM_ID_MAIN :
-                            break;
-                        default :
-                            break;
-                    }
-
-#if DEBUG_COMM
-                    d_comm[ p_list->CommId ].rx_cnt++;
+#if( CONFIG_DEBUG_COMM == 1 )
+                    dbgComm[list->commId].rxCnt++;
 #endif
                 }
                 else
                 {
-
-
-#if DEBUG_COMM
-                    d_comm[ p_list->CommId ].rx_err++;
+#if( CONFIG_DEBUG_COMM == 1 )
+                    dbgComm[list->commId].rxErr++;
 #endif
                 }
             }
@@ -97,66 +90,58 @@ void RecvPacketHandler( void )
  * SEND PACKET 
  */
 
-typedef I16 (*fn_parser_tx_t)( CommHeader_T *p_comm, U8 *buf );
-typedef I16 (*fn_crc16_t)( U8 *buf, I16 len  );
+typedef I16 (*FPParserTx_T)(CommHeader_T *p_comm, U8 *buf);
+typedef I16 (*FPCrc16_T)(U8 *buf, I16 len);
 typedef struct _parser_tx_list_
 {
-    U8 TimerId;
-    U8 CommId;
-    fn_parser_tx_t make_pkt;
-    fn_crc16_t crc16;
+    U8 timerId;
+    U8 commId;
+    FPParserTx_T makePkt;
+    FPCrc16_T crc16;
+} SParserTxList_T;
 
-} parser_tx_list_t;
-
-static const parser_tx_list_t parser_tx_list[] = 
+static const SParserTxList_T parserTxList[] = 
 {
-    { TIMER_ID_COMM_MAIN_TX,   COMM_ID_MAIN,     MakePkt_Main,    Crc16_Main    }
+    { TIMER_USER_ID_COMM_MAIN_TX,      COMM_ID_MAIN,        MakePktMain,     Crc16Main },
+    { TIMER_USER_ID_COMM_FRONT_SUB_TX, COMM_ID_SUB_FRONT,   MakePktSubFront, Crc16Main }
 };
-#define MAX_PARSER_TX_NUM   ( sizeof( parser_tx_list) / sizeof( parser_tx_list_t ) )
+#define SZ_PARSER_TX   ( sizeof(parserTxList) / sizeof(SParserTxList_T) )
 
 void SendPacketHandler( void )
 {
-    parser_tx_list_t    *p_list;
-    U8  i;
-    CommHeader_T        p_comm;
+    SParserTxList_T *list = NULL;
+    U8 i = 0U;
+    CommHeader_T comm;
 
 
-    for( i = 0 ; i < MAX_PARSER_TX_NUM ; i++ )
+    for( i=0 ; i<SZ_PARSER_TX; i++ )
     {
-        p_list = &parser_tx_list[ i ];
+        list = &parserTxList[i];
 
-        if( IsExpiredTimer( p_list->TimerId ) == TIMER_EXPIRE )
+        if( IsExpiredTimer(TIMER_USER, list->timerId) == TIMER_EXPIRE )
         {
-            DisableTimer( p_list->TimerId );
+            DisableTimer(TIMER_USER, list->timerId);
 
-            p_comm = GetCommHeader( p_list->CommId );
+            comm = GetCommHeader(list->commId);
 
             /* MAKE PACKET */
-            memset( pkt_send, 0, MAX_COMM_TX_BUF_SZ );
-            pkt_send_len = p_list->make_pkt( (CommHeader_T *)p_comm, pkt_send );
-            if( pkt_send_len > 0 )
+            MEMSET( (void __FAR*)pktSend, 0, PARSER_TX_BUF_SZ );
+            pktSendLen = list->makePkt((CommHeader_T *)comm, pktSend);
+            if( pktSendLen > 0 )
             {
                 /* MAKE CRC-16 */
-                pkt_send_len = p_list->crc16( pkt_send, pkt_send_len );
+                pktSendLen = list->crc16(pktSend, pktSendLen);
 
                 /* SEND PACKET BY UART */
-                CommSendPacket( p_list->CommId, pkt_send, pkt_send_len );
+                SendCommPacket(list->commId, pktSend, pktSendLen);
 
-#if DEBUG_COMM
-                d_comm[ p_list->CommId ].tx_cnt++;
+#if( CONFIG_DEBUG_COMM == 1 )
+                dbgComm[list->commId].txCnt++;
 #endif
             }
             else
             {
-                switch( p_list->TimerId )
-                {
-                    case TIMER_ID_COMM_MAIN_TX :
-                        HAL_InitCommId( COMM_ID_MAIN );
-                        break;
-
-                    default :
-                        break;
-                }
+                InitCommId(list->commId);
             }
         }
     }

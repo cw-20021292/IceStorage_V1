@@ -1,98 +1,152 @@
-#pragma interrupt INTTM00 BaseTimerInterrupt
-
+/**
+ * File : timer.c
+ * 
+ * Process Sys Timer Api
+**/
 #include "hw.h"
-#include "timer.h" 
+#include "timer.h"
 
-#include <string.h>
+#include "hal_timer.h"
 
+//#include <string.h>
 
-/* BASE TIMER INTERRUPT */
-#define INTS_BYTE()     unsigned char _ints_byte
-#define MASK_BASE_TIMER                       TMMK00
-#define DISABLE_INT_MASK_BASE_TIMER()          do { MASK_BASE_TIMER = 1; }while(0)
-#define ENABLE_INT_MASK_BASE_TIMER()           do { MASK_BASE_TIMER = 0; }while(0)
+#define	HZ	(1UL)
 
-#define ENTER_CRITICAL_SECTION_TIMER()  \
-    do{ \
-        _ints_byte = MASK_BASE_TIMER; \
-        DISABLE_INT_MASK_BASE_TIMER(); \
-    }while(0)
-
-#define EXIT_CRITICAL_SECTION_TIMER()   \
-    do{ \
-        MASK_BASE_TIMER = _ints_byte; \
-    } while(0)
-
-
-#define HZ  (1UL)
+FPUserISR userISR = NULL;
 
 typedef struct _timer_
 {
-    U8      enable;
-    U8      type;
-    U32 time_out;
-} timer_info_t;
+    U8 Enable;
+    U32 TimeOut;
+} STimer_T;
 
-LOCAL timer_info_t      timer_info[ MAX_TIMER_ID_NUM ];
+LOCAL STimer_T Timer[TIMER_ID_MAX];
+LOCAL STimer_T UserTimer[TIMER_USER_ID_MAX];
 
-static void (*pFunUserISR)(void) = NULL ;   // 사용자 등록 ISR 함수
-
-
-void InitTimer( void )
+/**
+ * @brief     Function For Initialize Timer
+ * @detail    TAU0 / Channel0 / Interval Timer
+ * @param     none
+ * @return    none
+**/
+void InitTimer(void)
 {
-    memset( timer_info, 0, sizeof( timer_info) );
+    MEMSET( (void __FAR *)Timer, 0, sizeof(Timer) );
+    MEMSET( (void __FAR *)UserTimer, 0, sizeof(UserTimer) );
 
-    R_TAU0_Channel0_Start();   // Start Timer-00
+    HAL_TIMER00_START();   // Start Timer-00
 }
 
-
-void StartTimer( U8 id, U32 time_out )
+/**
+ * @brief                Function For Get Address Of TimerInfo Buffer
+ * @detail               none
+ * @param     xUid       TimerId
+ * @param     xUtimeOut  TimeOut
+ * @return               none
+**/
+static STimer_T* GetAddrOfBuf(ETimerType_T type, U8 id)
 {
-    INTS_BYTE();
+    STimer_T *pTimer = NULL;
+
+    if( type == TIMER_PROCESS )
+    {
+        pTimer = &Timer[id];
+    }
+    else  /// TIMER_USER
+    {
+        pTimer = &UserTimer[id];
+    }
+
+    return pTimer;
+}
+
+/**
+ * @brief                Function For Start Timer
+ * @detail               none
+ * @param     xEtype     Timer Type
+ * @param     xUid       TimerId
+ * @param     xUtimeOut  TimeOut
+ * @return               none
+**/
+void StartTimer(ETimerType_T type, U8 id, U32 timeOut)
+{
+    STimer_T *pTimer = NULL;
+
+    INTS_BYTE_BASE_TIMER();
 
     ENTER_CRITICAL_SECTION_TIMER();
 
-    timer_info[ id ].enable     = 1;
-    timer_info[ id ].time_out   = time_out / HZ;
+    pTimer = GetAddrOfBuf(type, id);
+
+    pTimer->Enable = 1U;
+    pTimer->TimeOut = timeOut / HZ;
 #if (HZ != 1UL)
-    if( (time_out % HZ) >= (U32)5 )
+    // What is the Function?
+    if( (timeOut % HZ) >= (U32)5 )
     {
-        timer_info[ id ].time_out++;
+        pTimer->TimeOut++;
     }
 #endif
 
     EXIT_CRITICAL_SECTION_TIMER();
-
 }
 
-void    DisableTimer( U8 id )
+/**
+ * @brief                Function For Disable Timer
+ * @detail               none
+ * @param     xEtype     Timer Type
+ * @param     xUid       TimerId
+ * @return               none
+**/
+void DisableTimer(ETimerType_T type, U8 id)
 {
-    timer_info[ id ].enable     = 0;
-    timer_info[ id ].time_out   = (U32)-1;
+    STimer_T *pTimer = NULL;
+
+    pTimer = GetAddrOfBuf(type, id);
+
+    pTimer->Enable 	= 0U;
+    pTimer->TimeOut	= (U32)-1;
 }
 
-void    StopTimer( U8 id )
+/**
+ * @brief                Function For Stop Timer
+ * @detail               none
+ * @param     xEtype     Timer Type
+ * @param     xUid       TimerId
+ * @return               none
+**/
+void StopTimer(ETimerType_T type, U8 id)
 {
-    DisableTimer( id );
+    DisableTimer(type, id);
 }
 
-
-U8 IsExpiredTimer( U8 id )
+/**
+ * @brief                Function For Stop Timer
+ * @detail               none
+ * @param     xEtype     Timer Type
+ * @param     xUid       TimerId
+ * @return               TIMER_EXPIRE /TIMER_NOT_EXPIRE / TIMER_DISABLE
+**/
+U8 IsExpiredTimer(ETimerType_T type, U8 id)
 {
-    U32 time_out;
-    INTS_BYTE();
+    STimer_T *pTimer = NULL;
+    U32	timeOut = 0UL;
 
+    INTS_BYTE_BASE_TIMER();
 
     ENTER_CRITICAL_SECTION_TIMER();
-    time_out = timer_info[ id ].time_out;
+
+    pTimer = GetAddrOfBuf(type, id);
+    
+    timeOut = pTimer->TimeOut;
     EXIT_CRITICAL_SECTION_TIMER();
 
-    if( timer_info[ id ].enable == 0 )
+    if( pTimer->Enable == 0 )
     {
         return TIMER_DISABLE;
     }
 
-    if( time_out > 0 )
+    if( timeOut > 0 )
     {
         return TIMER_NOT_EXPIRE;
     }
@@ -100,42 +154,56 @@ U8 IsExpiredTimer( U8 id )
     return TIMER_EXPIRE;
 }
 
-/* TIMER - MS */
-static void UpdateTimer( void )
+/**
+ * @brief     Function For Update TimerOut
+ * @detail    Unit : 1ms
+ * @param     none
+ * @return    none
+**/
+void UpdateTimer(void)
 {
-    U8  i;
+    U8  i = 0U;
+    U8  j = 0U;
 
-    for( i = 0 ; i < MAX_TIMER_ID_NUM ; i++ )
+    for( i=0; i<TIMER_ID_MAX; i++ )
     {
-        if( timer_info[ i ].enable == 0 )
+        if( Timer[i].Enable == 0 )
         {
             continue;
         }
 
-        if( timer_info[ i ].time_out > 0 )
+        if( Timer[i].TimeOut > 0 )
         {
-            timer_info[ i ].time_out--;
+            Timer[i].TimeOut--;
+        }
+    }
+
+    for( j=0; j<TIMER_USER_ID_MAX; j++ )
+    {
+        if( UserTimer[j].Enable == 0 )
+        {
+            continue;
+        }
+
+        if( UserTimer[j].TimeOut > 0 )
+        {
+            UserTimer[j].TimeOut--;
         }
     }
 }
 
-
-/* 타이머 입터럽트 사용자 ISR 함수 등록 */
-void RegisterTimerISR( void (*pUserISR)(void) )
+/**
+ * @brief                Function For User Timer Interrupt
+ * @detail               none
+ * @param     FPUserISR  User Interrupt Handler
+ * @return               TIMER_EXPIRE /TIMER_NOT_EXPIRE / TIMER_DISABLE
+**/
+void RegisterTimerISR(void (*FPUserISR)(void))
 {
-    pFunUserISR = pUserISR;
+    userISR = FPUserISR;
 }
 
-
-/* INTERRUPT SERVICE ROUTIN */
-void BaseTimerInterrupt(void)
+FPUserISR GetTimerISR(void)
 {
-    UpdateTimer();
-
-    /* 사용자 등록 인터럽트 함수를 호출한다. */
-    if( pFunUserISR != NULL )
-    {
-        pFunUserISR();
-    }
+    return userISR;
 }
-

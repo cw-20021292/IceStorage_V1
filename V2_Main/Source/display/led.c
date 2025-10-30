@@ -25,7 +25,7 @@ typedef struct _led_list_
 SLedList_T LedList[] = 
 {
     /* led_id                               On_Off  TYPE                Current_Duty  On_Duty            Off_Duty  */
-    { LED_ID_SEG_1A,                OFF,   LED_TYPE_DUTY_DIM,   0,            LED_DUTY_ON_100,   LED_DUTY_OFF    },
+    { LED_ID_SEG_1A,                OFF,   LED_TYPE_DUTY_DIM,   0,            LED_DUTY_ON_90,   LED_DUTY_OFF    },
     { LED_ID_SEG_1B,                OFF,   LED_TYPE_DUTY_DIM,   0,            LED_DUTY_ON_100,   LED_DUTY_OFF    },
     { LED_ID_SEG_1C,                OFF,   LED_TYPE_DUTY_DIM,   0,            LED_DUTY_ON_100,   LED_DUTY_OFF    },
     { LED_ID_SEG_1D,                OFF,   LED_TYPE_DUTY_DIM,   0,            LED_DUTY_ON_100,   LED_DUTY_OFF    },

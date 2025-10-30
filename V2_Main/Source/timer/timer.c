@@ -20,7 +20,7 @@ typedef struct _timer_
 
 LOCAL timer_info_t      timer_info[ MAX_TIMER_ID_NUM ];
 
-static void (*pFunUserISR)(void) = NULL ;   // μ‚¬μ©μ λ“±λ΅ ISR ν•¨μ
+static void (*pFunUserISR)(void) = NULL ;   // ?‚¬?©? ?“±λ΅? ISR ?•¨?
 
 
 void InitTimer( void )
@@ -105,7 +105,7 @@ static void UpdateTimer( void )
 }
 
 
-/* νƒ€μ΄λ¨Έ μ…ν„°λ½νΈ μ‚¬μ©μ ISR ν•¨μ λ“±λ΅ */
+/* ????΄λ¨? ?…?„°?½?Έ ?‚¬?©? ISR ?•¨? ?“±λ΅? */
 void RegisterTimerISR( void (*pUserISR)(void) )
 {
     pFunUserISR = pUserISR;
@@ -117,7 +117,7 @@ void BaseTimerInterrupt(void)
 {
     UpdateTimer();
 
-    /* μ‚¬μ©μ λ“±λ΅ μΈν„°λ½νΈ ν•¨μλ¥Ό νΈμ¶ν•λ‹¤. */
+    /* ?‚¬?©? ?“±λ΅? ?Έ?„°?½?Έ ?•¨?λ¥? ?Έμ¶ν•?‹¤. */
     if( pFunUserISR != NULL )
     {
         pFunUserISR();

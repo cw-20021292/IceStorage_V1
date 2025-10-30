@@ -14,6 +14,7 @@
 #include "power_saving.h"
 #include "process_display.h"
 #include "process_sys_event.h"
+#include "led.h"
 #include "../Wifi/WifiUser/AIS4.0/WIFI_MonitorFixRAM.h"
 #include "WIFI_Common.h"
 #include "WIFI_UserInterface_IconAIS.h"
@@ -30,8 +31,8 @@ static void InitStartTimers( void )
     StartTimer( TIMER_ID_1SEC,  SEC(1));
     StartTimer( TIMER_ID_10SEC, SEC(1));
 
-    // TIMER_ID_40SEC???�도 ?�서 ON/OFF ?�용 ?�?�머?�다.
-    // ?�원 Reset ??10분이 지????40�?간격?�로 ?�도 ?�서�??�어?�다.
+    // TIMER_ID_40SEC???�도 ?�서 ON/OFF ?�용 ?�??�머?�다.
+    // ?�원 Reset ??10분이 �?????40�??간격?�로 ?�도 ?�서�???�어?�다.
     StartTimer( TIMER_ID_40SEC, SEC(600));  
     StartTimer( TIMER_ID_1MIN,  SEC(1));
 #if !CONFIG_JIG_RBK_FRONT
@@ -119,6 +120,8 @@ void main( void )
         StartTimer( TIMER_ID_TEST_8585_ICE, SEC(30) );
 #endif
     }
+    
+    OnAllLed();
 
     WifiControlProcess(WIFI_TIME_SET);
 

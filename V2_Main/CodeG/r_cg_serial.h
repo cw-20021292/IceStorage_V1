@@ -373,12 +373,12 @@ Macro definitions (Register bit)
 /***********************************************************************************************************************
 Macro definitions
 ***********************************************************************************************************************/
-#define _F800_UART0_RECEIVE_DIVISOR      (0xF800U)
-#define _F800_UART0_TRANSMIT_DIVISOR     (0xF800U)
+#define _F800_UART0_RECEIVE_DIVISOR      (0xCE00U)
+#define _F800_UART0_TRANSMIT_DIVISOR     (0xCE00U)
 #define _8800_UART1_RECEIVE_DIVISOR      (0x8800U)
 #define _8800_UART1_TRANSMIT_DIVISOR     (0x8800U)
-#define _CE00_UART2_RECEIVE_DIVISOR      (0xCE00U)
-#define _CE00_UART2_TRANSMIT_DIVISOR     (0xCE00U)
+#define _CE00_UART2_RECEIVE_DIVISOR      (0xF800U)
+#define _CE00_UART2_TRANSMIT_DIVISOR     (0xF800U)
 #define _CE00_UART3_RECEIVE_DIVISOR      (0xCE00U)
 #define _CE00_UART3_TRANSMIT_DIVISOR     (0xCE00U)
 #define _10_IICA0_MASTERADDRESS          (0x10U)

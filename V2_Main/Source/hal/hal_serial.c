@@ -3,7 +3,7 @@
 #define CONFIG_UART_2   1
 #define CONFIG_UART_3   1  
 
-/* UART3 : COMP */
+/* UART0 : FRONT */
 #if CONFIG_UART_0 
 #pragma interrupt INTST0    r_uart0_interrupt_send
 #pragma interrupt INTSR0    r_uart0_interrupt_receive
@@ -15,13 +15,13 @@
 #pragma interrupt INTSR1    r_uart1_interrupt_receive
 #endif
 
-/* UART2 : FRONT */
+/* UART2 : BLDC COMP */
 #if CONFIG_UART_2 
 #pragma interrupt INTST2    r_uart2_interrupt_send
 #pragma interrupt INTSR2    r_uart2_interrupt_receive
 #endif
 
-/* EOL */
+/* EOL (OK) */
 #if CONFIG_UART_3 
 #pragma interrupt INTST3    r_uart3_interrupt_send
 #pragma interrupt INTSR3    r_uart3_interrupt_receive
@@ -36,8 +36,8 @@
 
 
 #if CONFIG_UART_0
-#define  COMP_TXD TXD0
-#define  COMP_RXD RXD0
+#define  FRONT_TXD TXD0
+#define  FRONT_RXD RXD0
 #endif
 
 #if CONFIG_UART_1
@@ -46,8 +46,8 @@
 #endif
 
 #if CONFIG_UART_2
-#define  FRONT_TXD TXD2
-#define  FRONT_RXD RXD2
+#define  COMP_TXD TXD2
+#define  COMP_RXD RXD2
 #endif
 
 #if CONFIG_UART_3
@@ -97,7 +97,7 @@ comm_t  comm[ MAX_COMM_ID ];
 
 void    HAL_InitCommId( U8 uart_id )
 {
-    if( uart_id == COMM_ID_COMP )
+    if( uart_id == COMM_ID_FRONT)
     {
 #if CONFIG_UART_0
         MEMSET( (void __FAR *)&recv_0_buf[0], 0, MAX_COMM_0_RX_BUF_SZ );
@@ -111,13 +111,15 @@ void    HAL_InitCommId( U8 uart_id )
         MEMSET( (void __FAR *)&send_1_buf[0], 0, MAX_COMM_1_TX_BUF_SZ );
 #endif
     }
-    else if( uart_id == COMM_ID_FRONT)
+    
+    else if( uart_id == COMM_ID_COMP )
     {
 #if CONFIG_UART_2
         MEMSET( (void __FAR *)&recv_2_buf[0], 0, MAX_COMM_2_RX_BUF_SZ );
         MEMSET( (void __FAR *)&send_2_buf[0], 0, MAX_COMM_2_TX_BUF_SZ );
 #endif
     }
+
     else //if( uart_id == COMM_ID_EOL)
     {
 #if CONFIG_UART_3
@@ -132,7 +134,7 @@ void    HAL_InitCommId( U8 uart_id )
 void    HAL_InitComm( void )
 {
 #if CONFIG_UART_0
-    HAL_InitCommId( COMM_ID_COMP );
+    HAL_InitCommId( COMM_ID_FRONT );
     R_UART0_Start();
 #endif
 
@@ -142,7 +144,7 @@ void    HAL_InitComm( void )
 #endif
 
 #if CONFIG_UART_2
-    HAL_InitCommId( COMM_ID_FRONT );
+    HAL_InitCommId( COMM_ID_COMP );
     R_UART2_Start();
 #endif
 
@@ -244,15 +246,15 @@ void    HAL_SetRecvBuffer(U8 uart_id, U8 _byte )
 #if 0
     p_comm->recv_buf[ p_comm->recv_len ] = _byte;
 #else
-    if( uart_id == COMM_ID_COMP )
+    if( uart_id == COMM_ID_FRONT)
     {
-        recv_0_buf[ p_comm->recv_len ] = _byte;
+        recv_0_buf[ p_comm->recv_len ] = _byte;        
     }
     else if( uart_id == COMM_ID_WIFI )
     {
         recv_1_buf[ p_comm->recv_len ] = _byte;
     }
-    else if( uart_id == COMM_ID_FRONT)
+    else if( uart_id == COMM_ID_COMP )
     {
         recv_2_buf[ p_comm->recv_len ] = _byte;
     }
@@ -270,7 +272,7 @@ U8 HAL_GetRecvBuffer( U8 uart_id, U16 index )
 #if 0
     return comm[ uart_id ].recv_buf[ index ];
 #else
-    if( uart_id == COMM_ID_COMP )
+    if( uart_id == COMM_ID_FRONT)
     {
         return recv_0_buf[ index ];
     }
@@ -278,7 +280,7 @@ U8 HAL_GetRecvBuffer( U8 uart_id, U16 index )
     {
         return recv_1_buf[ index ];
     }
-    else if( uart_id == COMM_ID_FRONT)
+    else if( uart_id == COMM_ID_COMP )
     {
         return recv_2_buf[ index ];
     }
@@ -300,7 +302,7 @@ void    HAL_SetSendBuffer( U8 uart_id, U8 _byte )
 #if 0
         p_comm->send_buf[ p_comm->send_len ] = _byte;
 #else
-        if( uart_id == COMM_ID_COMP )
+        if( uart_id == COMM_ID_FRONT)
         {
             send_0_buf[ p_comm->send_len ] = _byte;
         }
@@ -308,7 +310,7 @@ void    HAL_SetSendBuffer( U8 uart_id, U8 _byte )
         {
             send_1_buf[ p_comm->send_len ] = _byte;
         }
-        else if( uart_id == COMM_ID_FRONT)
+        else if( uart_id == COMM_ID_COMP )
         {
             send_2_buf[ p_comm->send_len ] = _byte;
         }
@@ -328,7 +330,7 @@ U8  HAL_GetSendBuffer( U8 uart_id, U16 index )
 #else
     if( uart_id == COMM_ID_COMP )
     {
-        return send_0_buf[index];
+        return send_2_buf[index];
     }
     else if( uart_id == COMM_ID_WIFI )
     {
@@ -336,7 +338,7 @@ U8  HAL_GetSendBuffer( U8 uart_id, U16 index )
     }
     else if( uart_id == COMM_ID_FRONT)
     {
-        return send_2_buf[index];
+        return send_0_buf[index];
     }
     else //if( uart_id == COMM_ID_EOL)
     {
@@ -356,7 +358,7 @@ void    HAL_SendByte( U8 uart_id )
 #if 0
     ch      = p_comm->send_buf[ p_comm->tx_len ];
 #else
-    if( uart_id == COMM_ID_COMP )
+    if( uart_id == COMM_ID_FRONT)
     {
         ch = send_0_buf[p_comm->tx_len];
     }
@@ -364,7 +366,7 @@ void    HAL_SendByte( U8 uart_id )
     {
         ch = send_1_buf[p_comm->tx_len];
     }
-    else if( uart_id == COMM_ID_FRONT)
+    else if( uart_id == COMM_ID_COMP )
     {
         ch = send_2_buf[p_comm->tx_len];
     }
@@ -376,10 +378,10 @@ void    HAL_SendByte( U8 uart_id )
 
     p_comm->tx_len++;
 
-    if( uart_id == COMM_ID_COMP )
+    if( uart_id == COMM_ID_FRONT )
     {
 #if CONFIG_UART_0
-        COMP_TXD = ch;
+        FRONT_TXD = ch;
 #endif
     }
     else if( uart_id == COMM_ID_WIFI )
@@ -388,10 +390,10 @@ void    HAL_SendByte( U8 uart_id )
         WIFI_TXD = ch;
 #endif
     }
-    else if( uart_id == COMM_ID_FRONT )
+    else if( uart_id == COMM_ID_COMP )
     {
 #if CONFIG_UART_2
-        FRONT_TXD = ch;
+        COMP_TXD = ch;
 #endif
     }
     else if( uart_id == COMM_ID_EOL )
@@ -426,32 +428,32 @@ __interrupt static void r_uart0_interrupt_receive(void)
     err_type = (uint8_t)(SSR01 & 0x0007U);
     SIR01 = (uint16_t)err_type;
 
-    rx_data = COMP_RXD;
+    rx_data = FRONT_RXD;
 
     if( err_type == 0 )
     {
-        if( HAL_IsFullRecvBuffer( COMM_ID_COMP ) == FALSE )
+        if( HAL_IsFullRecvBuffer( COMM_ID_FRONT ) == FALSE )
         {
-            HAL_SetRecvBuffer( COMM_ID_COMP, rx_data );
+            HAL_SetRecvBuffer( COMM_ID_FRONT, rx_data );
         }
         else
         {
-            HAL_InitCommId( COMM_ID_COMP );
+            HAL_InitCommId( COMM_ID_FRONT );
         }
 
-        StartTimer( TIMER_ID_COMM_COMP_RX, UART0_RX_TIME_STAMP );
+        StartTimer( TIMER_ID_COMM_FRONT_RX, UART2_RX_TIME_STAMP );
     }
 }
 
 __interrupt static void r_uart0_interrupt_send(void)
 {
-    if( IsCompleteTx( COMM_ID_COMP ) == FALSE )
+    if( IsCompleteTx( COMM_ID_FRONT ) == FALSE )
     {
-        HAL_SendByte( COMM_ID_COMP );
+        HAL_SendByte( COMM_ID_FRONT );
     }
     else
     {
-        HAL_InitCommId( COMM_ID_COMP );
+        HAL_InitCommId( COMM_ID_FRONT );
     }
 }
 #endif
@@ -519,21 +521,21 @@ __interrupt static void r_uart2_interrupt_receive(void)
     err_type = (uint8_t)(SSR11 & 0x0007U);
     SIR11 = (uint16_t)err_type;
 
-    rx_data = FRONT_RXD;
+    rx_data = COMP_RXD;
 
     EI();
     if( err_type == 0 )
     {
-        if( HAL_IsFullRecvBuffer( COMM_ID_FRONT ) == FALSE )
+        if( HAL_IsFullRecvBuffer( COMM_ID_COMP ) == FALSE )
         {
-            HAL_SetRecvBuffer( COMM_ID_FRONT, rx_data );
+            HAL_SetRecvBuffer( COMM_ID_COMP, rx_data );
         }
         else
         {
-            HAL_InitCommId( COMM_ID_FRONT );
+            HAL_InitCommId( COMM_ID_COMP );
         }
 
-        StartTimer( TIMER_ID_COMM_FRONT_RX, UART2_RX_TIME_STAMP );
+        StartTimer( TIMER_ID_COMM_COMP_RX, UART0_RX_TIME_STAMP );
     }
     else
     {
@@ -544,13 +546,13 @@ __interrupt static void r_uart2_interrupt_receive(void)
 __interrupt static void r_uart2_interrupt_send(void)
 {
     EI();
-    if( IsCompleteTx( COMM_ID_FRONT ) == FALSE )
+    if( IsCompleteTx( COMM_ID_COMP ) == FALSE )
     {
-        HAL_SendByte( COMM_ID_FRONT );
+        HAL_SendByte( COMM_ID_COMP );
     }
     else
     {
-        HAL_InitCommId( COMM_ID_FRONT );
+        HAL_InitCommId( COMM_ID_COMP );
     }
 }
 #endif

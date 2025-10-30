@@ -1,55 +1,151 @@
 <CubeSuiteProject.User>
+  <Class Guid="f72c6cc0-ae77-4a2d-964e-b970c2010835">
+    <Instance Guid="5c2754eb-8b67-47d7-b205-e913e38c9746">
+      <EventFunction-Timer1-Name>UgB1AG4ALQBCAHIAZQBhAGsAIABUAGkAbQBlAHIA</EventFunction-Timer1-Name>
+      <EventFunction-Timer1-Description />
+      <EventFunction-Timer1-EventStatus>Enable</EventFunction-Timer1-EventStatus>
+      <EventFunction-Timer1-EventStatusBeforeInvalid>Invalid</EventFunction-Timer1-EventStatusBeforeInvalid>
+      <EventFunction-Timer1-IsBuiltIn>True</EventFunction-Timer1-IsBuiltIn>
+      <EventFunction-Timer1-CountLimit>0</EventFunction-Timer1-CountLimit>
+      <EventFunction-Timer1-TimerLimit>0</EventFunction-Timer1-TimerLimit>
+      <EventFunction-Timer1-StartTimerEvent-SaveLength>0</EventFunction-Timer1-StartTimerEvent-SaveLength>
+      <EventFunction-Timer1-EndTimerEvent-SaveLength>0</EventFunction-Timer1-EndTimerEvent-SaveLength>
+      <EventFunction-SaveEventConditionItemHardwareNumber>0</EventFunction-SaveEventConditionItemHardwareNumber>
+      <EventFunction-SaveEventConditionItemSoftwareNumber>0</EventFunction-SaveEventConditionItemSoftwareNumber>
+      <EventFunction-SaveActionEventNumber>0</EventFunction-SaveActionEventNumber>
+      <EventFunction-SaveBreakNumber>0</EventFunction-SaveBreakNumber>
+      <EventFunction-SaveTimerNumber>1</EventFunction-SaveTimerNumber>
+      <EventFunction-SaveTraceNumber>0</EventFunction-SaveTraceNumber>
+      <EventFunction-SaveNumberOfProcessorElement>1</EventFunction-SaveNumberOfProcessorElement>
+    </Instance>
+    <Instance Guid="f105ac95-4e84-4344-a652-1bfa557c61d7">
+      <EventFunction-Timer1-Name>UgB1AG4ALQBCAHIAZQBhAGsAIABUAGkAbQBlAHIA</EventFunction-Timer1-Name>
+      <EventFunction-Timer1-Description />
+      <EventFunction-Timer1-EventStatus>Enable</EventFunction-Timer1-EventStatus>
+      <EventFunction-Timer1-EventStatusBeforeInvalid>Invalid</EventFunction-Timer1-EventStatusBeforeInvalid>
+      <EventFunction-Timer1-IsBuiltIn>True</EventFunction-Timer1-IsBuiltIn>
+      <EventFunction-Timer1-CountLimit>0</EventFunction-Timer1-CountLimit>
+      <EventFunction-Timer1-TimerLimit>0</EventFunction-Timer1-TimerLimit>
+      <EventFunction-Timer1-StartTimerEvent-SaveLength>0</EventFunction-Timer1-StartTimerEvent-SaveLength>
+      <EventFunction-Timer1-EndTimerEvent-SaveLength>0</EventFunction-Timer1-EndTimerEvent-SaveLength>
+      <EventFunction-SaveEventConditionItemHardwareNumber>0</EventFunction-SaveEventConditionItemHardwareNumber>
+      <EventFunction-SaveEventConditionItemSoftwareNumber>0</EventFunction-SaveEventConditionItemSoftwareNumber>
+      <EventFunction-SaveActionEventNumber>0</EventFunction-SaveActionEventNumber>
+      <EventFunction-SaveBreakNumber>0</EventFunction-SaveBreakNumber>
+      <EventFunction-SaveTimerNumber>1</EventFunction-SaveTimerNumber>
+      <EventFunction-SaveTraceNumber>0</EventFunction-SaveTraceNumber>
+      <EventFunction-SaveNumberOfProcessorElement>1</EventFunction-SaveNumberOfProcessorElement>
+    </Instance>
+  </Class>
   <Class Guid="2c267d36-9968-416b-8f39-cfcf1e069830">
     <Instance Guid="9a2aa537-6164-42cd-80e4-e708b32cd890">
       <Bookmarks>0</Bookmarks>
     </Instance>
   </Class>
+  <Class Guid="ce51aa0d-1353-40fe-ba85-46c1106c7c21">
+    <Instance Guid="00000000-0000-0000-0000-000000000000">
+      <IsSymbolOffsetVisible>False</IsSymbolOffsetVisible>
+      <IsCurrentPCTracking>False</IsCurrentPCTracking>
+      <SourceTextVisible>True</SourceTextVisible>
+    </Instance>
+  </Class>
+  <Class Guid="0f65773b-f830-4042-8079-b38957be1b13">
+    <Instance Guid="00000000-0000-0000-0000-000000000000">
+      <IsSymbolOffsetVisible>False</IsSymbolOffsetVisible>
+      <IsCurrentPCTracking>False</IsCurrentPCTracking>
+      <SourceTextVisible>True</SourceTextVisible>
+    </Instance>
+  </Class>
+  <Class Guid="0550f945-5481-49df-a4f7-4494d0113007">
+    <Instance Guid="00000000-0000-0000-0000-000000000000">
+      <IsSymbolOffsetVisible>False</IsSymbolOffsetVisible>
+      <IsCurrentPCTracking>False</IsCurrentPCTracking>
+      <SourceTextVisible>True</SourceTextVisible>
+    </Instance>
+  </Class>
+  <Class Guid="a2909be3-c046-45e6-a811-0c5634810437">
+    <Instance Guid="00000000-0000-0000-0000-000000000000">
+      <IsSymbolOffsetVisible>False</IsSymbolOffsetVisible>
+      <IsCurrentPCTracking>False</IsCurrentPCTracking>
+      <SourceTextVisible>True</SourceTextVisible>
+    </Instance>
+  </Class>
   <Class Guid="eeae2c1c-3b17-44ca-9a69-17638edf07a9">
     <Instance Guid="ffd1bb0e-b707-4d38-8165-aa8629d78fcc">
       <Name>PanelWatch1</Name>
-      <WatchExpressionColumnWidth>0</WatchExpressionColumnWidth>
-      <ValueColumnWindth>0</ValueColumnWindth>
-      <TypeColumnWidth>0</TypeColumnWidth>
-      <AddressColumnWidth>0</AddressColumnWidth>
-      <MemoColumnWidth>0</MemoColumnWidth>
+      <WatchExpressionColumnWidth>150</WatchExpressionColumnWidth>
+      <ValueColumnWindth>100</ValueColumnWindth>
+      <TypeColumnWidth>150</TypeColumnWidth>
+      <AddressColumnWidth>100</AddressColumnWidth>
+      <MemoColumnWidth>150</MemoColumnWidth>
       <ArrayIndexNotation>None</ArrayIndexNotation>
+      <WatchId0>0</WatchId0>
+      <ParentId0>-1</ParentId0>
+      <WatchStatement0>timer_info</WatchStatement0>
+      <WatchType0>WatchItem</WatchType0>
+      <Memo0 />
+      <BitWidth0>8</BitWidth0>
+      <Encode0>20127</Encode0>
+      <WithHexadecimal0>True</WithHexadecimal0>
+      <Expanded0>True</Expanded0>
+      <Notation0>Unsigned</Notation0>
+      <WatchId1>1</WatchId1>
+      <ParentId1>-1</ParentId1>
+      <WatchStatement1>comm</WatchStatement1>
+      <WatchType1>WatchItem</WatchType1>
+      <Memo1 />
+      <BitWidth1>8</BitWidth1>
+      <Encode1>20127</Encode1>
+      <WithHexadecimal1>True</WithHexadecimal1>
+      <Expanded1>True</Expanded1>
+      <Notation1>Auto</Notation1>
+      <WatchId2>2</WatchId2>
+      <ParentId2>-1</ParentId2>
+      <WatchStatement2>send_0_buf</WatchStatement2>
+      <WatchType2>WatchItem</WatchType2>
+      <Memo2 />
+      <BitWidth2>8</BitWidth2>
+      <Encode2>20127</Encode2>
+      <WithHexadecimal2>True</WithHexadecimal2>
+      <Expanded2>True</Expanded2>
+      <Notation2>Auto</Notation2>
     </Instance>
     <Instance Guid="3e85fe22-38a0-44af-bbc8-8b0507ddb643">
       <Name>PanelWatch2</Name>
-      <WatchExpressionColumnWidth>0</WatchExpressionColumnWidth>
-      <ValueColumnWindth>0</ValueColumnWindth>
-      <TypeColumnWidth>0</TypeColumnWidth>
-      <AddressColumnWidth>0</AddressColumnWidth>
-      <MemoColumnWidth>0</MemoColumnWidth>
+      <WatchExpressionColumnWidth>150</WatchExpressionColumnWidth>
+      <ValueColumnWindth>100</ValueColumnWindth>
+      <TypeColumnWidth>150</TypeColumnWidth>
+      <AddressColumnWidth>100</AddressColumnWidth>
+      <MemoColumnWidth>150</MemoColumnWidth>
       <ArrayIndexNotation>None</ArrayIndexNotation>
     </Instance>
     <Instance Guid="355e79de-dc0b-4fa3-84bf-ee0d9c1ba57f">
       <Name>PanelWatch3</Name>
-      <WatchExpressionColumnWidth>0</WatchExpressionColumnWidth>
-      <ValueColumnWindth>0</ValueColumnWindth>
-      <TypeColumnWidth>0</TypeColumnWidth>
-      <AddressColumnWidth>0</AddressColumnWidth>
-      <MemoColumnWidth>0</MemoColumnWidth>
+      <WatchExpressionColumnWidth>150</WatchExpressionColumnWidth>
+      <ValueColumnWindth>100</ValueColumnWindth>
+      <TypeColumnWidth>150</TypeColumnWidth>
+      <AddressColumnWidth>100</AddressColumnWidth>
+      <MemoColumnWidth>150</MemoColumnWidth>
       <ArrayIndexNotation>None</ArrayIndexNotation>
     </Instance>
     <Instance Guid="db34cb34-72b5-4527-9a2b-09189d05d858">
       <Name>PanelWatch4</Name>
-      <WatchExpressionColumnWidth>0</WatchExpressionColumnWidth>
-      <ValueColumnWindth>0</ValueColumnWindth>
-      <TypeColumnWidth>0</TypeColumnWidth>
-      <AddressColumnWidth>0</AddressColumnWidth>
-      <MemoColumnWidth>0</MemoColumnWidth>
+      <WatchExpressionColumnWidth>150</WatchExpressionColumnWidth>
+      <ValueColumnWindth>100</ValueColumnWindth>
+      <TypeColumnWidth>150</TypeColumnWidth>
+      <AddressColumnWidth>100</AddressColumnWidth>
+      <MemoColumnWidth>150</MemoColumnWidth>
       <ArrayIndexNotation>None</ArrayIndexNotation>
     </Instance>
   </Class>
   <Class Guid="cd02d324-a75c-4e2b-b858-33bd0d529683">
     <Instance Guid="7f99f0d7-ad41-4e24-b822-a21c2c44cb6d">
       <Name>PanelIORegister</Name>
-      <WatchExpressionColumnWidth>0</WatchExpressionColumnWidth>
-      <ValueColumnWindth>0</ValueColumnWindth>
-      <TypeColumnWidth>0</TypeColumnWidth>
-      <AddressColumnWidth>0</AddressColumnWidth>
-      <MemoColumnWidth>0</MemoColumnWidth>
+      <WatchExpressionColumnWidth>150</WatchExpressionColumnWidth>
+      <ValueColumnWindth>100</ValueColumnWindth>
+      <TypeColumnWidth>150</TypeColumnWidth>
+      <AddressColumnWidth>100</AddressColumnWidth>
+      <MemoColumnWidth>150</MemoColumnWidth>
     </Instance>
   </Class>
   <Class Guid="9e32877b-f8ee-49c6-a44e-88758c92bfd6">
@@ -65,11 +161,11 @@
   <Class Guid="6a2b4ad0-1b10-43f2-be75-80747f093531">
     <Instance Guid="4c4194a5-8901-49ad-9a38-fe608d2120d5">
       <Name>PanelLocalVariable</Name>
-      <WatchExpressionColumnWidth>0</WatchExpressionColumnWidth>
-      <ValueColumnWindth>0</ValueColumnWindth>
-      <TypeColumnWidth>0</TypeColumnWidth>
-      <AddressColumnWidth>0</AddressColumnWidth>
-      <MemoColumnWidth>0</MemoColumnWidth>
+      <WatchExpressionColumnWidth>150</WatchExpressionColumnWidth>
+      <ValueColumnWindth>100</ValueColumnWindth>
+      <TypeColumnWidth>150</TypeColumnWidth>
+      <AddressColumnWidth>100</AddressColumnWidth>
+      <MemoColumnWidth>150</MemoColumnWidth>
       <IncludeHexadecimalValue>False</IncludeHexadecimalValue>
       <WatchItemNotation>Decimal</WatchItemNotation>
       <ArrayIndexNotation>Decimal</ArrayIndexNotation>
@@ -86,6 +182,21 @@
       <IsParameterShow>True</IsParameterShow>
       <DepthColumnWidth>50</DepthColumnWidth>
       <CallStackColumnWidth>500</CallStackColumnWidth>
+    </Instance>
+  </Class>
+  <Class Guid="d560aa5b-55a3-4ab3-8943-80835f7092bb">
+    <Instance Guid="d55305c0-229a-428c-99e5-cb62b9dca98c">
+      <NameColumnWIDTH>0</NameColumnWIDTH>
+      <DetailColumnWidth>0</DetailColumnWidth>
+      <CommentColumnWidth>0</CommentColumnWidth>
+      <IndividualDetailColumnWidth>0</IndividualDetailColumnWidth>
+      <TotalTimeColumnWidth>0</TotalTimeColumnWidth>
+      <PassCountColumnWidth>0</PassCountColumnWidth>
+      <AverageTimeColumnWidth>0</AverageTimeColumnWidth>
+      <MaxTimeColumnWidth>0</MaxTimeColumnWidth>
+      <MinimumTimeColumnWidth>0</MinimumTimeColumnWidth>
+      <TimerEventName0>Run-Break Timer</TimerEventName0>
+      <TimerEventUnit0>Nanosecond</TimerEventUnit0>
     </Instance>
   </Class>
   <Class Guid="be300f29-1d30-421a-8dc0-66ed37f33d52">
@@ -145,6 +256,16 @@
       <EvaluationText />
       <LineByteCount>16</LineByteCount>
       <ViewAddressOffset>0</ViewAddressOffset>
+    </Instance>
+  </Class>
+  <Class Guid="78a1d8b9-6c3e-49af-90d4-3c01ff02a7b4">
+    <Instance Guid="ec8b1ab3-b062-4f67-8de0-8a9cfd0e8265">
+      <ViewHardwareBreak>True</ViewHardwareBreak>
+      <ViewSoftwareBreak>True</ViewSoftwareBreak>
+      <ViewTimer>True</ViewTimer>
+      <ViewTrace>True</ViewTrace>
+      <ViewAction>True</ViewAction>
+      <ViewBuiltin>True</ViewBuiltin>
     </Instance>
   </Class>
 </CubeSuiteProject.User>

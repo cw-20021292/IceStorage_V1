@@ -115,7 +115,7 @@ Directive: ;MEMORY - PH
 *** Link information ***
 
    308 output segment(s)
-3375BH byte(s) real data
+3375EH byte(s) real data
  49193 symbol(s) defined
 
 
@@ -2987,7 +2987,7 @@ Directive: ;MEMORY - PH
                   @ERLINIT purifier   0CD7CH    00000H
                   @ERLINIT util       0CD7CH    00000H
                   @ERLINIT @rome      0CD7CH    00000H
-         @ECODEL                      0CD7CH    27862H  CSEG
+         @ECODEL                      0CD7CH    27865H  CSEG
                   @ECODEL  comm       0CD7CH    000C7H
                   @ECODEL  crc16      0CE43H    0009CH
                   @ECODEL  parser     0CEDFH    001F9H
@@ -3271,12 +3271,12 @@ Directive: ;MEMORY - PH
                   @ECODEL  WIFI_MonitorFixRAM
                                       3346DH    00264H
                   @ECODEL  led        336D1H    002CAH
-                  @ECODEL  main       3399BH    00145H
+                  @ECODEL  main       3399BH    00149H
                   @ECODEL  process_sys_event
-                                      33AE0H    007B2H
-                  @ECODEL  purifier   34292H    00140H
-                  @ECODEL  util       343D2H    0020CH
-* gap *                               345DEH    0B822H
+                                      33AE4H    007B1H
+                  @ECODEL  purifier   34295H    00140H
+                  @ECODEL  util       343D5H    0020CH
+* gap *                               345E1H    0B81FH
 
   MEMORY=OCD_ROM
   BASE ADDRESS=3FE00H   SIZE=00200H

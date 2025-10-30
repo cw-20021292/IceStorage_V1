@@ -4,24 +4,24 @@
 #include "prj_type.h"
 
 /* UART ID */
-#define COMM_ID_COMP          0
+#define COMM_ID_FRONT         0
 #define COMM_ID_WIFI          1
-#define COMM_ID_FRONT         2
+#define COMM_ID_COMP          2
 #define COMM_ID_EOL           3
 #define MAX_COMM_ID           4
 
 
 // COMP
-#define MAX_COMM_0_RX_BUF_SZ      30
-#define MAX_COMM_0_TX_BUF_SZ      30
+#define MAX_COMM_0_RX_BUF_SZ      128
+#define MAX_COMM_0_TX_BUF_SZ      128
 
 // WIFI
 #define MAX_COMM_1_RX_BUF_SZ      8
 #define MAX_COMM_1_TX_BUF_SZ      8
 
 // FRONT
-#define MAX_COMM_2_RX_BUF_SZ      128
-#define MAX_COMM_2_TX_BUF_SZ      128
+#define MAX_COMM_2_RX_BUF_SZ      30
+#define MAX_COMM_2_TX_BUF_SZ      30
 
 // EOL
 #define MAX_COMM_3_RX_BUF_SZ      255

@@ -3,6 +3,7 @@
         "front.h": "c",
         "led.h": "c",
         "prj_type.h": "c",
-        "process_display.h": "c"
+        "process_display.h": "c",
+        "wifi_control.h": "c"
     }
 }

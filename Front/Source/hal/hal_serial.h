@@ -11,8 +11,8 @@
 
 /* UART CONFIG */
 #define CONFIG_USE_UART_0       (0)   // NONE
-#define CONFIG_USE_UART_1       (1)   // MAIN
-#define CONFIG_USE_UART_2       (1)   // SUB FRONT
+#define CONFIG_USE_UART_1       (1)   // With MAIN
+#define CONFIG_USE_UART_2       (1)   // With SUB FRONT
 #define CONFIG_USE_UART_3       (0)   // NONE
 
 /* UART ID */

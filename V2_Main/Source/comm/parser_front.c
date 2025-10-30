@@ -412,7 +412,7 @@ static I16 MakePktReqLed3( U8 *buf )
     // MESSAGE TYPE
     buf[ mi16Len++ ] = PKT_FRONT_REQ_LED_3;
     
-    /// LEDs
+    /// LEDs (2 ~ 122)
     for( i=0; i < LED_ID_MAX; i++ )
     {
         buf[mi16Len++] = ConvertDuty2Protocol(i);
@@ -424,7 +424,7 @@ static I16 MakePktReqLed3( U8 *buf )
     {
         PlayVoice( ID_NONE );               // Clear Voice Id ( for one-shot )
     }
-    buf[ mi16Len++ ] = mVoiceId;
+    buf[ mi16Len++ ] = mVoiceId;            // 123
 
     if( IsVoiceMaxVol( mVoiceId ) == TRUE )
     {
@@ -432,16 +432,16 @@ static I16 MakePktReqLed3( U8 *buf )
     }
     else
     {
-        mVoiceVol = GetVoiceVolume();
+        mVoiceVol = GetVoiceVolume();   
     }
     // VOICE VOLUME
-    buf[ mi16Len++ ] = mVoiceVol;
+    buf[ mi16Len++ ] = mVoiceVol;       // 124
 
     // CRC-16
-    buf[ mi16Len++ ] = 0;
-    buf[ mi16Len++ ] = 0;
+    buf[ mi16Len++ ] = 0;               // 125
+    buf[ mi16Len++ ] = 0;               // 126
 
-    buf[ mi16Len++ ] = ETX;
+    buf[ mi16Len++ ] = ETX;             // 127
     return mi16Len;
 }
 
